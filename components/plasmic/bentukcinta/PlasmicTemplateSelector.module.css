@@ -9,7 +9,22 @@
   min-width: 0;
   min-height: 0;
 }
-.template1__wgy93:global(.__wab_instance) {
+.template1__af3U:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
+}
+.img__qKjx5 {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  min-width: 0;
+}
+.img__qKjx5 > picture > img {
+  object-fit: cover;
+}
+.img__qKjx5 > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
 }

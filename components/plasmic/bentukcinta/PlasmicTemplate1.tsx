@@ -46,18 +46,25 @@ type VariantPropType = keyof PlasmicTemplate1__VariantsArgs;
 export const PlasmicTemplate1__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicTemplate1__ArgsType = {
-  children?: React.ReactNode;
+  bgMasshead?: React.ReactNode;
+  title?: React.ReactNode;
 };
 type ArgPropType = keyof PlasmicTemplate1__ArgsType;
-export const PlasmicTemplate1__ArgProps = new Array<ArgPropType>("children");
+export const PlasmicTemplate1__ArgProps = new Array<ArgPropType>(
+  "bgMasshead",
+  "title"
+);
 
 export type PlasmicTemplate1__OverridesType = {
   root?: p.Flex<"div">;
+  hero?: p.Flex<"header">;
+  imageContainer?: p.Flex<"div">;
   freeBox?: p.Flex<"div">;
 };
 
 export interface DefaultTemplate1Props {
-  children?: React.ReactNode;
+  bgMasshead?: React.ReactNode;
+  title?: React.ReactNode;
   className?: string;
 }
 
@@ -92,22 +99,79 @@ function PlasmicTemplate1__RenderFunc(props: {
         sty.root
       )}
     >
-      <div
-        data-plasmic-name={"freeBox"}
-        data-plasmic-override={overrides.freeBox}
-        className={classNames(projectcss.all, sty.freeBox)}
-      >
-        {p.renderPlasmicSlot({
-          defaultContents: "Title was Here",
-          value: args.children
-        })}
-      </div>
+      {true ? (
+        <header
+          data-plasmic-name={"hero"}
+          data-plasmic-override={overrides.hero}
+          className={classNames(projectcss.all, sty.hero)}
+        >
+          <div
+            data-plasmic-name={"imageContainer"}
+            data-plasmic-override={overrides.imageContainer}
+            className={classNames(projectcss.all, sty.imageContainer)}
+          >
+            {p.renderPlasmicSlot({
+              defaultContents: (
+                <p.PlasmicImg
+                  alt={""}
+                  className={classNames(sty.img__t4FxX)}
+                  displayHeight={"auto" as const}
+                  displayMaxHeight={"none" as const}
+                  displayMaxWidth={"100%" as const}
+                  displayMinHeight={"0" as const}
+                  displayMinWidth={"0" as const}
+                  displayWidth={"100%" as const}
+                  loading={"lazy" as const}
+                />
+              ),
+
+              value: args.bgMasshead
+            })}
+          </div>
+
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__yidOo
+              )}
+            >
+              {"UNDANGAN PERNIKAHAN"}
+            </div>
+
+            {p.renderPlasmicSlot({
+              defaultContents: "Jonh & Merry",
+              value: args.title,
+              className: classNames(sty.slotTargetTitle)
+            })}
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___4LbFi
+              )}
+            >
+              {
+                "WE INVITE YOU TO CELEBRATE\nWITH US THE MOST SPECIAL DAY IN OUR LIFES"
+              }
+            </div>
+          </div>
+        </header>
+      ) : null}
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox"],
+  root: ["root", "hero", "imageContainer", "freeBox"],
+  hero: ["hero", "imageContainer", "freeBox"],
+  imageContainer: ["imageContainer"],
   freeBox: ["freeBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -115,6 +179,8 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  hero: "header";
+  imageContainer: "div";
   freeBox: "div";
 };
 
@@ -179,6 +245,8 @@ export const PlasmicTemplate1 = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    hero: makeNodeComponent("hero"),
+    imageContainer: makeNodeComponent("imageContainer"),
     freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicTemplate1

@@ -48,11 +48,11 @@ export const PlasmicTemplateSelector__VariantProps =
   new Array<VariantPropType>();
 
 export type PlasmicTemplateSelector__ArgsType = {
-  children?: React.ReactNode;
+  template1?: React.ReactNode;
 };
 type ArgPropType = keyof PlasmicTemplateSelector__ArgsType;
 export const PlasmicTemplateSelector__ArgProps = new Array<ArgPropType>(
-  "children"
+  "template1"
 );
 
 export type PlasmicTemplateSelector__OverridesType = {
@@ -60,7 +60,7 @@ export type PlasmicTemplateSelector__OverridesType = {
 };
 
 export interface DefaultTemplateSelectorProps {
-  children?: React.ReactNode;
+  template1?: React.ReactNode;
   className?: string;
 }
 
@@ -98,11 +98,11 @@ function PlasmicTemplateSelector__RenderFunc(props: {
       {p.renderPlasmicSlot({
         defaultContents: (
           <Template1
-            className={classNames("__wab_instance", sty.template1__wgy93)}
+            className={classNames("__wab_instance", sty.template1__af3U)}
           />
         ),
 
-        value: args.children
+        value: args.template1
       })}
     </div>
   ) as React.ReactElement | null;
