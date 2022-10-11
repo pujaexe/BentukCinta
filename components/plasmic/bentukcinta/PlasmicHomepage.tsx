@@ -134,7 +134,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.h1
               )}
             >
-              {"Welcome to your first page."}
+              {"Bentukcintrong"}
             </h1>
 
             <GraphCMSFetcher
