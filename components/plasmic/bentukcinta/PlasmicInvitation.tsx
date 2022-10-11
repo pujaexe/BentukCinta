@@ -36,6 +36,8 @@ import {
 } from "@plasmicapp/react-web";
 import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
 import { GraphCMSField } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: _3Kx5FMtA8n/codeComponent
+import TemplateSelector from "../../TemplateSelector"; // plasmic-import: tV2xuA4xJL/component
+import Template1 from "../../Template1"; // plasmic-import: GJ6j9vTAsC/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -56,6 +58,8 @@ export type PlasmicInvitation__OverridesType = {
   graphCmsFetcher?: p.Flex<typeof GraphCMSFetcher>;
   freeBox?: p.Flex<"div">;
   graphCmsField?: p.Flex<typeof GraphCMSField>;
+  templateSelector?: p.Flex<typeof TemplateSelector>;
+  template1?: p.Flex<typeof Template1>;
 };
 
 export interface DefaultInvitationProps {}
@@ -136,6 +140,32 @@ function PlasmicInvitation__RenderFunc(props: {
                     className={classNames("__wab_instance", sty.graphCmsField)}
                     path={["title"]}
                   />
+
+                  <TemplateSelector
+                    data-plasmic-name={"templateSelector"}
+                    data-plasmic-override={overrides.templateSelector}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.templateSelector
+                    )}
+                  >
+                    <Template1
+                      data-plasmic-name={"template1"}
+                      data-plasmic-override={overrides.template1}
+                      className={classNames("__wab_instance", sty.template1)}
+                    >
+                      {(() => {
+                        try {
+                          return $ctx.graphCmsItem.templateUse;
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "Title was Here";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </Template1>
+                  </TemplateSelector>
                 </div>
               )}
             </ph.DataCtxReader>
@@ -147,10 +177,25 @@ function PlasmicInvitation__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "graphCmsFetcher", "freeBox", "graphCmsField"],
-  graphCmsFetcher: ["graphCmsFetcher", "freeBox", "graphCmsField"],
-  freeBox: ["freeBox", "graphCmsField"],
-  graphCmsField: ["graphCmsField"]
+  root: [
+    "root",
+    "graphCmsFetcher",
+    "freeBox",
+    "graphCmsField",
+    "templateSelector",
+    "template1"
+  ],
+  graphCmsFetcher: [
+    "graphCmsFetcher",
+    "freeBox",
+    "graphCmsField",
+    "templateSelector",
+    "template1"
+  ],
+  freeBox: ["freeBox", "graphCmsField", "templateSelector", "template1"],
+  graphCmsField: ["graphCmsField"],
+  templateSelector: ["templateSelector", "template1"],
+  template1: ["template1"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -160,6 +205,8 @@ type NodeDefaultElementType = {
   graphCmsFetcher: typeof GraphCMSFetcher;
   freeBox: "div";
   graphCmsField: typeof GraphCMSField;
+  templateSelector: typeof TemplateSelector;
+  template1: typeof Template1;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -226,6 +273,8 @@ export const PlasmicInvitation = Object.assign(
     graphCmsFetcher: makeNodeComponent("graphCmsFetcher"),
     freeBox: makeNodeComponent("freeBox"),
     graphCmsField: makeNodeComponent("graphCmsField"),
+    templateSelector: makeNodeComponent("templateSelector"),
+    template1: makeNodeComponent("template1"),
 
     // Metadata about props expected for PlasmicInvitation
     internalVariantProps: PlasmicInvitation__VariantProps,

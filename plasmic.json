@@ -83,6 +83,32 @@
           "cssFilePath": "plasmic/bentukcinta/PlasmicInvitation.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "tV2xuA4xJL",
+          "name": "TemplateSelector",
+          "type": "managed",
+          "projectId": "6366ps4JUXGcyRNfgAokBX",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicTemplateSelector.tsx",
+          "importSpec": {
+            "modulePath": "TemplateSelector.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicTemplateSelector.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "GJ6j9vTAsC",
+          "name": "Template1",
+          "type": "managed",
+          "projectId": "6366ps4JUXGcyRNfgAokBX",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicTemplate1.tsx",
+          "importSpec": {
+            "modulePath": "Template1.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicTemplate1.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [],
