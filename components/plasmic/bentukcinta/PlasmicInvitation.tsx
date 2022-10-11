@@ -35,8 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
-import TemplateSelector from "../../TemplateSelector"; // plasmic-import: tV2xuA4xJL/component
-import Template1 from "../../Template1"; // plasmic-import: GJ6j9vTAsC/component
+import { GraphCMSField } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: _3Kx5FMtA8n/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -55,9 +54,7 @@ export const PlasmicInvitation__ArgProps = new Array<ArgPropType>();
 export type PlasmicInvitation__OverridesType = {
   root?: p.Flex<"div">;
   graphCmsFetcher?: p.Flex<typeof GraphCMSFetcher>;
-  templateSelector?: p.Flex<typeof TemplateSelector>;
-  template1?: p.Flex<typeof Template1>;
-  img?: p.Flex<typeof p.PlasmicImg>;
+  graphCmsField?: p.Flex<typeof GraphCMSField>;
 };
 
 export interface DefaultInvitationProps {}
@@ -127,52 +124,11 @@ function PlasmicInvitation__RenderFunc(props: {
           >
             <ph.DataCtxReader>
               {$ctx => (
-                <TemplateSelector
-                  data-plasmic-name={"templateSelector"}
-                  data-plasmic-override={overrides.templateSelector}
-                  className={classNames("__wab_instance", sty.templateSelector)}
-                  template1={
-                    <Template1
-                      data-plasmic-name={"template1"}
-                      data-plasmic-override={overrides.template1}
-                      bgMasshead={
-                        <p.PlasmicImg
-                          data-plasmic-name={"img"}
-                          data-plasmic-override={overrides.img}
-                          alt={""}
-                          className={classNames(sty.img)}
-                          displayHeight={"auto" as const}
-                          displayMaxHeight={"none" as const}
-                          displayMaxWidth={"100%" as const}
-                          displayMinHeight={"0" as const}
-                          displayMinWidth={"0" as const}
-                          displayWidth={"100%" as const}
-                          loading={"lazy" as const}
-                          src={(() => {
-                            try {
-                              return $ctx.graphCmsItem.coverPhoto;
-                            } catch (e) {
-                              if (e instanceof TypeError) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()}
-                        />
-                      }
-                      className={classNames("__wab_instance", sty.template1)}
-                      title={(() => {
-                        try {
-                          return $ctx.graphCmsItem.title;
-                        } catch (e) {
-                          if (e instanceof TypeError) {
-                            return "Jonh & Merry";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    />
-                  }
+                <GraphCMSField
+                  data-plasmic-name={"graphCmsField"}
+                  data-plasmic-override={overrides.graphCmsField}
+                  className={classNames("__wab_instance", sty.graphCmsField)}
+                  path={["title"]}
                 />
               )}
             </ph.DataCtxReader>
@@ -184,11 +140,9 @@ function PlasmicInvitation__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "graphCmsFetcher", "templateSelector", "template1", "img"],
-  graphCmsFetcher: ["graphCmsFetcher", "templateSelector", "template1", "img"],
-  templateSelector: ["templateSelector", "template1", "img"],
-  template1: ["template1", "img"],
-  img: ["img"]
+  root: ["root", "graphCmsFetcher", "graphCmsField"],
+  graphCmsFetcher: ["graphCmsFetcher", "graphCmsField"],
+  graphCmsField: ["graphCmsField"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -196,9 +150,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   graphCmsFetcher: typeof GraphCMSFetcher;
-  templateSelector: typeof TemplateSelector;
-  template1: typeof Template1;
-  img: typeof p.PlasmicImg;
+  graphCmsField: typeof GraphCMSField;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -263,9 +215,7 @@ export const PlasmicInvitation = Object.assign(
   {
     // Helper components rendering sub-elements
     graphCmsFetcher: makeNodeComponent("graphCmsFetcher"),
-    templateSelector: makeNodeComponent("templateSelector"),
-    template1: makeNodeComponent("template1"),
-    img: makeNodeComponent("img"),
+    graphCmsField: makeNodeComponent("graphCmsField"),
 
     // Metadata about props expected for PlasmicInvitation
     internalVariantProps: PlasmicInvitation__VariantProps,

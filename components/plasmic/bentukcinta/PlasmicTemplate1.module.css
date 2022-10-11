@@ -48,7 +48,7 @@
 .img__t4FxX > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
-.freeBox {
+.freeBox__tlr7I {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -67,6 +67,18 @@
   max-width: 800px;
   text-align: center;
   min-width: 0;
+}
+.freeBox__zMpa1 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
 }
 .slotTargetTitle {
   text-align: center;

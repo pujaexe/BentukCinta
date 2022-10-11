@@ -59,7 +59,6 @@ export type PlasmicTemplate1__OverridesType = {
   root?: p.Flex<"div">;
   hero?: p.Flex<"header">;
   imageContainer?: p.Flex<"div">;
-  freeBox?: p.Flex<"div">;
 };
 
 export interface DefaultTemplate1Props {
@@ -129,11 +128,7 @@ function PlasmicTemplate1__RenderFunc(props: {
             })}
           </div>
 
-          <div
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox)}
-          >
+          <div className={classNames(projectcss.all, sty.freeBox__tlr7I)}>
             <div
               className={classNames(
                 projectcss.all,
@@ -144,11 +139,15 @@ function PlasmicTemplate1__RenderFunc(props: {
               {"UNDANGAN PERNIKAHAN"}
             </div>
 
-            {p.renderPlasmicSlot({
-              defaultContents: "Jonh & Merry",
-              value: args.title,
-              className: classNames(sty.slotTargetTitle)
-            })}
+            {true ? (
+              <div className={classNames(projectcss.all, sty.freeBox__zMpa1)}>
+                {p.renderPlasmicSlot({
+                  defaultContents: "Jonh & Merry",
+                  value: args.title,
+                  className: classNames(sty.slotTargetTitle)
+                })}
+              </div>
+            ) : null}
 
             <div
               className={classNames(
@@ -169,10 +168,9 @@ function PlasmicTemplate1__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "hero", "imageContainer", "freeBox"],
-  hero: ["hero", "imageContainer", "freeBox"],
-  imageContainer: ["imageContainer"],
-  freeBox: ["freeBox"]
+  root: ["root", "hero", "imageContainer"],
+  hero: ["hero", "imageContainer"],
+  imageContainer: ["imageContainer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -181,7 +179,6 @@ type NodeDefaultElementType = {
   root: "div";
   hero: "header";
   imageContainer: "div";
-  freeBox: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -247,7 +244,6 @@ export const PlasmicTemplate1 = Object.assign(
     // Helper components rendering sub-elements
     hero: makeNodeComponent("hero"),
     imageContainer: makeNodeComponent("imageContainer"),
-    freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicTemplate1
     internalVariantProps: PlasmicTemplate1__VariantProps,

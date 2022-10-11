@@ -19,25 +19,8 @@
   position: relative;
   padding: 8px;
 }
-.templateSelector:global(.__wab_instance) {
+.graphCmsField:global(.__wab_instance) {
   max-width: 100%;
-}
-.template1:global(.__wab_instance) {
-  max-width: 100%;
+  object-fit: cover;
   position: relative;
-}
-.img {
-  position: absolute;
-  object-fit: cover;
-  max-width: 100%;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  min-width: 0;
-}
-.img > picture > img {
-  object-fit: cover;
-}
-.img > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
 }
