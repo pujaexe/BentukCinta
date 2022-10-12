@@ -36,6 +36,8 @@ import {
 } from "@plasmicapp/react-web";
 import { Modal } from "../../registerModal"; // plasmic-import: rqrUD0ogIY/codeComponent
 import { AudioPlayer } from "../../registerAudioplayer"; // plasmic-import: mA6Gaqg1fB/codeComponent
+import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
+import { GraphCMSField } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: _3Kx5FMtA8n/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -68,6 +70,7 @@ export type PlasmicTemplate1__ArgsType = {
   month?: React.ReactNode;
   year?: React.ReactNode;
   audio?: React.ReactNode;
+  imageGallery?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicTemplate1__ArgsType;
@@ -90,7 +93,8 @@ export const PlasmicTemplate1__ArgProps = new Array<ArgPropType>(
   "address",
   "month",
   "year",
-  "audio"
+  "audio",
+  "imageGallery"
 );
 
 export type PlasmicTemplate1__OverridesType = {
@@ -100,7 +104,6 @@ export type PlasmicTemplate1__OverridesType = {
   imageContainer?: p.Flex<"div">;
   heroTitle?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
-  freeBox?: p.Flex<"div">;
   h3?: p.Flex<"h3">;
   details?: p.Flex<"section">;
   col?: p.Flex<"div">;
@@ -119,6 +122,7 @@ export type PlasmicTemplate1__OverridesType = {
   addressWrapperContainer?: p.Flex<"div">;
   addressWrapper?: p.Flex<"div">;
   closing?: p.Flex<"div">;
+  gallery?: p.Flex<"section">;
 };
 
 export interface DefaultTemplate1Props {
@@ -141,6 +145,7 @@ export interface DefaultTemplate1Props {
   month?: React.ReactNode;
   year?: React.ReactNode;
   audio?: React.ReactNode;
+  imageGallery?: React.ReactNode;
   className?: string;
 }
 
@@ -183,13 +188,14 @@ function PlasmicTemplate1__RenderFunc(props: {
         sty.root
       )}
     >
-      <Modal
-        data-plasmic-name={"modal"}
-        data-plasmic-override={overrides.modal}
-        className={classNames("__wab_instance", sty.modal)}
-        isVisible={true}
-      />
-
+      {true ? (
+        <Modal
+          data-plasmic-name={"modal"}
+          data-plasmic-override={overrides.modal}
+          className={classNames("__wab_instance", sty.modal)}
+          isVisible={false}
+        />
+      ) : null}
       {true ? (
         <header
           data-plasmic-name={"hero"}
@@ -266,10 +272,8 @@ function PlasmicTemplate1__RenderFunc(props: {
 
             <p.Stack
               as={"div"}
-              data-plasmic-name={"freeBox"}
-              data-plasmic-override={overrides.freeBox}
               hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox)}
+              className={classNames(projectcss.all, sty.freeBox__phdNj)}
             >
               <p
                 className={classNames(
@@ -750,6 +754,43 @@ function PlasmicTemplate1__RenderFunc(props: {
 
         value: args.audio
       })}
+
+      <section
+        data-plasmic-name={"gallery"}
+        data-plasmic-override={overrides.gallery}
+        className={classNames(projectcss.all, sty.gallery)}
+      >
+        <div className={classNames(projectcss.all, sty.freeBox___3WF0P)}>
+          {p.renderPlasmicSlot({
+            defaultContents: (
+              <GraphCMSFetcher
+                className={classNames(
+                  "__wab_instance",
+                  sty.graphCmsFetcher__yxL8
+                )}
+                noLayout={false}
+              >
+                <ph.DataCtxReader>
+                  {$ctx => (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__ql86M)}
+                    >
+                      <GraphCMSField
+                        className={classNames(
+                          "__wab_instance",
+                          sty.graphCmsField__lXedm
+                        )}
+                      />
+                    </div>
+                  )}
+                </ph.DataCtxReader>
+              </GraphCMSFetcher>
+            ),
+
+            value: args.imageGallery
+          })}
+        </div>
+      </section>
     </div>
   ) as React.ReactElement | null;
 }
@@ -762,7 +803,6 @@ const PlasmicDescendants = {
     "imageContainer",
     "heroTitle",
     "h1",
-    "freeBox",
     "h3",
     "details",
     "col",
@@ -780,14 +820,14 @@ const PlasmicDescendants = {
     "timeWrapper2",
     "addressWrapperContainer",
     "addressWrapper",
-    "closing"
+    "closing",
+    "gallery"
   ],
   modal: ["modal"],
-  hero: ["hero", "imageContainer", "heroTitle", "h1", "freeBox", "h3"],
+  hero: ["hero", "imageContainer", "heroTitle", "h1", "h3"],
   imageContainer: ["imageContainer"],
-  heroTitle: ["heroTitle", "h1", "freeBox", "h3"],
+  heroTitle: ["heroTitle", "h1", "h3"],
   h1: ["h1"],
-  freeBox: ["freeBox", "h3"],
   h3: ["h3"],
   details: [
     "details",
@@ -854,7 +894,8 @@ const PlasmicDescendants = {
   timeWrapper2: ["timeWrapper2"],
   addressWrapperContainer: ["addressWrapperContainer", "addressWrapper"],
   addressWrapper: ["addressWrapper"],
-  closing: ["closing"]
+  closing: ["closing"],
+  gallery: ["gallery"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -866,7 +907,6 @@ type NodeDefaultElementType = {
   imageContainer: "div";
   heroTitle: "div";
   h1: "h1";
-  freeBox: "div";
   h3: "h3";
   details: "section";
   col: "div";
@@ -885,6 +925,7 @@ type NodeDefaultElementType = {
   addressWrapperContainer: "div";
   addressWrapper: "div";
   closing: "div";
+  gallery: "section";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -953,7 +994,6 @@ export const PlasmicTemplate1 = Object.assign(
     imageContainer: makeNodeComponent("imageContainer"),
     heroTitle: makeNodeComponent("heroTitle"),
     h1: makeNodeComponent("h1"),
-    freeBox: makeNodeComponent("freeBox"),
     h3: makeNodeComponent("h3"),
     details: makeNodeComponent("details"),
     col: makeNodeComponent("col"),
@@ -972,6 +1012,7 @@ export const PlasmicTemplate1 = Object.assign(
     addressWrapperContainer: makeNodeComponent("addressWrapperContainer"),
     addressWrapper: makeNodeComponent("addressWrapper"),
     closing: makeNodeComponent("closing"),
+    gallery: makeNodeComponent("gallery"),
 
     // Metadata about props expected for PlasmicTemplate1
     internalVariantProps: PlasmicTemplate1__VariantProps,
