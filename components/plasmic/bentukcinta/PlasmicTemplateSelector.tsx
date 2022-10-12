@@ -36,8 +36,6 @@ import {
 } from "@plasmicapp/react-web";
 import Template1 from "../../Template1"; // plasmic-import: GJ6j9vTAsC/component
 import { AudioPlayer } from "../../registerAudioplayer"; // plasmic-import: mA6Gaqg1fB/codeComponent
-import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
-import { GraphCMSField } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: _3Kx5FMtA8n/codeComponent
 import Template2 from "../../Template2"; // plasmic-import: ZsxWBfHDXcp/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";

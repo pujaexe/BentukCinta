@@ -4,18 +4,16 @@ import "antd/dist/antd.css";
 import React, { ReactNode, useState } from "react";
 
 export interface ImageProps {
-    className?: string;
     imageURL?: string;
     children?: ReactNode;
     height?: string;
     width?: string;
 }
 
-export function Image({imageURL, className,width,height}: ImageProps){
+export function Image({imageURL,width,height}: ImageProps){
     
     return ( 
     <AntdImage
-    rootClassName={className}
     width={width}
     height={height}
     src={imageURL ?? ""}

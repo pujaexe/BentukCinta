@@ -36,8 +36,6 @@ import {
 } from "@plasmicapp/react-web";
 import { Modal } from "../../registerModal"; // plasmic-import: rqrUD0ogIY/codeComponent
 import { AudioPlayer } from "../../registerAudioplayer"; // plasmic-import: mA6Gaqg1fB/codeComponent
-import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
-import { GraphCMSField } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: _3Kx5FMtA8n/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -70,7 +68,7 @@ export type PlasmicTemplate1__ArgsType = {
   month?: React.ReactNode;
   year?: React.ReactNode;
   audio?: React.ReactNode;
-  imageGallery?: React.ReactNode;
+  slot?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicTemplate1__ArgsType;
@@ -94,7 +92,7 @@ export const PlasmicTemplate1__ArgProps = new Array<ArgPropType>(
   "month",
   "year",
   "audio",
-  "imageGallery"
+  "slot"
 );
 
 export type PlasmicTemplate1__OverridesType = {
@@ -122,7 +120,7 @@ export type PlasmicTemplate1__OverridesType = {
   addressWrapperContainer?: p.Flex<"div">;
   addressWrapper?: p.Flex<"div">;
   closing?: p.Flex<"div">;
-  gallery?: p.Flex<"section">;
+  gallery?: p.Flex<"div">;
 };
 
 export interface DefaultTemplate1Props {
@@ -145,7 +143,7 @@ export interface DefaultTemplate1Props {
   month?: React.ReactNode;
   year?: React.ReactNode;
   audio?: React.ReactNode;
-  imageGallery?: React.ReactNode;
+  slot?: React.ReactNode;
   className?: string;
 }
 
@@ -755,42 +753,34 @@ function PlasmicTemplate1__RenderFunc(props: {
         value: args.audio
       })}
 
-      <section
+      <div
         data-plasmic-name={"gallery"}
         data-plasmic-override={overrides.gallery}
         className={classNames(projectcss.all, sty.gallery)}
       >
-        <div className={classNames(projectcss.all, sty.freeBox___3WF0P)}>
+        <div className={classNames(projectcss.all, sty.freeBox__d1D7F)}>
           {p.renderPlasmicSlot({
-            defaultContents: (
-              <GraphCMSFetcher
-                className={classNames(
-                  "__wab_instance",
-                  sty.graphCmsFetcher__yxL8
-                )}
-                noLayout={false}
+            defaultContents: [2, 3, 4].map((currentItem, currentIndex) => (
+              <div
+                className={classNames(projectcss.all, sty.freeBox__hn4Vu)}
+                key={currentIndex}
               >
-                <ph.DataCtxReader>
-                  {$ctx => (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__ql86M)}
-                    >
-                      <GraphCMSField
-                        className={classNames(
-                          "__wab_instance",
-                          sty.graphCmsField__lXedm
-                        )}
-                      />
-                    </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__fNuqh
                   )}
-                </ph.DataCtxReader>
-              </GraphCMSFetcher>
-            ),
+                >
+                  {"Enter some text"}
+                </div>
+              </div>
+            )),
 
-            value: args.imageGallery
+            value: args.slot
           })}
         </div>
-      </section>
+      </div>
     </div>
   ) as React.ReactElement | null;
 }
@@ -925,7 +915,7 @@ type NodeDefaultElementType = {
   addressWrapperContainer: "div";
   addressWrapper: "div";
   closing: "div";
-  gallery: "section";
+  gallery: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";

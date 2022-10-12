@@ -38,7 +38,6 @@ import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-impo
 import TemplateSelector from "../../TemplateSelector"; // plasmic-import: tV2xuA4xJL/component
 import Template1 from "../../Template1"; // plasmic-import: GJ6j9vTAsC/component
 import { AudioPlayer } from "../../registerAudioplayer"; // plasmic-import: mA6Gaqg1fB/codeComponent
-import { AntdImage } from "../../registerImage"; // plasmic-import: a6nbDCyC_k/codeComponent
 import Template2 from "../../Template2"; // plasmic-import: ZsxWBfHDXcp/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -58,10 +57,12 @@ export const PlasmicInvitation__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicInvitation__OverridesType = {
   root?: p.Flex<"div">;
+  graphCmsFetcher?: p.Flex<typeof GraphCMSFetcher>;
   templateSelector?: p.Flex<typeof TemplateSelector>;
   template1?: p.Flex<typeof Template1>;
   audioPlayer?: p.Flex<typeof AudioPlayer>;
-  antdImage?: p.Flex<typeof AntdImage>;
+  freeBox?: p.Flex<"div">;
+  text?: p.Flex<"div">;
 };
 
 export interface DefaultInvitationProps {}
@@ -116,10 +117,9 @@ function PlasmicInvitation__RenderFunc(props: {
           )}
         >
           <GraphCMSFetcher
-            className={classNames(
-              "__wab_instance",
-              sty.graphCmsFetcher___6AhGv
-            )}
+            data-plasmic-name={"graphCmsFetcher"}
+            data-plasmic-override={overrides.graphCmsFetcher}
+            className={classNames("__wab_instance", sty.graphCmsFetcher)}
             noLayout={true}
             query={(() => {
               try {
@@ -127,7 +127,7 @@ function PlasmicInvitation__RenderFunc(props: {
                   query:
                     'query MyQuery {\n pengantin(where: {slug: "' +
                     $ctx.params.slug +
-                    '"}) {\n slug\n title\n eventLocation\n gmapsEmbed\n evenDateTime\n eventMap {\n latitude\n longitude\n }\n phone1\n phone2\n pengantinPria\n pengantinWanita\n bapakPria\n bapakWanita\n ibuPria\n ibuWanita\n alamatPria\n alamatWanita\n coverPhoto\n photoPria\n photoWanita\n youtubeUrl\n templateUse\n audioUrl\n }\n}\n',
+                    '"}) {\n slug\n title\n eventLocation\n gmapsEmbed\n evenDateTime\n eventMap {\n latitude\n longitude\n }\n phone1\n phone2\n pengantinPria\n pengantinWanita\n bapakPria\n bapakWanita\n ibuPria\n ibuWanita\n alamatPria\n alamatWanita\n coverPhoto\n photoPria\n photoWanita\n youtubeUrl\n templateUse\n audioUrl\n galleries {photoGallery}}\n}\n',
                   variables: {}
                 };
               } catch (e) {
@@ -233,98 +233,6 @@ function PlasmicInvitation__RenderFunc(props: {
                           throw e;
                         }
                       })()}
-                      imageGallery={
-                        <GraphCMSFetcher
-                          className={classNames(
-                            "__wab_instance",
-                            sty.graphCmsFetcher__ulG2K
-                          )}
-                          noLayout={true}
-                          query={(() => {
-                            try {
-                              return {
-                                query:
-                                  'query MyQuery {\n  pengantin(where: {slug: "' +
-                                  $ctx.params.slug +
-                                  '"}) {\n    galleries {\n      photoGallery\n    }\n  }\n}\n',
-                                variables: {}
-                              };
-                            } catch (e) {
-                              if (e instanceof TypeError) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()}
-                        >
-                          <ph.DataCtxReader>
-                            {$ctx => (
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__zkzXj
-                                )}
-                              >
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.freeBox__qsZf
-                                  )}
-                                >
-                                  {(() => {
-                                    try {
-                                      return $ctx.graphCmsItem.galleries;
-                                    } catch (e) {
-                                      if (e instanceof TypeError) {
-                                        return [];
-                                      }
-                                      throw e;
-                                    }
-                                  })().map((currentItem, currentIndex) => (
-                                    <div
-                                      className={classNames(
-                                        projectcss.all,
-                                        sty.freeBox___5GvXk
-                                      )}
-                                      key={currentIndex}
-                                    >
-                                      {true ? (
-                                        <div
-                                          className={classNames(
-                                            projectcss.all,
-                                            sty.freeBox__wxFi
-                                          )}
-                                        >
-                                          <AntdImage
-                                            data-plasmic-name={"antdImage"}
-                                            data-plasmic-override={
-                                              overrides.antdImage
-                                            }
-                                            className={classNames(
-                                              "__wab_instance",
-                                              sty.antdImage
-                                            )}
-                                            imageURL={(() => {
-                                              try {
-                                                return currentItem.photoGallery;
-                                              } catch (e) {
-                                                if (e instanceof TypeError) {
-                                                  return undefined;
-                                                }
-                                                throw e;
-                                              }
-                                            })()}
-                                          />
-                                        </div>
-                                      ) : null}
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            )}
-                          </ph.DataCtxReader>
-                        </GraphCMSFetcher>
-                      }
                       imgPria={
                         <p.PlasmicImg
                           alt={""}
@@ -451,6 +359,35 @@ function PlasmicInvitation__RenderFunc(props: {
                           throw e;
                         }
                       })()}
+                      slot={(() => {
+                        try {
+                          return $ctx.graphCmsItem.galleries;
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return [];
+                          }
+                          throw e;
+                        }
+                      })().map((currentItem, currentIndex) => (
+                        <div
+                          data-plasmic-name={"freeBox"}
+                          data-plasmic-override={overrides.freeBox}
+                          className={classNames(projectcss.all, sty.freeBox)}
+                          key={currentIndex}
+                        >
+                          <div
+                            data-plasmic-name={"text"}
+                            data-plasmic-override={overrides.text}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text
+                            )}
+                          >
+                            {"Enter some text"}
+                          </div>
+                        </div>
+                      ))}
                       time={(() => {
                         try {
                           return (
@@ -487,26 +424,46 @@ function PlasmicInvitation__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "templateSelector", "template1", "audioPlayer", "antdImage"],
+  root: [
+    "root",
+    "graphCmsFetcher",
+    "templateSelector",
+    "template1",
+    "audioPlayer",
+    "freeBox",
+    "text"
+  ],
+  graphCmsFetcher: [
+    "graphCmsFetcher",
+    "templateSelector",
+    "template1",
+    "audioPlayer",
+    "freeBox",
+    "text"
+  ],
   templateSelector: [
     "templateSelector",
     "template1",
     "audioPlayer",
-    "antdImage"
+    "freeBox",
+    "text"
   ],
-  template1: ["template1", "audioPlayer", "antdImage"],
+  template1: ["template1", "audioPlayer", "freeBox", "text"],
   audioPlayer: ["audioPlayer"],
-  antdImage: ["antdImage"]
+  freeBox: ["freeBox", "text"],
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  graphCmsFetcher: typeof GraphCMSFetcher;
   templateSelector: typeof TemplateSelector;
   template1: typeof Template1;
   audioPlayer: typeof AudioPlayer;
-  antdImage: typeof AntdImage;
+  freeBox: "div";
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -570,10 +527,12 @@ export const PlasmicInvitation = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    graphCmsFetcher: makeNodeComponent("graphCmsFetcher"),
     templateSelector: makeNodeComponent("templateSelector"),
     template1: makeNodeComponent("template1"),
     audioPlayer: makeNodeComponent("audioPlayer"),
-    antdImage: makeNodeComponent("antdImage"),
+    freeBox: makeNodeComponent("freeBox"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicInvitation
     internalVariantProps: PlasmicInvitation__VariantProps,
