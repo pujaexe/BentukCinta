@@ -35,7 +35,10 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
-import { GraphCMSField } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: _3Kx5FMtA8n/codeComponent
+import TemplateSelector from "../../TemplateSelector"; // plasmic-import: tV2xuA4xJL/component
+import Template1 from "../../Template1"; // plasmic-import: GJ6j9vTAsC/component
+import { AudioPlayer } from "../../registerAudioplayer"; // plasmic-import: mA6Gaqg1fB/codeComponent
+import Template2 from "../../Template2"; // plasmic-import: ZsxWBfHDXcp/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -43,6 +46,7 @@ import projectcss from "./plasmic_bentukcinta.module.css"; // plasmic-import: 63
 import sty from "./PlasmicInvitation.module.css"; // plasmic-import: ygw79zXKnU/css
 
 export type PlasmicInvitation__VariantMembers = {};
+
 export type PlasmicInvitation__VariantsArgs = {};
 type VariantPropType = keyof PlasmicInvitation__VariantsArgs;
 export const PlasmicInvitation__VariantProps = new Array<VariantPropType>();
@@ -54,7 +58,9 @@ export const PlasmicInvitation__ArgProps = new Array<ArgPropType>();
 export type PlasmicInvitation__OverridesType = {
   root?: p.Flex<"div">;
   graphCmsFetcher?: p.Flex<typeof GraphCMSFetcher>;
-  graphCmsField?: p.Flex<typeof GraphCMSField>;
+  templateSelector?: p.Flex<typeof TemplateSelector>;
+  template1?: p.Flex<typeof Template1>;
+  audioPlayer?: p.Flex<typeof AudioPlayer>;
 };
 
 export interface DefaultInvitationProps {}
@@ -69,7 +75,15 @@ function PlasmicInvitation__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -124,11 +138,250 @@ function PlasmicInvitation__RenderFunc(props: {
           >
             <ph.DataCtxReader>
               {$ctx => (
-                <GraphCMSField
-                  data-plasmic-name={"graphCmsField"}
-                  data-plasmic-override={overrides.graphCmsField}
-                  className={classNames("__wab_instance", sty.graphCmsField)}
-                  path={["title"]}
+                <TemplateSelector
+                  data-plasmic-name={"templateSelector"}
+                  data-plasmic-override={overrides.templateSelector}
+                  className={classNames("__wab_instance", sty.templateSelector)}
+                  template={$ctx.graphCmsItem.templateUse}
+                  template1={
+                    <Template1
+                      data-plasmic-name={"template1"}
+                      data-plasmic-override={overrides.template1}
+                      address={(() => {
+                        try {
+                          return $ctx.graphCmsItem.eventLocation;
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "date&time";
+                          }
+                          throw e;
+                        }
+                      })()}
+                      alamatPria={(() => {
+                        try {
+                          return $ctx.graphCmsItem.alamatPria;
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "This is address wrapper";
+                          }
+                          throw e;
+                        }
+                      })()}
+                      alamatWanita={(() => {
+                        try {
+                          return $ctx.graphCmsItem.alamatWanita;
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "This is address wrapper";
+                          }
+                          throw e;
+                        }
+                      })()}
+                      audio={
+                        <AudioPlayer
+                          data-plasmic-name={"audioPlayer"}
+                          data-plasmic-override={overrides.audioPlayer}
+                          audioURL={(() => {
+                            try {
+                              return $ctx.graphCmsItem.audioUrl;
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.audioPlayer
+                          )}
+                        />
+                      }
+                      bgMasshead={
+                        <p.PlasmicImg
+                          alt={""}
+                          className={classNames(sty.img__gaRpc)}
+                          displayHeight={"auto" as const}
+                          displayMaxHeight={"none" as const}
+                          displayMaxWidth={"100%" as const}
+                          displayMinHeight={"0" as const}
+                          displayMinWidth={"0" as const}
+                          displayWidth={"100%" as const}
+                          loading={"lazy" as const}
+                          src={(() => {
+                            try {
+                              return $ctx.graphCmsItem.coverPhoto;
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return "https://via.placeholder.com/1920x1080";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        />
+                      }
+                      className={classNames("__wab_instance", sty.template1)}
+                      date={(() => {
+                        try {
+                          return $ctx.graphCmsItem.evenDateTime.slice(8, 10);
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "date&time";
+                          }
+                          throw e;
+                        }
+                      })()}
+                      imgPria={
+                        <p.PlasmicImg
+                          alt={""}
+                          className={classNames(sty.img__kfkVq)}
+                          displayHeight={"200px" as const}
+                          displayMaxHeight={"none" as const}
+                          displayMaxWidth={"100%" as const}
+                          displayMinHeight={"0" as const}
+                          displayMinWidth={"0" as const}
+                          displayWidth={"200px" as const}
+                          loading={"lazy" as const}
+                          src={(() => {
+                            try {
+                              return $ctx.graphCmsItem.photoPria;
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return "https://via.placeholder.com/200";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        />
+                      }
+                      imgWanita={
+                        <p.PlasmicImg
+                          alt={""}
+                          className={classNames(sty.img__hcMok)}
+                          displayHeight={"200px" as const}
+                          displayMaxHeight={"none" as const}
+                          displayMaxWidth={"100%" as const}
+                          displayMinHeight={"0" as const}
+                          displayMinWidth={"0" as const}
+                          displayWidth={"200px" as const}
+                          loading={"lazy" as const}
+                          src={(() => {
+                            try {
+                              return $ctx.graphCmsItem.photoWanita;
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return "https://via.placeholder.com/200";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        />
+                      }
+                      month={(() => {
+                        try {
+                          return $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 1
+                            ? "Jan"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 2
+                            ? "Feb"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 3
+                            ? "Mar"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 4
+                            ? "Apr"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 5
+                            ? "May"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 6
+                            ? "Jun"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 7
+                            ? "Jul"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 8
+                            ? "Aug"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 9
+                            ? "Sep"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 10
+                            ? "Oct"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 11
+                            ? "Nov"
+                            : "Dec";
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "date&time";
+                          }
+                          throw e;
+                        }
+                      })()}
+                      namaPria={(() => {
+                        try {
+                          return $ctx.graphCmsItem.pengantinPria;
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "John Stewart";
+                          }
+                          throw e;
+                        }
+                      })()}
+                      namaPria2={(() => {
+                        try {
+                          return $ctx.graphCmsItem.pengantinWanita;
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "John Stewart";
+                          }
+                          throw e;
+                        }
+                      })()}
+                      ortuPria={(() => {
+                        try {
+                          return (
+                            $ctx.graphCmsItem.bapakPria +
+                            " & " +
+                            $ctx.graphCmsItem.ibuPria
+                          );
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "john lenon & John Lenin";
+                          }
+                          throw e;
+                        }
+                      })()}
+                      ortuWanita={(() => {
+                        try {
+                          return (
+                            $ctx.graphCmsItem.bapakWanita +
+                            " & " +
+                            $ctx.graphCmsItem.ibuWanita
+                          );
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "john lenon & John Lenin";
+                          }
+                          throw e;
+                        }
+                      })()}
+                      time={(() => {
+                        try {
+                          return (
+                            $ctx.graphCmsItem.evenDateTime.slice(11, 16) +
+                            " s/d Selesai"
+                          );
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "time";
+                          }
+                          throw e;
+                        }
+                      })()}
+                      year={(() => {
+                        try {
+                          return $ctx.graphCmsItem.evenDateTime.slice(0, 4);
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "date&time";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    />
+                  }
                 />
               )}
             </ph.DataCtxReader>
@@ -140,9 +393,22 @@ function PlasmicInvitation__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "graphCmsFetcher", "graphCmsField"],
-  graphCmsFetcher: ["graphCmsFetcher", "graphCmsField"],
-  graphCmsField: ["graphCmsField"]
+  root: [
+    "root",
+    "graphCmsFetcher",
+    "templateSelector",
+    "template1",
+    "audioPlayer"
+  ],
+  graphCmsFetcher: [
+    "graphCmsFetcher",
+    "templateSelector",
+    "template1",
+    "audioPlayer"
+  ],
+  templateSelector: ["templateSelector", "template1", "audioPlayer"],
+  template1: ["template1", "audioPlayer"],
+  audioPlayer: ["audioPlayer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -150,7 +416,9 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   graphCmsFetcher: typeof GraphCMSFetcher;
-  graphCmsField: typeof GraphCMSField;
+  templateSelector: typeof TemplateSelector;
+  template1: typeof Template1;
+  audioPlayer: typeof AudioPlayer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -215,7 +483,9 @@ export const PlasmicInvitation = Object.assign(
   {
     // Helper components rendering sub-elements
     graphCmsFetcher: makeNodeComponent("graphCmsFetcher"),
-    graphCmsField: makeNodeComponent("graphCmsField"),
+    templateSelector: makeNodeComponent("templateSelector"),
+    template1: makeNodeComponent("template1"),
+    audioPlayer: makeNodeComponent("audioPlayer"),
 
     // Metadata about props expected for PlasmicInvitation
     internalVariantProps: PlasmicInvitation__VariantProps,

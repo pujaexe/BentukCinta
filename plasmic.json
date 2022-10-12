@@ -109,6 +109,19 @@
           "cssFilePath": "plasmic/bentukcinta/PlasmicTemplate1.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "ZsxWBfHDXcp",
+          "name": "Template2",
+          "type": "managed",
+          "projectId": "6366ps4JUXGcyRNfgAokBX",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicTemplate2.tsx",
+          "importSpec": {
+            "modulePath": "Template2.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicTemplate2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [],
@@ -125,6 +138,21 @@
           "id": "BtdRfcJJa_",
           "name": "Fetcher",
           "componentImportPath": "@plasmicapp/data-sources"
+        },
+        {
+          "id": "mA6Gaqg1fB",
+          "name": "AudioPlayer",
+          "componentImportPath": "./components/registerAudioplayer"
+        },
+        {
+          "id": "rqrUD0ogIY",
+          "name": "Modal",
+          "componentImportPath": "./components/registerModal"
+        },
+        {
+          "id": "a6nbDCyC_k",
+          "name": "AntdImage",
+          "componentImportPath": "./components/registerImage"
         }
       ]
     }

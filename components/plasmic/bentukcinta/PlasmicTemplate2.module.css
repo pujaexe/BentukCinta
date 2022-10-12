@@ -9,11 +9,6 @@
   min-width: 0;
   min-height: 0;
 }
-.modal:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  position: relative;
-}
 .hero {
   display: flex;
   position: relative;
@@ -38,7 +33,7 @@
   min-width: 0;
   min-height: 0;
 }
-.img__t4FxX {
+.img__lqqwG {
   position: absolute;
   object-fit: cover;
   max-width: 100%;
@@ -47,10 +42,10 @@
   width: 100%;
   min-width: 0;
 }
-.img__t4FxX > picture > img {
+.img__lqqwG > picture > img {
   object-fit: cover;
 }
-.img__t4FxX > :global(.__wab_img-spacer) > img {
+.img__lqqwG > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .heroTitle {
@@ -61,8 +56,7 @@
   height: auto;
   max-width: 100%;
   padding-bottom: 5rem;
-  background: linear-gradient(0deg, #0c4627 13%, #0c462700 100%) 0% 0% / 100%
-    100% repeat;
+  background: none;
   min-width: 0;
 }
 .heroTitle > :global(.__wab_flex-container) {
@@ -83,7 +77,7 @@
   > img {
   margin-top: 24px;
 }
-.h6__yidOo {
+.h6__rfi5L {
   font-size: 0.75rem;
   line-height: 150%;
   letter-spacing: 4px;
@@ -114,7 +108,7 @@
 .slotTargetChildren {
   text-align: center;
 }
-.h6___4LbFi {
+.h6___5VWz {
   font-size: 0.63rem;
   line-height: 150%;
   letter-spacing: 4px;
@@ -154,7 +148,7 @@
   > img {
   margin-left: 24px;
 }
-.p__jjwSr {
+.p___2QzBn {
   font-size: 0.75rem;
   line-height: 150%;
   letter-spacing: normal;
@@ -187,7 +181,7 @@
 .slotTargetTanggal {
   font-family: "Poppins", sans-serif;
 }
-.p___9G9Nb {
+.p___0ImlA {
   font-size: 0.75rem;
   line-height: 150%;
   letter-spacing: normal;
@@ -239,14 +233,14 @@
   max-width: 50rem;
   min-width: 0;
 }
-.text__k47Nj {
+.text__ksHxY {
   width: 100%;
   height: auto;
   max-width: 800px;
   text-align: center;
   min-width: 0;
 }
-.text__bizXz {
+.text__hzDq1 {
   width: 100%;
   height: auto;
   max-width: 800px;
@@ -295,7 +289,7 @@
   align-items: center;
   min-width: 0;
 }
-.img___3QbrX {
+.img__i926D {
   position: relative;
   object-fit: cover;
   max-width: 100%;
@@ -303,10 +297,10 @@
   height: 200px;
   flex-shrink: 0;
 }
-.img___3QbrX > picture > img {
+.img__i926D > picture > img {
   object-fit: cover;
 }
-.img___3QbrX > :global(.__wab_img-spacer) > img {
+.img__i926D > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .priaDetailsWrapper {
@@ -336,7 +330,7 @@
   > img {
   margin-top: 0px;
 }
-.h6__jZz8W {
+.h6___4Hk8S {
   font-size: 1.5rem;
   line-height: 150%;
   letter-spacing: normal;
@@ -352,7 +346,7 @@
 .slotTargetNamaPria {
   text-align: center;
 }
-.text__fwAbN {
+.text__mFoz0 {
   font-size: 0.75rem;
   line-height: 150%;
   letter-spacing: normal;
@@ -362,7 +356,7 @@
   text-align: center;
   min-width: 0;
 }
-.p__vy9Rd {
+.p__iomge {
   font-size: 0.88rem;
   line-height: 150%;
   letter-spacing: normal;
@@ -376,7 +370,7 @@
 .slotTargetOrtuPria {
   text-align: center;
 }
-.p___9WdA7 {
+.p__ahpOi {
   font-size: 0.63rem;
   line-height: 150%;
   letter-spacing: normal;
@@ -401,7 +395,7 @@
   align-items: center;
   min-width: 0;
 }
-.img___8CXoW {
+.img___3KEv5 {
   position: relative;
   object-fit: cover;
   max-width: 100%;
@@ -409,10 +403,10 @@
   height: 200px;
   flex-shrink: 0;
 }
-.img___8CXoW > picture > img {
+.img___3KEv5 > picture > img {
   object-fit: cover;
 }
-.img___8CXoW > :global(.__wab_img-spacer) > img {
+.img___3KEv5 > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .priaDetailsWrapper2 {
@@ -445,7 +439,7 @@
   > img {
   margin-top: 0px;
 }
-.h6___630JH {
+.h6__efsBx {
   font-size: 1.5rem;
   line-height: 150%;
   letter-spacing: normal;
@@ -461,7 +455,7 @@
 .slotTargetNamaPria2 {
   text-align: center;
 }
-.text__mUjfD {
+.text___0W7JN {
   font-size: 0.75rem;
   line-height: 150%;
   letter-spacing: normal;
@@ -471,7 +465,7 @@
   text-align: center;
   min-width: 0;
 }
-.p__ayBzi {
+.p__fv0Am {
   font-size: 0.88rem;
   line-height: 150%;
   letter-spacing: normal;
@@ -485,7 +479,7 @@
 .slotTargetOrtuWanita {
   text-align: center;
 }
-.p__c9QmR {
+.p__lxgAd {
   font-size: 0.63rem;
   line-height: 150%;
   letter-spacing: normal;
@@ -510,14 +504,14 @@
   max-width: 50rem;
   min-width: 0;
 }
-.text__jEfIw {
+.text__wgy66 {
   width: 100%;
   height: auto;
   max-width: 800px;
   text-align: center;
   min-width: 0;
 }
-.text___1OHhX {
+.text___7GJqw {
   width: 100%;
   height: auto;
   max-width: 800px;
@@ -546,14 +540,14 @@
   max-width: 30rem;
   min-width: 0;
 }
-.text__jwdWz {
+.text__uscL5 {
   width: 100%;
   height: auto;
   max-width: 800px;
   text-align: left;
   min-width: 0;
 }
-.text__nosg0 {
+.text__dz7WC {
   width: 100%;
   height: auto;
   max-width: 800px;
@@ -561,36 +555,14 @@
   min-width: 0;
 }
 .dateWrapper {
-  flex-direction: row;
   width: 100%;
   height: auto;
   max-width: 800px;
   display: flex;
-  min-width: 0;
-}
-.dateWrapper > :global(.__wab_flex-container) {
   flex-direction: row;
   min-width: 0;
-  margin-left: calc(0px - 12px);
-  width: calc(100% + 12px);
-}
-.dateWrapper > :global(.__wab_flex-container) > *,
-.dateWrapper > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.dateWrapper > :global(.__wab_flex-container) > picture > img,
-.dateWrapper
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  margin-left: 12px;
 }
 .slotTargetDate {
-  text-align: left;
-}
-.slotTargetMonth {
-  text-align: left;
-}
-.slotTargetYear {
   text-align: left;
 }
 .timeWrapper {
@@ -604,14 +576,14 @@
   max-width: 30rem;
   min-width: 0;
 }
-.text___9DSTt {
+.text__bizY1 {
   width: 100%;
   height: auto;
   max-width: 800px;
   text-align: left;
   min-width: 0;
 }
-.text__zm7F {
+.text__pBo3 {
   width: 100%;
   height: auto;
   max-width: 800px;
@@ -640,14 +612,14 @@
   max-width: 30rem;
   min-width: 0;
 }
-.text__f8Qf {
+.text__gRUtw {
   width: 100%;
   height: auto;
   max-width: 800px;
   text-align: left;
   min-width: 0;
 }
-.text___0Bmt7 {
+.text__d5Lan {
   width: 100%;
   height: auto;
   max-width: 800px;
@@ -676,22 +648,17 @@
   max-width: 50rem;
   min-width: 0;
 }
-.text__rfKky {
+.text__zouok {
   width: 100%;
   height: auto;
   max-width: 800px;
   text-align: center;
   min-width: 0;
 }
-.text__p7HZz {
+.text__xvyAf {
   width: 100%;
   height: auto;
   max-width: 800px;
   text-align: center;
   min-width: 0;
-}
-.audioPlayer__ihTG:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  position: relative;
 }

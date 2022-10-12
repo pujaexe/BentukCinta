@@ -35,24 +35,36 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Template1 from "../../Template1"; // plasmic-import: GJ6j9vTAsC/component
+import { AudioPlayer } from "../../registerAudioplayer"; // plasmic-import: mA6Gaqg1fB/codeComponent
+import Template2 from "../../Template2"; // plasmic-import: ZsxWBfHDXcp/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_bentukcinta.module.css"; // plasmic-import: 6366ps4JUXGcyRNfgAokBX/projectcss
 import sty from "./PlasmicTemplateSelector.module.css"; // plasmic-import: tV2xuA4xJL/css
 
-export type PlasmicTemplateSelector__VariantMembers = {};
-export type PlasmicTemplateSelector__VariantsArgs = {};
+export type PlasmicTemplateSelector__VariantMembers = {
+  template: "template1" | "template2";
+};
+
+export type PlasmicTemplateSelector__VariantsArgs = {
+  template?: SingleChoiceArg<"template1" | "template2">;
+};
+
 type VariantPropType = keyof PlasmicTemplateSelector__VariantsArgs;
-export const PlasmicTemplateSelector__VariantProps =
-  new Array<VariantPropType>();
+export const PlasmicTemplateSelector__VariantProps = new Array<VariantPropType>(
+  "template"
+);
 
 export type PlasmicTemplateSelector__ArgsType = {
   template1?: React.ReactNode;
+  template2?: React.ReactNode;
 };
+
 type ArgPropType = keyof PlasmicTemplateSelector__ArgsType;
 export const PlasmicTemplateSelector__ArgProps = new Array<ArgPropType>(
-  "template1"
+  "template1",
+  "template2"
 );
 
 export type PlasmicTemplateSelector__OverridesType = {
@@ -61,6 +73,8 @@ export type PlasmicTemplateSelector__OverridesType = {
 
 export interface DefaultTemplateSelectorProps {
   template1?: React.ReactNode;
+  template2?: React.ReactNode;
+  template?: SingleChoiceArg<"template1" | "template2">;
   className?: string;
 }
 
@@ -74,7 +88,15 @@ function PlasmicTemplateSelector__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -92,18 +114,43 @@ function PlasmicTemplateSelector__RenderFunc(props: {
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
-        sty.root
+        sty.root,
+        {
+          [sty.roottemplate_template1]: hasVariant(
+            variants,
+            "template",
+            "template1"
+          ),
+          [sty.roottemplate_template2]: hasVariant(
+            variants,
+            "template",
+            "template2"
+          )
+        }
       )}
     >
-      {p.renderPlasmicSlot({
-        defaultContents: (
-          <Template1
-            className={classNames("__wab_instance", sty.template1__af3U)}
-          />
-        ),
+      {(hasVariant(variants, "template", "template2") ? false : true)
+        ? p.renderPlasmicSlot({
+            defaultContents: (
+              <Template1
+                className={classNames("__wab_instance", sty.template1__af3U)}
+              />
+            ),
 
-        value: args.template1
-      })}
+            value: args.template1
+          })
+        : null}
+      {(hasVariant(variants, "template", "template2") ? true : false)
+        ? p.renderPlasmicSlot({
+            defaultContents: (
+              <Template2
+                className={classNames("__wab_instance", sty.template2__xs8Uz)}
+              />
+            ),
+
+            value: args.template2
+          })
+        : null}
     </div>
   ) as React.ReactElement | null;
 }
