@@ -19,6 +19,6 @@ registerModal()
 registerImage()
 
 export default function PlasmicHost() {
-  return <PlasmicCanvasHost />;
+  return PLASMIC &&<PlasmicCanvasHost />;
 }
     
