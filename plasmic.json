@@ -183,7 +183,13 @@
           "moduleFilePath": "plasmic/bentukcinta/icons/PlasmicIcon__WhatsappSvgrepoCom1Svg.tsx"
         }
       ],
-      "images": [],
+      "images": [
+        {
+          "id": "TldPE3Awl",
+          "name": "phone-image-min.png",
+          "filePath": "../public/plasmic/bentukcinta/images/phoneImageMinpng.png"
+        }
+      ],
       "indirect": false,
       "globalContextsFilePath": "plasmic/bentukcinta/PlasmicGlobalContextsProvider.tsx",
       "codeComponents": [

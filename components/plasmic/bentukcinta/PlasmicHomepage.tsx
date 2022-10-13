@@ -54,10 +54,19 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
+  navBar?: p.Flex<"div">;
+  alingLeft?: p.Flex<"div">;
+  logo?: p.Flex<"div">;
+  h5?: p.Flex<"h5">;
+  navMenu?: p.Flex<"div">;
+  tentangKami?: p.Flex<"a"> & Partial<LinkProps>;
+  harga?: p.Flex<"a"> & Partial<LinkProps>;
+  faq?: p.Flex<"a"> & Partial<LinkProps>;
+  alingRigth?: p.Flex<"div">;
   section?: p.Flex<"section">;
   h1?: p.Flex<"h1">;
+  img?: p.Flex<typeof p.PlasmicImg>;
   graphCmsFetcher?: p.Flex<typeof GraphCMSFetcher>;
-  link?: p.Flex<"a"> & Partial<LinkProps>;
   graphCmsField?: p.Flex<typeof GraphCMSField>;
 };
 
@@ -126,6 +135,136 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
+          <div
+            data-plasmic-name={"navBar"}
+            data-plasmic-override={overrides.navBar}
+            className={classNames(projectcss.all, sty.navBar)}
+          >
+            <div
+              data-plasmic-name={"alingLeft"}
+              data-plasmic-override={overrides.alingLeft}
+              className={classNames(projectcss.all, sty.alingLeft)}
+            >
+              {true ? (
+                <div
+                  data-plasmic-name={"logo"}
+                  data-plasmic-override={overrides.logo}
+                  className={classNames(projectcss.all, sty.logo)}
+                >
+                  <h5
+                    data-plasmic-name={"h5"}
+                    data-plasmic-override={overrides.h5}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h5,
+                      projectcss.__wab_text,
+                      sty.h5
+                    )}
+                  >
+                    {"Bentuk Cinta"}
+                  </h5>
+                </div>
+              ) : null}
+
+              <p.Stack
+                as={"div"}
+                data-plasmic-name={"navMenu"}
+                data-plasmic-override={overrides.navMenu}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.navMenu)}
+              >
+                <p.PlasmicLink
+                  data-plasmic-name={"tentangKami"}
+                  data-plasmic-override={overrides.tentangKami}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.tentangKami
+                  )}
+                  component={Link}
+                  platform={"nextjs"}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__hoijD
+                    )}
+                  >
+                    {"Tentang Kami"}
+                  </div>
+                </p.PlasmicLink>
+
+                <p.PlasmicLink
+                  data-plasmic-name={"harga"}
+                  data-plasmic-override={overrides.harga}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.harga
+                  )}
+                  component={Link}
+                  platform={"nextjs"}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__kv1Cv
+                    )}
+                  >
+                    {"Harga"}
+                  </div>
+                </p.PlasmicLink>
+
+                <p.PlasmicLink
+                  data-plasmic-name={"faq"}
+                  data-plasmic-override={overrides.faq}
+                  className={classNames(projectcss.all, projectcss.a, sty.faq)}
+                  component={Link}
+                  platform={"nextjs"}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___6Fi9
+                    )}
+                  >
+                    {"FAQ"}
+                  </div>
+                </p.PlasmicLink>
+              </p.Stack>
+            </div>
+
+            <div
+              data-plasmic-name={"alingRigth"}
+              data-plasmic-override={overrides.alingRigth}
+              className={classNames(projectcss.all, sty.alingRigth)}
+            >
+              <p.PlasmicLink
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__e8TRn
+                )}
+                component={Link}
+                platform={"nextjs"}
+              >
+                <h6
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h6,
+                    projectcss.__wab_text,
+                    sty.h6___6A10Q
+                  )}
+                >
+                  {"Hubungi Kami"}
+                </h6>
+              </p.PlasmicLink>
+            </div>
+          </div>
+
           <p.Stack
             as={"section"}
             data-plasmic-name={"section"}
@@ -143,8 +282,43 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.h1
               )}
             >
-              {"Bentuk Cinta"}
+              {"Ciee masih ngundang pake kartu! Online Donk!"}
             </h1>
+
+            <h6
+              className={classNames(
+                projectcss.all,
+                projectcss.h6,
+                projectcss.__wab_text,
+                sty.h6___7AAcH
+              )}
+            >
+              {
+                "Bentukcinta.com siap membantu mu bikinin undangan online yang keren, kekinian dan hemat waktu, biar kamu ga ngundang pake cara lama,"
+              }
+            </h6>
+
+            <div className={classNames(projectcss.all, sty.freeBox___46RYd)}>
+              <p.PlasmicImg
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
+                alt={""}
+                className={classNames(sty.img)}
+                displayHeight={"auto" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"auto" as const}
+                loading={"lazy" as const}
+                src={{
+                  src: "/plasmic/bentukcinta/images/phoneImageMinpng.png",
+                  fullWidth: 600,
+                  fullHeight: 710,
+                  aspectRatio: undefined
+                }}
+              />
+            </div>
 
             <div className={classNames(projectcss.all, sty.freeBox__ftCi)}>
               <GraphCMSFetcher
@@ -164,12 +338,10 @@ function PlasmicHomepage__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.freeBox__kBxD)}
                     >
                       <p.PlasmicLink
-                        data-plasmic-name={"link"}
-                        data-plasmic-override={overrides.link}
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
-                          sty.link
+                          sty.link__twWtR
                         )}
                         component={Link}
                         href={`/${(() => {
@@ -192,7 +364,7 @@ function PlasmicHomepage__RenderFunc(props: {
                             "__wab_instance",
                             sty.graphCmsField
                           )}
-                          path={["slug"]}
+                          path={["title"]}
                         />
                       </p.PlasmicLink>
                     </div>
@@ -208,11 +380,54 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "h1", "graphCmsFetcher", "link", "graphCmsField"],
-  section: ["section", "h1", "graphCmsFetcher", "link", "graphCmsField"],
+  root: [
+    "root",
+    "navBar",
+    "alingLeft",
+    "logo",
+    "h5",
+    "navMenu",
+    "tentangKami",
+    "harga",
+    "faq",
+    "alingRigth",
+    "section",
+    "h1",
+    "img",
+    "graphCmsFetcher",
+    "graphCmsField"
+  ],
+  navBar: [
+    "navBar",
+    "alingLeft",
+    "logo",
+    "h5",
+    "navMenu",
+    "tentangKami",
+    "harga",
+    "faq",
+    "alingRigth"
+  ],
+  alingLeft: [
+    "alingLeft",
+    "logo",
+    "h5",
+    "navMenu",
+    "tentangKami",
+    "harga",
+    "faq"
+  ],
+  logo: ["logo", "h5"],
+  h5: ["h5"],
+  navMenu: ["navMenu", "tentangKami", "harga", "faq"],
+  tentangKami: ["tentangKami"],
+  harga: ["harga"],
+  faq: ["faq"],
+  alingRigth: ["alingRigth"],
+  section: ["section", "h1", "img", "graphCmsFetcher", "graphCmsField"],
   h1: ["h1"],
-  graphCmsFetcher: ["graphCmsFetcher", "link", "graphCmsField"],
-  link: ["link", "graphCmsField"],
+  img: ["img"],
+  graphCmsFetcher: ["graphCmsFetcher", "graphCmsField"],
   graphCmsField: ["graphCmsField"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -220,10 +435,19 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  navBar: "div";
+  alingLeft: "div";
+  logo: "div";
+  h5: "h5";
+  navMenu: "div";
+  tentangKami: "a";
+  harga: "a";
+  faq: "a";
+  alingRigth: "div";
   section: "section";
   h1: "h1";
+  img: typeof p.PlasmicImg;
   graphCmsFetcher: typeof GraphCMSFetcher;
-  link: "a";
   graphCmsField: typeof GraphCMSField;
 };
 
@@ -288,10 +512,19 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    navBar: makeNodeComponent("navBar"),
+    alingLeft: makeNodeComponent("alingLeft"),
+    logo: makeNodeComponent("logo"),
+    h5: makeNodeComponent("h5"),
+    navMenu: makeNodeComponent("navMenu"),
+    tentangKami: makeNodeComponent("tentangKami"),
+    harga: makeNodeComponent("harga"),
+    faq: makeNodeComponent("faq"),
+    alingRigth: makeNodeComponent("alingRigth"),
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
+    img: makeNodeComponent("img"),
     graphCmsFetcher: makeNodeComponent("graphCmsFetcher"),
-    link: makeNodeComponent("link"),
     graphCmsField: makeNodeComponent("graphCmsField"),
 
     // Metadata about props expected for PlasmicHomepage
