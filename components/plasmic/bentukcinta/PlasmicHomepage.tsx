@@ -43,6 +43,7 @@ import projectcss from "./plasmic_bentukcinta.module.css"; // plasmic-import: 63
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: cWWh_VXruR120/css
 
 export type PlasmicHomepage__VariantMembers = {};
+
 export type PlasmicHomepage__VariantsArgs = {};
 type VariantPropType = keyof PlasmicHomepage__VariantsArgs;
 export const PlasmicHomepage__VariantProps = new Array<VariantPropType>();
@@ -73,7 +74,15 @@ function PlasmicHomepage__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+
+        props.args
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,

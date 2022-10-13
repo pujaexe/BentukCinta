@@ -1,35 +1,33 @@
-import registerComponent from "@plasmicapp/host/registerComponent";
-import { Image as AntdImage } from "antd";
+import registerComponent,{ComponentMeta,} from "@plasmicapp/host/registerComponent";
+import { classNames } from "@plasmicapp/react-web";
+import {Image as ImageAntd } from "antd";
 import "antd/dist/antd.css";
-import React, { ReactNode, useState } from "react";
+import React from "react";
 
-export interface ImageProps {
-    imageURL?: string;
-    children?: ReactNode;
-    height?: string;
-    width?: string;
+export interface AntdImageProps{
+    src?: string;
+    className?: string;
 }
 
-export function Image({imageURL,width,height}: ImageProps){
-    
-    return ( 
-    <AntdImage
-    width={width}
-    height={height}
-    src={imageURL ?? ""}
-    >
-        
-    </AntdImage>
+export function AntdImage({src,className}:AntdImageProps){
+    return (
+        <ImageAntd
+        rootClassName={className}
+        src={src}
+        >
+            
+        </ImageAntd>
     );
-}
 
-export function registerImage(){
-    return registerComponent(Image, {
-        name:"AntdImage",
+}
+export function registerImage(){ 
+    return registerComponent(AntdImage, {
+        name: 'AntdImage',
         props: {
-            imageURL: "string",
-            height: "string",
-            width: "string",
+            src: {
+            type: "string",
+            defaultValue: "https://via.placeholder.com/150",
+            },
         },
         importPath: "./components/registerImage",
     });

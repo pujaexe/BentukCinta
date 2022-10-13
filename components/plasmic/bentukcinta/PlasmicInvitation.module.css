@@ -72,7 +72,7 @@
   object-fit: cover;
   position: relative;
 }
-.freeBox {
+.freeBox__q76H {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -84,12 +84,42 @@
   min-width: 0;
   padding: 8px;
 }
-.text {
+.freeBox___5Me8 {
+  display: flex;
   position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 800px;
-  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 250px;
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 8px;
+}
+.antdImage:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.youTube:global(.__wab_instance) {
+  width: 640px;
+  height: 390px;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.iframe:global(.__wab_instance) {
+  width: 1280px;
+  height: 399px;
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.link {
+  position: relative;
+  padding: 16px 24px;
 }
 .template2__yWwWx:global(.__wab_instance) {
   max-width: 100%;

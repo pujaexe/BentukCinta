@@ -38,6 +38,9 @@ import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-impo
 import TemplateSelector from "../../TemplateSelector"; // plasmic-import: tV2xuA4xJL/component
 import Template1 from "../../Template1"; // plasmic-import: GJ6j9vTAsC/component
 import { AudioPlayer } from "../../registerAudioplayer"; // plasmic-import: mA6Gaqg1fB/codeComponent
+import { AntdImage } from "../../registerImage"; // plasmic-import: FkE2v0mpOg/codeComponent
+import YouTube from "@plasmicpkgs/react-youtube"; // plasmic-import: CHO21V9uYw/codeComponent
+import { Iframe } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: CMDBvOhaI4s/codeComponent
 import Template2 from "../../Template2"; // plasmic-import: ZsxWBfHDXcp/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -61,8 +64,10 @@ export type PlasmicInvitation__OverridesType = {
   templateSelector?: p.Flex<typeof TemplateSelector>;
   template1?: p.Flex<typeof Template1>;
   audioPlayer?: p.Flex<typeof AudioPlayer>;
-  freeBox?: p.Flex<"div">;
-  text?: p.Flex<"div">;
+  antdImage?: p.Flex<typeof AntdImage>;
+  youTube?: p.Flex<typeof YouTube>;
+  iframe?: p.Flex<typeof Iframe>;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultInvitationProps {}
@@ -222,6 +227,37 @@ function PlasmicInvitation__RenderFunc(props: {
                           })()}
                         />
                       }
+                      button={
+                        <p.PlasmicLink
+                          data-plasmic-name={"link"}
+                          data-plasmic-override={overrides.link}
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            sty.link
+                          )}
+                          component={Link}
+                          href={(() => {
+                            try {
+                              return (
+                                "https://www.google.com/maps/place/" +
+                                $ctx.graphCmsItem.eventMap.latitude +
+                                "," +
+                                $ctx.graphCmsItem.eventMap.longitude
+                              );
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return "https://www.plasmic.app/";
+                              }
+                              throw e;
+                            }
+                          })()}
+                          platform={"nextjs"}
+                        >
+                          {"Some link text"}
+                        </p.PlasmicLink>
+                      }
                       className={classNames("__wab_instance", sty.template1)}
                       date={(() => {
                         try {
@@ -273,6 +309,24 @@ function PlasmicInvitation__RenderFunc(props: {
                             } catch (e) {
                               if (e instanceof TypeError) {
                                 return "https://via.placeholder.com/200";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        />
+                      }
+                      mapsFrame={
+                        <Iframe
+                          data-plasmic-name={"iframe"}
+                          data-plasmic-override={overrides.iframe}
+                          className={classNames("__wab_instance", sty.iframe)}
+                          preview={true}
+                          src={(() => {
+                            try {
+                              return $ctx.graphCmsItem.gmapsEmbed;
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return "https://www.example.com";
                               }
                               throw e;
                             }
@@ -359,7 +413,7 @@ function PlasmicInvitation__RenderFunc(props: {
                           throw e;
                         }
                       })()}
-                      slot={(() => {
+                      photo={(() => {
                         try {
                           return $ctx.graphCmsItem.galleries;
                         } catch (e) {
@@ -370,21 +424,36 @@ function PlasmicInvitation__RenderFunc(props: {
                         }
                       })().map((currentItem, currentIndex) => (
                         <div
-                          data-plasmic-name={"freeBox"}
-                          data-plasmic-override={overrides.freeBox}
-                          className={classNames(projectcss.all, sty.freeBox)}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__q76H
+                          )}
                           key={currentIndex}
                         >
                           <div
-                            data-plasmic-name={"text"}
-                            data-plasmic-override={overrides.text}
                             className={classNames(
                               projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text
+                              sty.freeBox___5Me8
                             )}
                           >
-                            {"Enter some text"}
+                            <AntdImage
+                              data-plasmic-name={"antdImage"}
+                              data-plasmic-override={overrides.antdImage}
+                              className={classNames(
+                                "__wab_instance",
+                                sty.antdImage
+                              )}
+                              src={(() => {
+                                try {
+                                  return currentItem.photoGallery;
+                                } catch (e) {
+                                  if (e instanceof TypeError) {
+                                    return "https://via.placeholder.com/150";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            />
                           </div>
                         </div>
                       ))}
@@ -411,6 +480,23 @@ function PlasmicInvitation__RenderFunc(props: {
                           throw e;
                         }
                       })()}
+                      youtubeVideo={
+                        <YouTube
+                          data-plasmic-name={"youTube"}
+                          data-plasmic-override={overrides.youTube}
+                          className={classNames("__wab_instance", sty.youTube)}
+                          videoId={(() => {
+                            try {
+                              return $ctx.graphCmsItem.youtubeUrl;
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return "R6MeLqRQzYw";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        />
+                      }
                     />
                   }
                 />
@@ -430,28 +516,43 @@ const PlasmicDescendants = {
     "templateSelector",
     "template1",
     "audioPlayer",
-    "freeBox",
-    "text"
+    "antdImage",
+    "youTube",
+    "iframe",
+    "link"
   ],
   graphCmsFetcher: [
     "graphCmsFetcher",
     "templateSelector",
     "template1",
     "audioPlayer",
-    "freeBox",
-    "text"
+    "antdImage",
+    "youTube",
+    "iframe",
+    "link"
   ],
   templateSelector: [
     "templateSelector",
     "template1",
     "audioPlayer",
-    "freeBox",
-    "text"
+    "antdImage",
+    "youTube",
+    "iframe",
+    "link"
   ],
-  template1: ["template1", "audioPlayer", "freeBox", "text"],
+  template1: [
+    "template1",
+    "audioPlayer",
+    "antdImage",
+    "youTube",
+    "iframe",
+    "link"
+  ],
   audioPlayer: ["audioPlayer"],
-  freeBox: ["freeBox", "text"],
-  text: ["text"]
+  antdImage: ["antdImage"],
+  youTube: ["youTube"],
+  iframe: ["iframe"],
+  link: ["link"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -462,8 +563,10 @@ type NodeDefaultElementType = {
   templateSelector: typeof TemplateSelector;
   template1: typeof Template1;
   audioPlayer: typeof AudioPlayer;
-  freeBox: "div";
-  text: "div";
+  antdImage: typeof AntdImage;
+  youTube: typeof YouTube;
+  iframe: typeof Iframe;
+  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -531,8 +634,10 @@ export const PlasmicInvitation = Object.assign(
     templateSelector: makeNodeComponent("templateSelector"),
     template1: makeNodeComponent("template1"),
     audioPlayer: makeNodeComponent("audioPlayer"),
-    freeBox: makeNodeComponent("freeBox"),
-    text: makeNodeComponent("text"),
+    antdImage: makeNodeComponent("antdImage"),
+    youTube: makeNodeComponent("youTube"),
+    iframe: makeNodeComponent("iframe"),
+    link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicInvitation
     internalVariantProps: PlasmicInvitation__VariantProps,

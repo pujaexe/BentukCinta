@@ -36,6 +36,9 @@ import {
 } from "@plasmicapp/react-web";
 import Template1 from "../../Template1"; // plasmic-import: GJ6j9vTAsC/component
 import { AudioPlayer } from "../../registerAudioplayer"; // plasmic-import: mA6Gaqg1fB/codeComponent
+import { AntdImage } from "../../registerImage"; // plasmic-import: FkE2v0mpOg/codeComponent
+import YouTube from "@plasmicpkgs/react-youtube"; // plasmic-import: CHO21V9uYw/codeComponent
+import { Iframe } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: CMDBvOhaI4s/codeComponent
 import Template2 from "../../Template2"; // plasmic-import: ZsxWBfHDXcp/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";

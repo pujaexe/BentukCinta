@@ -35,7 +35,10 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import { Modal } from "../../registerModal"; // plasmic-import: rqrUD0ogIY/codeComponent
+import YouTube from "@plasmicpkgs/react-youtube"; // plasmic-import: CHO21V9uYw/codeComponent
+import { AntdImage } from "../../registerImage"; // plasmic-import: FkE2v0mpOg/codeComponent
 import { AudioPlayer } from "../../registerAudioplayer"; // plasmic-import: mA6Gaqg1fB/codeComponent
+import { Iframe } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: CMDBvOhaI4s/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -68,7 +71,10 @@ export type PlasmicTemplate1__ArgsType = {
   month?: React.ReactNode;
   year?: React.ReactNode;
   audio?: React.ReactNode;
-  slot?: React.ReactNode;
+  photo?: React.ReactNode;
+  youtubeVideo?: React.ReactNode;
+  mapsFrame?: React.ReactNode;
+  button?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicTemplate1__ArgsType;
@@ -92,7 +98,10 @@ export const PlasmicTemplate1__ArgProps = new Array<ArgPropType>(
   "month",
   "year",
   "audio",
-  "slot"
+  "photo",
+  "youtubeVideo",
+  "mapsFrame",
+  "button"
 );
 
 export type PlasmicTemplate1__OverridesType = {
@@ -121,6 +130,10 @@ export type PlasmicTemplate1__OverridesType = {
   addressWrapper?: p.Flex<"div">;
   closing?: p.Flex<"div">;
   gallery?: p.Flex<"div">;
+  title2?: p.Flex<"div">;
+  maps?: p.Flex<"div">;
+  buttonWrapper?: p.Flex<"div">;
+  button?: p.Flex<"div">;
 };
 
 export interface DefaultTemplate1Props {
@@ -143,7 +156,10 @@ export interface DefaultTemplate1Props {
   month?: React.ReactNode;
   year?: React.ReactNode;
   audio?: React.ReactNode;
-  slot?: React.ReactNode;
+  photo?: React.ReactNode;
+  youtubeVideo?: React.ReactNode;
+  mapsFrame?: React.ReactNode;
+  button?: React.ReactNode;
   className?: string;
 }
 
@@ -743,42 +759,134 @@ function PlasmicTemplate1__RenderFunc(props: {
         </div>
       </section>
 
-      {p.renderPlasmicSlot({
-        defaultContents: (
-          <AudioPlayer
-            className={classNames("__wab_instance", sty.audioPlayer__ihTG)}
-          />
-        ),
-
-        value: args.audio
-      })}
-
       <div
         data-plasmic-name={"gallery"}
         data-plasmic-override={overrides.gallery}
         className={classNames(projectcss.all, sty.gallery)}
       >
-        <div className={classNames(projectcss.all, sty.freeBox__d1D7F)}>
+        {true ? (
+          <div
+            data-plasmic-name={"title2"}
+            data-plasmic-override={overrides.title2}
+            className={classNames(projectcss.all, sty.title2)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__yXnJ
+              )}
+            >
+              {"OmSwastiastu"}
+            </div>
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__twOo7
+              )}
+            >
+              {
+                '"Ya Tuhanku yang Maha Pengasih, anugerahkanlah kepada pasangan pengantin ini senantiasa berbahagia keduanya tiada terpisahkan, panjang umur, semoga pengantin ini dianugerahkan putra dan cucu yang memberikan penghiburan, tinggal dirumah yang penuh kebahagiaan.”'
+              }
+            </div>
+          </div>
+        ) : null}
+
+        <div className={classNames(projectcss.all, sty.freeBox___7QCjG)}>
+          {p.renderPlasmicSlot({
+            defaultContents: (
+              <YouTube
+                className={classNames("__wab_instance", sty.youTube__a13Xj)}
+                videoId={"R6MeLqRQzYw" as const}
+              />
+            ),
+
+            value: args.youtubeVideo
+          })}
+        </div>
+
+        <div className={classNames(projectcss.all, sty.freeBox___9Todx)}>
           {p.renderPlasmicSlot({
             defaultContents: [2, 3, 4].map((currentItem, currentIndex) => (
               <div
-                className={classNames(projectcss.all, sty.freeBox__hn4Vu)}
+                className={classNames(projectcss.all, sty.freeBox__jxbOx)}
                 key={currentIndex}
               >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__fNuqh
-                  )}
-                >
-                  {"Enter some text"}
+                <div className={classNames(projectcss.all, sty.freeBox___8Xvr)}>
+                  <AntdImage
+                    className={classNames(
+                      "__wab_instance",
+                      sty.antdImage__aVTev
+                    )}
+                    src={"https://via.placeholder.com/150" as const}
+                  />
                 </div>
               </div>
             )),
 
-            value: args.slot
+            value: args.photo
           })}
+        </div>
+
+        {p.renderPlasmicSlot({
+          defaultContents: (
+            <AudioPlayer
+              className={classNames("__wab_instance", sty.audioPlayer__ihTG)}
+            />
+          ),
+
+          value: args.audio
+        })}
+      </div>
+
+      <div
+        data-plasmic-name={"maps"}
+        data-plasmic-override={overrides.maps}
+        className={classNames(projectcss.all, sty.maps)}
+      >
+        {p.renderPlasmicSlot({
+          defaultContents: (
+            <Iframe
+              className={classNames("__wab_instance", sty.iframe__mKseR)}
+              src={"https://www.example.com" as const}
+            />
+          ),
+
+          value: args.mapsFrame
+        })}
+
+        <div
+          data-plasmic-name={"buttonWrapper"}
+          data-plasmic-override={overrides.buttonWrapper}
+          className={classNames(projectcss.all, sty.buttonWrapper)}
+        >
+          <div
+            data-plasmic-name={"button"}
+            data-plasmic-override={overrides.button}
+            className={classNames(projectcss.all, sty.button)}
+          >
+            {p.renderPlasmicSlot({
+              defaultContents: (
+                <p.PlasmicLink
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__g8QWv
+                  )}
+                  component={Link}
+                  href={"https://www.plasmic.app/" as const}
+                  platform={"nextjs"}
+                >
+                  {"Some link text"}
+                </p.PlasmicLink>
+              ),
+
+              value: args.button
+            })}
+          </div>
         </div>
       </div>
     </div>
@@ -811,7 +919,11 @@ const PlasmicDescendants = {
     "addressWrapperContainer",
     "addressWrapper",
     "closing",
-    "gallery"
+    "gallery",
+    "title2",
+    "maps",
+    "buttonWrapper",
+    "button"
   ],
   modal: ["modal"],
   hero: ["hero", "imageContainer", "heroTitle", "h1", "h3"],
@@ -885,7 +997,11 @@ const PlasmicDescendants = {
   addressWrapperContainer: ["addressWrapperContainer", "addressWrapper"],
   addressWrapper: ["addressWrapper"],
   closing: ["closing"],
-  gallery: ["gallery"]
+  gallery: ["gallery", "title2"],
+  title2: ["title2"],
+  maps: ["maps", "buttonWrapper", "button"],
+  buttonWrapper: ["buttonWrapper", "button"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -916,6 +1032,10 @@ type NodeDefaultElementType = {
   addressWrapper: "div";
   closing: "div";
   gallery: "div";
+  title2: "div";
+  maps: "div";
+  buttonWrapper: "div";
+  button: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1003,6 +1123,10 @@ export const PlasmicTemplate1 = Object.assign(
     addressWrapper: makeNodeComponent("addressWrapper"),
     closing: makeNodeComponent("closing"),
     gallery: makeNodeComponent("gallery"),
+    title2: makeNodeComponent("title2"),
+    maps: makeNodeComponent("maps"),
+    buttonWrapper: makeNodeComponent("buttonWrapper"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicTemplate1
     internalVariantProps: PlasmicTemplate1__VariantProps,
