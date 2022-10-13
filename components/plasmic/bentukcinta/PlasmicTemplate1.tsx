@@ -36,6 +36,7 @@ import {
 } from "@plasmicapp/react-web";
 import BrideTitleHero from "../../BrideTitleHero"; // plasmic-import: w1AsPdUUjj/component
 import HeroDateTime from "../../HeroDateTime"; // plasmic-import: lGTX7nAbs-/component
+import BrideCard from "../../BrideCard"; // plasmic-import: D8Nie4k4_Z/component
 import YouTube from "@plasmicpkgs/react-youtube"; // plasmic-import: CHO21V9uYw/codeComponent
 import { AntdImage } from "../../registerImage"; // plasmic-import: FkE2v0mpOg/codeComponent
 import { AudioPlayer } from "../../registerAudioplayer"; // plasmic-import: mA6Gaqg1fB/codeComponent
@@ -54,47 +55,29 @@ export const PlasmicTemplate1__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicTemplate1__ArgsType = {
   bgMasshead?: React.ReactNode;
-  imgPria?: React.ReactNode;
-  namaPria?: React.ReactNode;
-  ortuPria?: React.ReactNode;
-  alamatPria?: React.ReactNode;
-  imgWanita?: React.ReactNode;
-  namaPria2?: React.ReactNode;
-  ortuWanita?: React.ReactNode;
-  alamatWanita?: React.ReactNode;
   date?: React.ReactNode;
   time?: React.ReactNode;
   address?: React.ReactNode;
   month?: React.ReactNode;
   year?: React.ReactNode;
-  audio?: React.ReactNode;
-  photo?: React.ReactNode;
-  youtubeVideo?: React.ReactNode;
   mapsFrame?: React.ReactNode;
   button?: React.ReactNode;
+  cardPria?: React.ReactNode;
+  cardWanita?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicTemplate1__ArgsType;
 export const PlasmicTemplate1__ArgProps = new Array<ArgPropType>(
   "bgMasshead",
-  "imgPria",
-  "namaPria",
-  "ortuPria",
-  "alamatPria",
-  "imgWanita",
-  "namaPria2",
-  "ortuWanita",
-  "alamatWanita",
   "date",
   "time",
   "address",
   "month",
   "year",
-  "audio",
-  "photo",
-  "youtubeVideo",
   "mapsFrame",
-  "button"
+  "button",
+  "cardPria",
+  "cardWanita"
 );
 
 export type PlasmicTemplate1__OverridesType = {
@@ -104,17 +87,16 @@ export type PlasmicTemplate1__OverridesType = {
   heroTitle?: p.Flex<"div">;
   col2?: p.Flex<"div">;
   brideTitleHero?: p.Flex<typeof BrideTitleHero>;
+  span?: p.Flex<"span">;
   heroDateTime?: p.Flex<typeof HeroDateTime>;
   h4?: p.Flex<"h4">;
   details?: p.Flex<"section">;
-  col?: p.Flex<"div">;
+  row?: p.Flex<"div">;
   title?: p.Flex<"div">;
-  h3?: p.Flex<"h3">;
+  h5?: p.Flex<"h5">;
   detailsPengantin?: p.Flex<"div">;
   colPria?: p.Flex<"div">;
-  priaDetailsWrapper?: p.Flex<"div">;
   colWanita?: p.Flex<"div">;
-  priaDetailsWrapper2?: p.Flex<"div">;
   greetings?: p.Flex<"div">;
   eventDateTime?: p.Flex<"div">;
   dateTimeWrapper?: p.Flex<"div">;
@@ -126,6 +108,12 @@ export type PlasmicTemplate1__OverridesType = {
   closing?: p.Flex<"div">;
   gallery?: p.Flex<"div">;
   title2?: p.Flex<"div">;
+  youtubeWrapper?: p.Flex<"div">;
+  youTube?: p.Flex<typeof YouTube>;
+  img?: p.Flex<typeof p.PlasmicImg>;
+  antdImage?: p.Flex<typeof AntdImage>;
+  audioWidget?: p.Flex<"div">;
+  audioPlayer?: p.Flex<typeof AudioPlayer>;
   maps?: p.Flex<"div">;
   buttonWrapper?: p.Flex<"div">;
   button?: p.Flex<"div">;
@@ -133,24 +121,15 @@ export type PlasmicTemplate1__OverridesType = {
 
 export interface DefaultTemplate1Props {
   bgMasshead?: React.ReactNode;
-  imgPria?: React.ReactNode;
-  namaPria?: React.ReactNode;
-  ortuPria?: React.ReactNode;
-  alamatPria?: React.ReactNode;
-  imgWanita?: React.ReactNode;
-  namaPria2?: React.ReactNode;
-  ortuWanita?: React.ReactNode;
-  alamatWanita?: React.ReactNode;
   date?: React.ReactNode;
   time?: React.ReactNode;
   address?: React.ReactNode;
   month?: React.ReactNode;
   year?: React.ReactNode;
-  audio?: React.ReactNode;
-  photo?: React.ReactNode;
-  youtubeVideo?: React.ReactNode;
   mapsFrame?: React.ReactNode;
   button?: React.ReactNode;
+  cardPria?: React.ReactNode;
+  cardWanita?: React.ReactNode;
   className?: string;
 }
 
@@ -274,12 +253,14 @@ function PlasmicTemplate1__RenderFunc(props: {
                         <React.Fragment>{""}</React.Fragment>
                         {
                           <span
+                            data-plasmic-name={"span"}
+                            data-plasmic-override={overrides.span}
                             className={classNames(
                               projectcss.all,
                               projectcss.span,
                               projectcss.__wab_text,
                               projectcss.plasmic_default__inline,
-                              sty.span__z7VlD
+                              sty.span
                             )}
                           >
                             {(() => {
@@ -329,7 +310,16 @@ function PlasmicTemplate1__RenderFunc(props: {
                       sty.h4
                     )}
                   >
-                    {"Date"}
+                    {(() => {
+                      try {
+                        return $ctx.graphCmsItem.evenDateTime.slice(8, 10);
+                      } catch (e) {
+                        if (e instanceof TypeError) {
+                          return "Date";
+                        }
+                        throw e;
+                      }
+                    })()}
                   </h4>
                 }
                 month={
@@ -341,7 +331,38 @@ function PlasmicTemplate1__RenderFunc(props: {
                       sty.h6__uhBWq
                     )}
                   >
-                    {"Month"}
+                    {(() => {
+                      try {
+                        return $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 1
+                          ? "Jan"
+                          : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 2
+                          ? "Feb"
+                          : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 3
+                          ? "Mar"
+                          : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 4
+                          ? "Apr"
+                          : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 5
+                          ? "May"
+                          : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 6
+                          ? "Jun"
+                          : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 7
+                          ? "Jul"
+                          : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 8
+                          ? "Aug"
+                          : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 9
+                          ? "Sep"
+                          : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 10
+                          ? "Oct"
+                          : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 11
+                          ? "Nov"
+                          : "Dec";
+                      } catch (e) {
+                        if (e instanceof TypeError) {
+                          return "Month";
+                        }
+                        throw e;
+                      }
+                    })()}
                   </h6>
                 }
                 year={
@@ -353,7 +374,16 @@ function PlasmicTemplate1__RenderFunc(props: {
                       sty.h6__syJ5J
                     )}
                   >
-                    {"Year"}
+                    {(() => {
+                      try {
+                        return $ctx.graphCmsItem.evenDateTime.slice(0, 4);
+                      } catch (e) {
+                        if (e instanceof TypeError) {
+                          return "Year";
+                        }
+                        throw e;
+                      }
+                    })()}
                   </h6>
                 }
               />
@@ -367,10 +397,12 @@ function PlasmicTemplate1__RenderFunc(props: {
         data-plasmic-override={overrides.details}
         className={classNames(projectcss.all, sty.details)}
       >
-        <div
-          data-plasmic-name={"col"}
-          data-plasmic-override={overrides.col}
-          className={classNames(projectcss.all, sty.col)}
+        <p.Stack
+          as={"div"}
+          data-plasmic-name={"row"}
+          data-plasmic-override={overrides.row}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.row)}
         >
           {true ? (
             <div
@@ -378,29 +410,29 @@ function PlasmicTemplate1__RenderFunc(props: {
               data-plasmic-override={overrides.title}
               className={classNames(projectcss.all, sty.title)}
             >
-              <h3
-                data-plasmic-name={"h3"}
-                data-plasmic-override={overrides.h3}
+              <h1
                 className={classNames(
                   projectcss.all,
-                  projectcss.h3,
+                  projectcss.h1,
                   projectcss.__wab_text,
-                  sty.h3
+                  sty.h1__k47Nj
                 )}
               >
                 {"OmSwastiastu"}
-              </h3>
+              </h1>
 
-              <h6
+              <h5
+                data-plasmic-name={"h5"}
+                data-plasmic-override={overrides.h5}
                 className={classNames(
                   projectcss.all,
-                  projectcss.h6,
+                  projectcss.h5,
                   projectcss.__wab_text,
-                  sty.h6__bizXz
+                  sty.h5
                 )}
               >
                 {"Mohon Doa Restu"}
-              </h6>
+              </h5>
             </div>
           ) : null}
 
@@ -416,81 +448,163 @@ function PlasmicTemplate1__RenderFunc(props: {
             >
               {p.renderPlasmicSlot({
                 defaultContents: (
-                  <p.PlasmicImg
-                    alt={""}
-                    className={classNames(sty.img___3QbrX)}
-                    displayHeight={"200px" as const}
-                    displayMaxHeight={"none" as const}
-                    displayMaxWidth={"100%" as const}
-                    displayMinHeight={"0" as const}
-                    displayMinWidth={"0" as const}
-                    displayWidth={"200px" as const}
-                    loading={"lazy" as const}
-                    src={"https://via.placeholder.com/200" as const}
-                  />
+                  <BrideCard
+                    brideName={
+                      <h4
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h4,
+                          projectcss.__wab_text,
+                          sty.h4__oaCwf
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <span
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.span,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.span__i6604
+                              )}
+                            >
+                              {(() => {
+                                try {
+                                  return $ctx.graphCmsItem.pengantinPria;
+                                } catch (e) {
+                                  if (e instanceof TypeError) {
+                                    return "John Stewart";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </span>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </h4>
+                    }
+                    className={classNames(
+                      "__wab_instance",
+                      sty.brideCard__pamXq
+                    )}
+                    ortuBride={
+                      <h6
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h6,
+                          projectcss.__wab_text,
+                          sty.h6___1I3Kj
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <span
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.span,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.span__hQq
+                              )}
+                            >
+                              {(() => {
+                                try {
+                                  return (
+                                    $ctx.graphCmsItem.bapakPria +
+                                    " & " +
+                                    $ctx.graphCmsItem.ibuPria
+                                  );
+                                } catch (e) {
+                                  if (e instanceof TypeError) {
+                                    return "john lenon & John Lenin";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </span>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </h6>
+                    }
+                    slot={
+                      (() => {
+                        try {
+                          return $ctx.graphCmsItem.photoPria != null;
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })() ? (
+                        <p.PlasmicImg
+                          alt={""}
+                          className={classNames(sty.img___50Mh8)}
+                          displayHeight={"200px" as const}
+                          displayMaxHeight={"none" as const}
+                          displayMaxWidth={"100%" as const}
+                          displayMinHeight={"0" as const}
+                          displayMinWidth={"0" as const}
+                          displayWidth={"200px" as const}
+                          loading={"lazy" as const}
+                          src={(() => {
+                            try {
+                              return $ctx.graphCmsItem.photoPria;
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}
+                        />
+                      ) : null
+                    }
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__fBbvg
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>{""}</React.Fragment>
+                        {
+                          <span
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.span,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.span___1DpUf
+                            )}
+                          >
+                            {(() => {
+                              try {
+                                return $ctx.graphCmsItem.alamatPria;
+                              } catch (e) {
+                                if (e instanceof TypeError) {
+                                  return "This is address wrapper";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </span>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                      </React.Fragment>
+                    </div>
+                  </BrideCard>
                 ),
 
-                value: args.imgPria
+                value: args.cardPria
               })}
-
-              {true ? (
-                <p.Stack
-                  as={"div"}
-                  data-plasmic-name={"priaDetailsWrapper"}
-                  data-plasmic-override={overrides.priaDetailsWrapper}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.priaDetailsWrapper)}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__jZz8W)}
-                  >
-                    {p.renderPlasmicSlot({
-                      defaultContents: "John Stewart",
-                      value: args.namaPria,
-                      className: classNames(sty.slotTargetNamaPria)
-                    })}
-                  </div>
-
-                  <span
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.span,
-                      projectcss.__wab_text,
-                      sty.span__fwAbN
-                    )}
-                  >
-                    {"Putra dari pasangan"}
-                  </span>
-
-                  <span
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.span,
-                      sty.span__vy9Rd
-                    )}
-                  >
-                    {p.renderPlasmicSlot({
-                      defaultContents: "john lenon & John Lenin",
-                      value: args.ortuPria,
-                      className: classNames(sty.slotTargetOrtuPria)
-                    })}
-                  </span>
-
-                  <span
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.span,
-                      sty.span___9WdA7
-                    )}
-                  >
-                    {p.renderPlasmicSlot({
-                      defaultContents: "This is address wrapper",
-                      value: args.alamatPria,
-                      className: classNames(sty.slotTargetAlamatPria)
-                    })}
-                  </span>
-                </p.Stack>
-              ) : null}
             </div>
 
             <div
@@ -500,84 +614,163 @@ function PlasmicTemplate1__RenderFunc(props: {
             >
               {p.renderPlasmicSlot({
                 defaultContents: (
-                  <p.PlasmicImg
-                    alt={""}
-                    className={classNames(sty.img___8CXoW)}
-                    displayHeight={"200px" as const}
-                    displayMaxHeight={"none" as const}
-                    displayMaxWidth={"100%" as const}
-                    displayMinHeight={"0" as const}
-                    displayMinWidth={"0" as const}
-                    displayWidth={"200px" as const}
-                    loading={"lazy" as const}
-                    src={"https://via.placeholder.com/200" as const}
-                  />
+                  <BrideCard
+                    brideName={
+                      <h4
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h4,
+                          projectcss.__wab_text,
+                          sty.h4__hQcJg
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <span
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.span,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.span__dYgAc
+                              )}
+                            >
+                              {(() => {
+                                try {
+                                  return $ctx.graphCmsItem.pengantinWanita;
+                                } catch (e) {
+                                  if (e instanceof TypeError) {
+                                    return "John Stewart";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </span>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </h4>
+                    }
+                    className={classNames(
+                      "__wab_instance",
+                      sty.brideCard__ucXrm
+                    )}
+                    ortuBride={
+                      <h6
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h6,
+                          projectcss.__wab_text,
+                          sty.h6___9O3Qb
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <span
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.span,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.span__qYgQ0
+                              )}
+                            >
+                              {(() => {
+                                try {
+                                  return (
+                                    $ctx.graphCmsItem.bapakWanita +
+                                    " & " +
+                                    $ctx.graphCmsItem.ibuWanita
+                                  );
+                                } catch (e) {
+                                  if (e instanceof TypeError) {
+                                    return "john lenon & John Lenin";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </span>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </h6>
+                    }
+                    slot={
+                      (() => {
+                        try {
+                          return $ctx.graphCmsItem.photoWanita != null;
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })() ? (
+                        <p.PlasmicImg
+                          alt={""}
+                          className={classNames(sty.img__exhXa)}
+                          displayHeight={"200px" as const}
+                          displayMaxHeight={"none" as const}
+                          displayMaxWidth={"100%" as const}
+                          displayMinHeight={"0" as const}
+                          displayMinWidth={"0" as const}
+                          displayWidth={"200px" as const}
+                          loading={"lazy" as const}
+                          src={(() => {
+                            try {
+                              return $ctx.graphCmsItem.photoWanita;
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}
+                        />
+                      ) : null
+                    }
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__z7Ns0
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>{""}</React.Fragment>
+                        {
+                          <span
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.span,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.span___0DXi
+                            )}
+                          >
+                            {(() => {
+                              try {
+                                return $ctx.graphCmsItem.alamatWanita;
+                              } catch (e) {
+                                if (e instanceof TypeError) {
+                                  return "This is address wrapper";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </span>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                      </React.Fragment>
+                    </div>
+                  </BrideCard>
                 ),
 
-                value: args.imgWanita
+                value: args.cardWanita
               })}
-
-              {true ? (
-                <p.Stack
-                  as={"div"}
-                  data-plasmic-name={"priaDetailsWrapper2"}
-                  data-plasmic-override={overrides.priaDetailsWrapper2}
-                  hasGap={true}
-                  className={classNames(
-                    projectcss.all,
-                    sty.priaDetailsWrapper2
-                  )}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___630JH)}
-                  >
-                    {p.renderPlasmicSlot({
-                      defaultContents: "John Stewart",
-                      value: args.namaPria2,
-                      className: classNames(sty.slotTargetNamaPria2)
-                    })}
-                  </div>
-
-                  <span
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.span,
-                      projectcss.__wab_text,
-                      sty.span__mUjfD
-                    )}
-                  >
-                    {"Putra dari pasangan"}
-                  </span>
-
-                  <span
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.span,
-                      sty.span__ayBzi
-                    )}
-                  >
-                    {p.renderPlasmicSlot({
-                      defaultContents: "john lenon & John Lenin",
-                      value: args.ortuWanita,
-                      className: classNames(sty.slotTargetOrtuWanita)
-                    })}
-                  </span>
-
-                  <span
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.span,
-                      sty.span__c9QmR
-                    )}
-                  >
-                    {p.renderPlasmicSlot({
-                      defaultContents: "This is address wrapper",
-                      value: args.alamatWanita,
-                      className: classNames(sty.slotTargetAlamatWanita)
-                    })}
-                  </span>
-                </p.Stack>
-              ) : null}
             </div>
           </div>
 
@@ -613,9 +806,11 @@ function PlasmicTemplate1__RenderFunc(props: {
             </div>
           ) : null}
           {true ? (
-            <div
+            <p.Stack
+              as={"div"}
               data-plasmic-name={"eventDateTime"}
               data-plasmic-override={overrides.eventDateTime}
+              hasGap={true}
               className={classNames(projectcss.all, sty.eventDateTime)}
             >
               {true ? (
@@ -652,19 +847,68 @@ function PlasmicTemplate1__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.dateWrapper)}
                   >
                     {p.renderPlasmicSlot({
-                      defaultContents: "date&time",
+                      defaultContents: (() => {
+                        try {
+                          return $ctx.graphCmsItem.evenDateTime.slice(8, 10);
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "Tanggal";
+                          }
+                          throw e;
+                        }
+                      })(),
                       value: args.date,
                       className: classNames(sty.slotTargetDate)
                     })}
 
                     {p.renderPlasmicSlot({
-                      defaultContents: "date&time",
+                      defaultContents: (() => {
+                        try {
+                          return $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 1
+                            ? "Jan"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 2
+                            ? "Feb"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 3
+                            ? "Mar"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 4
+                            ? "Apr"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 5
+                            ? "May"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 6
+                            ? "Jun"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 7
+                            ? "Jul"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 8
+                            ? "Aug"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 9
+                            ? "Sep"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 10
+                            ? "Oct"
+                            : $ctx.graphCmsItem.evenDateTime.slice(5, 7) == 11
+                            ? "Nov"
+                            : "Dec";
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "Bulan";
+                          }
+                          throw e;
+                        }
+                      })(),
                       value: args.month,
                       className: classNames(sty.slotTargetMonth)
                     })}
 
                     {p.renderPlasmicSlot({
-                      defaultContents: "date&time",
+                      defaultContents: (() => {
+                        try {
+                          return $ctx.graphCmsItem.evenDateTime.slice(0, 4);
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "Tahun";
+                          }
+                          throw e;
+                        }
+                      })(),
                       value: args.year,
                       className: classNames(sty.slotTargetYear)
                     })}
@@ -703,7 +947,19 @@ function PlasmicTemplate1__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.timeWrapper2)}
                   >
                     {p.renderPlasmicSlot({
-                      defaultContents: "time",
+                      defaultContents: (() => {
+                        try {
+                          return (
+                            $ctx.graphCmsItem.evenDateTime.slice(11, 16) +
+                            " s/d Selesai"
+                          );
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "time";
+                          }
+                          throw e;
+                        }
+                      })(),
                       value: args.time,
                       className: classNames(sty.slotTargetTime)
                     })}
@@ -745,19 +1001,30 @@ function PlasmicTemplate1__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.addressWrapper)}
                   >
                     {p.renderPlasmicSlot({
-                      defaultContents: "date&time",
+                      defaultContents: (() => {
+                        try {
+                          return $ctx.graphCmsItem.eventLocation;
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return "Alamat";
+                          }
+                          throw e;
+                        }
+                      })(),
                       value: args.address,
                       className: classNames(sty.slotTargetAddress)
                     })}
                   </div>
                 </div>
               ) : null}
-            </div>
+            </p.Stack>
           ) : null}
           {true ? (
-            <div
+            <p.Stack
+              as={"div"}
               data-plasmic-name={"closing"}
               data-plasmic-override={overrides.closing}
+              hasGap={true}
               className={classNames(projectcss.all, sty.closing)}
             >
               <div
@@ -782,9 +1049,9 @@ function PlasmicTemplate1__RenderFunc(props: {
               >
                 {"Om Shanti Shanti Shanti Om"}
               </h1>
-            </div>
+            </p.Stack>
           ) : null}
-        </div>
+        </p.Stack>
       </section>
 
       <div
@@ -822,52 +1089,131 @@ function PlasmicTemplate1__RenderFunc(props: {
             </div>
           </div>
         ) : null}
-
-        <div className={classNames(projectcss.all, sty.freeBox___7QCjG)}>
-          {p.renderPlasmicSlot({
-            defaultContents: (
-              <YouTube
-                className={classNames("__wab_instance", sty.youTube__a13Xj)}
-                videoId={"R6MeLqRQzYw" as const}
-              />
-            ),
-
-            value: args.youtubeVideo
-          })}
-        </div>
+        {(() => {
+          try {
+            return $ctx.graphCmsItem.youtubeUrl != null;
+          } catch (e) {
+            if (e instanceof TypeError) {
+              return true;
+            }
+            throw e;
+          }
+        })() ? (
+          <div
+            data-plasmic-name={"youtubeWrapper"}
+            data-plasmic-override={overrides.youtubeWrapper}
+            className={classNames(projectcss.all, sty.youtubeWrapper)}
+          >
+            <YouTube
+              data-plasmic-name={"youTube"}
+              data-plasmic-override={overrides.youTube}
+              className={classNames("__wab_instance", sty.youTube)}
+              videoId={(() => {
+                try {
+                  return $ctx.graphCmsItem.youtubeUrl;
+                } catch (e) {
+                  if (e instanceof TypeError) {
+                    return "R6MeLqRQzYw";
+                  }
+                  throw e;
+                }
+              })()}
+            />
+          </div>
+        ) : null}
 
         <div className={classNames(projectcss.all, sty.freeBox___9Todx)}>
-          {p.renderPlasmicSlot({
-            defaultContents: [2, 3, 4].map((currentItem, currentIndex) => (
-              <div
-                className={classNames(projectcss.all, sty.freeBox__jxbOx)}
-                key={currentIndex}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox___8Xvr)}>
-                  <AntdImage
-                    className={classNames(
-                      "__wab_instance",
-                      sty.antdImage__aVTev
-                    )}
-                    src={"https://via.placeholder.com/150" as const}
-                  />
-                </div>
-              </div>
-            )),
+          {(() => {
+            try {
+              return $ctx.graphCmsItem.galleries;
+            } catch (e) {
+              if (e instanceof TypeError) {
+                return [];
+              }
+              throw e;
+            }
+          })().map((currentItem, currentIndex) => (
+            <div
+              className={classNames(projectcss.all, sty.freeBox__jxbOx)}
+              key={currentIndex}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox___8Xvr)}>
+                <p.PlasmicImg
+                  data-plasmic-name={"img"}
+                  data-plasmic-override={overrides.img}
+                  alt={""}
+                  className={classNames(sty.img)}
+                  displayHeight={"250px" as const}
+                  displayMaxHeight={"none" as const}
+                  displayMaxWidth={"100%" as const}
+                  displayMinHeight={"0" as const}
+                  displayMinWidth={"0" as const}
+                  displayWidth={"300px" as const}
+                  loading={"lazy" as const}
+                  src={(() => {
+                    try {
+                      return currentItem.photoGallery;
+                    } catch (e) {
+                      if (e instanceof TypeError) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                />
 
-            value: args.photo
-          })}
+                <AntdImage
+                  data-plasmic-name={"antdImage"}
+                  data-plasmic-override={overrides.antdImage}
+                  className={classNames("__wab_instance", sty.antdImage)}
+                  src={(() => {
+                    try {
+                      return currentItem.photoGallery;
+                    } catch (e) {
+                      if (e instanceof TypeError) {
+                        return "https://via.placeholder.com/150";
+                      }
+                      throw e;
+                    }
+                  })()}
+                />
+              </div>
+            </div>
+          ))}
         </div>
 
-        {p.renderPlasmicSlot({
-          defaultContents: (
+        {(() => {
+          try {
+            return $ctx.graphCmsItem.audioUrl != null;
+          } catch (e) {
+            if (e instanceof TypeError) {
+              return true;
+            }
+            throw e;
+          }
+        })() ? (
+          <div
+            data-plasmic-name={"audioWidget"}
+            data-plasmic-override={overrides.audioWidget}
+            className={classNames(projectcss.all, sty.audioWidget)}
+          >
             <AudioPlayer
-              className={classNames("__wab_instance", sty.audioPlayer__ihTG)}
+              data-plasmic-name={"audioPlayer"}
+              data-plasmic-override={overrides.audioPlayer}
+              audioURL={(() => {
+                try {
+                  return $ctx.graphCmsItem.audioUrl;
+                } catch (e) {
+                  if (e instanceof TypeError) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+              className={classNames("__wab_instance", sty.audioPlayer)}
             />
-          ),
-
-          value: args.audio
-        })}
+          </div>
+        ) : null}
       </div>
 
       <div
@@ -879,7 +1225,17 @@ function PlasmicTemplate1__RenderFunc(props: {
           defaultContents: (
             <Iframe
               className={classNames("__wab_instance", sty.iframe__mKseR)}
-              src={"https://www.example.com" as const}
+              preview={true}
+              src={(() => {
+                try {
+                  return $ctx.graphCmsItem.gmapsEmbed;
+                } catch (e) {
+                  if (e instanceof TypeError) {
+                    return "https://www.example.com";
+                  }
+                  throw e;
+                }
+              })()}
             />
           ),
 
@@ -906,10 +1262,24 @@ function PlasmicTemplate1__RenderFunc(props: {
                     sty.link__g8QWv
                   )}
                   component={Link}
-                  href={"https://www.plasmic.app/" as const}
+                  href={(() => {
+                    try {
+                      return (
+                        "https://www.google.com/maps/place/" +
+                        $ctx.graphCmsItem.eventMap.latitude +
+                        "," +
+                        $ctx.graphCmsItem.eventMap.longitude
+                      );
+                    } catch (e) {
+                      if (e instanceof TypeError) {
+                        return "";
+                      }
+                      throw e;
+                    }
+                  })()}
                   platform={"nextjs"}
                 >
-                  {"Some link text"}
+                  {"Buka Petunjuk Arah"}
                 </p.PlasmicLink>
               ),
 
@@ -930,17 +1300,16 @@ const PlasmicDescendants = {
     "heroTitle",
     "col2",
     "brideTitleHero",
+    "span",
     "heroDateTime",
     "h4",
     "details",
-    "col",
+    "row",
     "title",
-    "h3",
+    "h5",
     "detailsPengantin",
     "colPria",
-    "priaDetailsWrapper",
     "colWanita",
-    "priaDetailsWrapper2",
     "greetings",
     "eventDateTime",
     "dateTimeWrapper",
@@ -952,6 +1321,12 @@ const PlasmicDescendants = {
     "closing",
     "gallery",
     "title2",
+    "youtubeWrapper",
+    "youTube",
+    "img",
+    "antdImage",
+    "audioWidget",
+    "audioPlayer",
     "maps",
     "buttonWrapper",
     "button"
@@ -962,25 +1337,32 @@ const PlasmicDescendants = {
     "heroTitle",
     "col2",
     "brideTitleHero",
+    "span",
     "heroDateTime",
     "h4"
   ],
   imageContainer: ["imageContainer"],
-  heroTitle: ["heroTitle", "col2", "brideTitleHero", "heroDateTime", "h4"],
-  col2: ["col2", "brideTitleHero", "heroDateTime", "h4"],
-  brideTitleHero: ["brideTitleHero"],
+  heroTitle: [
+    "heroTitle",
+    "col2",
+    "brideTitleHero",
+    "span",
+    "heroDateTime",
+    "h4"
+  ],
+  col2: ["col2", "brideTitleHero", "span", "heroDateTime", "h4"],
+  brideTitleHero: ["brideTitleHero", "span"],
+  span: ["span"],
   heroDateTime: ["heroDateTime", "h4"],
   h4: ["h4"],
   details: [
     "details",
-    "col",
+    "row",
     "title",
-    "h3",
+    "h5",
     "detailsPengantin",
     "colPria",
-    "priaDetailsWrapper",
     "colWanita",
-    "priaDetailsWrapper2",
     "greetings",
     "eventDateTime",
     "dateTimeWrapper",
@@ -991,15 +1373,13 @@ const PlasmicDescendants = {
     "addressWrapper",
     "closing"
   ],
-  col: [
-    "col",
+  row: [
+    "row",
     "title",
-    "h3",
+    "h5",
     "detailsPengantin",
     "colPria",
-    "priaDetailsWrapper",
     "colWanita",
-    "priaDetailsWrapper2",
     "greetings",
     "eventDateTime",
     "dateTimeWrapper",
@@ -1010,19 +1390,11 @@ const PlasmicDescendants = {
     "addressWrapper",
     "closing"
   ],
-  title: ["title", "h3"],
-  h3: ["h3"],
-  detailsPengantin: [
-    "detailsPengantin",
-    "colPria",
-    "priaDetailsWrapper",
-    "colWanita",
-    "priaDetailsWrapper2"
-  ],
-  colPria: ["colPria", "priaDetailsWrapper"],
-  priaDetailsWrapper: ["priaDetailsWrapper"],
-  colWanita: ["colWanita", "priaDetailsWrapper2"],
-  priaDetailsWrapper2: ["priaDetailsWrapper2"],
+  title: ["title", "h5"],
+  h5: ["h5"],
+  detailsPengantin: ["detailsPengantin", "colPria", "colWanita"],
+  colPria: ["colPria"],
+  colWanita: ["colWanita"],
   greetings: ["greetings"],
   eventDateTime: [
     "eventDateTime",
@@ -1040,8 +1412,23 @@ const PlasmicDescendants = {
   addressWrapperContainer: ["addressWrapperContainer", "addressWrapper"],
   addressWrapper: ["addressWrapper"],
   closing: ["closing"],
-  gallery: ["gallery", "title2"],
+  gallery: [
+    "gallery",
+    "title2",
+    "youtubeWrapper",
+    "youTube",
+    "img",
+    "antdImage",
+    "audioWidget",
+    "audioPlayer"
+  ],
   title2: ["title2"],
+  youtubeWrapper: ["youtubeWrapper", "youTube"],
+  youTube: ["youTube"],
+  img: ["img"],
+  antdImage: ["antdImage"],
+  audioWidget: ["audioWidget", "audioPlayer"],
+  audioPlayer: ["audioPlayer"],
   maps: ["maps", "buttonWrapper", "button"],
   buttonWrapper: ["buttonWrapper", "button"],
   button: ["button"]
@@ -1056,17 +1443,16 @@ type NodeDefaultElementType = {
   heroTitle: "div";
   col2: "div";
   brideTitleHero: typeof BrideTitleHero;
+  span: "span";
   heroDateTime: typeof HeroDateTime;
   h4: "h4";
   details: "section";
-  col: "div";
+  row: "div";
   title: "div";
-  h3: "h3";
+  h5: "h5";
   detailsPengantin: "div";
   colPria: "div";
-  priaDetailsWrapper: "div";
   colWanita: "div";
-  priaDetailsWrapper2: "div";
   greetings: "div";
   eventDateTime: "div";
   dateTimeWrapper: "div";
@@ -1078,6 +1464,12 @@ type NodeDefaultElementType = {
   closing: "div";
   gallery: "div";
   title2: "div";
+  youtubeWrapper: "div";
+  youTube: typeof YouTube;
+  img: typeof p.PlasmicImg;
+  antdImage: typeof AntdImage;
+  audioWidget: "div";
+  audioPlayer: typeof AudioPlayer;
   maps: "div";
   buttonWrapper: "div";
   button: "div";
@@ -1149,17 +1541,16 @@ export const PlasmicTemplate1 = Object.assign(
     heroTitle: makeNodeComponent("heroTitle"),
     col2: makeNodeComponent("col2"),
     brideTitleHero: makeNodeComponent("brideTitleHero"),
+    span: makeNodeComponent("span"),
     heroDateTime: makeNodeComponent("heroDateTime"),
     h4: makeNodeComponent("h4"),
     details: makeNodeComponent("details"),
-    col: makeNodeComponent("col"),
+    row: makeNodeComponent("row"),
     title: makeNodeComponent("title"),
-    h3: makeNodeComponent("h3"),
+    h5: makeNodeComponent("h5"),
     detailsPengantin: makeNodeComponent("detailsPengantin"),
     colPria: makeNodeComponent("colPria"),
-    priaDetailsWrapper: makeNodeComponent("priaDetailsWrapper"),
     colWanita: makeNodeComponent("colWanita"),
-    priaDetailsWrapper2: makeNodeComponent("priaDetailsWrapper2"),
     greetings: makeNodeComponent("greetings"),
     eventDateTime: makeNodeComponent("eventDateTime"),
     dateTimeWrapper: makeNodeComponent("dateTimeWrapper"),
@@ -1171,6 +1562,12 @@ export const PlasmicTemplate1 = Object.assign(
     closing: makeNodeComponent("closing"),
     gallery: makeNodeComponent("gallery"),
     title2: makeNodeComponent("title2"),
+    youtubeWrapper: makeNodeComponent("youtubeWrapper"),
+    youTube: makeNodeComponent("youTube"),
+    img: makeNodeComponent("img"),
+    antdImage: makeNodeComponent("antdImage"),
+    audioWidget: makeNodeComponent("audioWidget"),
+    audioPlayer: makeNodeComponent("audioPlayer"),
     maps: makeNodeComponent("maps"),
     buttonWrapper: makeNodeComponent("buttonWrapper"),
     button: makeNodeComponent("button"),

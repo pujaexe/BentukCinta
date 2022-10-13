@@ -48,7 +48,8 @@
           "name": "GraphCMSCredentialsProvider",
           "componentImportPath": "@plasmicpkgs/plasmic-graphcms"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "6366ps4JUXGcyRNfgAokBX",
@@ -134,6 +135,19 @@
           "cssFilePath": "plasmic/bentukcinta/PlasmicHeroDateTime.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "D8Nie4k4_Z",
+          "name": "BrideCard",
+          "type": "managed",
+          "projectId": "6366ps4JUXGcyRNfgAokBX",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicBrideCard.tsx",
+          "importSpec": {
+            "modulePath": "BrideCard.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicBrideCard.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [],
@@ -200,7 +214,8 @@
           "name": "DataProvider",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "enk3K4vZ6pmH6kVCoZJXGn",
@@ -219,7 +234,8 @@
           "name": "YouTube",
           "componentImportPath": "@plasmicpkgs/react-youtube"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {

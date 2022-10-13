@@ -1,0 +1,54 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  position: relative;
+  min-width: 0;
+}
+.freeBox {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+.freeBoxisBrideBadge {
+  display: none;
+}
+.img__yQdj1 {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+.img__yQdj1 > picture > img {
+  object-fit: cover;
+}
+.img__yQdj1 > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.h4__cvjp6 {
+  font-family: "Pacifico";
+  color: transparent;
+  background: linear-gradient(0deg, #be6f11 0%, #fce27f 100%) padding-box
+    /* clip: text **/;
+  line-height: 2;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  min-width: 0;
+}
+.text {
+  padding-bottom: 8px;
+}
+.text__pCpgz {
+  font-size: var(--token-66xnIBv0-);
+}
