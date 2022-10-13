@@ -97,10 +97,7 @@
   font-family: "Poppins", sans-serif;
   min-width: 0;
 }
-.h1 {
-  font-size: 3rem;
-  line-height: 200%;
-  letter-spacing: normal;
+.brideName {
   position: relative;
   width: 100%;
   height: auto;
@@ -108,11 +105,9 @@
   justify-content: center;
   display: flex;
   flex-direction: row;
-  font-family: "Pacifico";
-  color: #ffffff;
   min-width: 0;
 }
-.slotTargetChildren {
+.slotTargetBrideNameTitle {
   text-align: center;
 }
 .h6___4LbFi {
@@ -155,10 +150,7 @@
   > img {
   margin-left: 24px;
 }
-.p__jjwSr {
-  font-size: 0.75rem;
-  line-height: 150%;
-  letter-spacing: normal;
+.span__jjwSr {
   position: relative;
   width: 100%;
   height: auto;
@@ -166,39 +158,30 @@
   justify-content: flex-end;
   display: flex;
   flex-direction: row;
-  color: #ffffff;
   min-width: 0;
 }
 .slotTargetBulan {
   font-family: "Poppins", sans-serif;
   text-align: right;
 }
-.h3 {
-  font-size: 1.5rem;
-  line-height: 150%;
-  letter-spacing: normal;
+.span__jNNhQ {
   position: relative;
   width: auto;
   height: auto;
   max-width: 800px;
   display: flex;
   flex-direction: row;
-  color: #ffffff;
 }
 .slotTargetTanggal {
   font-family: "Poppins", sans-serif;
 }
-.p___9G9Nb {
-  font-size: 0.75rem;
-  line-height: 150%;
-  letter-spacing: normal;
+.span___9G9Nb {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 800px;
   display: flex;
   flex-direction: row;
-  color: #ffffff;
   min-width: 0;
 }
 .slotTargetTahun {
@@ -216,6 +199,7 @@
   max-width: 100%;
   padding-top: 9rem;
   padding-bottom: 9rem;
+  background: #ffffff;
   min-width: 0;
 }
 .col {
@@ -240,18 +224,36 @@
   max-width: 50rem;
   min-width: 0;
 }
-.text__k47Nj {
+.h3 {
+  background: linear-gradient(0deg, #be6f0e 0%, #fce27f 100%) padding-box
+    /* clip: text **/;
+  color: transparent;
+  font-family: "Pacifico";
+  font-size: 3rem;
+  line-height: 200%;
+  letter-spacing: normal;
   width: 100%;
   height: auto;
   max-width: 800px;
   text-align: center;
+  background-clip: text;
+  -webkit-background-clip: text;
   min-width: 0;
 }
-.text__bizXz {
+.h6__bizXz {
+  background: linear-gradient(0deg, #be6f0e 0%, #fce27f 100%) padding-box
+    /* clip: text **/;
+  color: transparent;
+  font-family: "Pacifico";
+  font-size: 1.5rem;
+  line-height: 150%;
+  letter-spacing: normal;
   width: 100%;
   height: auto;
   max-width: 800px;
   text-align: center;
+  background-clip: text;
+  -webkit-background-clip: text;
   min-width: 0;
 }
 .detailsPengantin {
@@ -337,23 +339,19 @@
   > img {
   margin-top: 0px;
 }
-.h6__jZz8W {
-  font-size: 1.5rem;
-  line-height: 150%;
-  letter-spacing: normal;
+.freeBox__jZz8W {
   width: 100%;
   height: auto;
   max-width: 800px;
   justify-content: center;
   display: flex;
   flex-direction: row;
-  font-family: "Pacifico";
   min-width: 0;
 }
 .slotTargetNamaPria {
   text-align: center;
 }
-.text__fwAbN {
+.span__fwAbN {
   font-size: 0.75rem;
   line-height: 150%;
   letter-spacing: normal;
@@ -363,10 +361,7 @@
   text-align: center;
   min-width: 0;
 }
-.p__vy9Rd {
-  font-size: 0.88rem;
-  line-height: 150%;
-  letter-spacing: normal;
+.span__vy9Rd {
   width: 100%;
   max-width: 800px;
   justify-content: center;
@@ -377,10 +372,7 @@
 .slotTargetOrtuPria {
   text-align: center;
 }
-.p___9WdA7 {
-  font-size: 0.63rem;
-  line-height: 150%;
-  letter-spacing: normal;
+.span___9WdA7 {
   width: 100%;
   max-width: 800px;
   justify-content: center;
@@ -446,23 +438,19 @@
   > img {
   margin-top: 0px;
 }
-.h6___630JH {
-  font-size: 1.5rem;
-  line-height: 150%;
-  letter-spacing: normal;
+.freeBox___630JH {
   width: 100%;
   height: auto;
   max-width: 800px;
   justify-content: center;
   display: flex;
   flex-direction: row;
-  font-family: "Pacifico";
   min-width: 0;
 }
 .slotTargetNamaPria2 {
   text-align: center;
 }
-.text__mUjfD {
+.span__mUjfD {
   font-size: 0.75rem;
   line-height: 150%;
   letter-spacing: normal;
@@ -472,10 +460,7 @@
   text-align: center;
   min-width: 0;
 }
-.p__ayBzi {
-  font-size: 0.88rem;
-  line-height: 150%;
-  letter-spacing: normal;
+.span__ayBzi {
   width: 100%;
   max-width: 800px;
   justify-content: center;
@@ -486,10 +471,7 @@
 .slotTargetOrtuWanita {
   text-align: center;
 }
-.p__c9QmR {
-  font-size: 0.63rem;
-  line-height: 150%;
-  letter-spacing: normal;
+.span__c9QmR {
   width: 100%;
   max-width: 800px;
   justify-content: center;
@@ -684,11 +666,20 @@
   text-align: center;
   min-width: 0;
 }
-.text__p7HZz {
+.h1__p7HZz {
+  background: linear-gradient(0deg, #be6f0e 0%, #fce27f 100%) padding-box
+    /* clip: text **/;
+  color: transparent;
+  font-family: "Pacifico";
+  font-size: 3rem;
+  line-height: 200%;
+  letter-spacing: normal;
   width: 100%;
   height: auto;
   max-width: 800px;
   text-align: center;
+  background-clip: text;
+  -webkit-background-clip: text;
   min-width: 0;
 }
 .gallery {
@@ -702,6 +693,7 @@
   max-width: 100%;
   padding-top: 9rem;
   padding-bottom: 9rem;
+  background: #ffffff;
   min-width: 0;
 }
 .title2 {
@@ -715,11 +707,20 @@
   max-width: 50rem;
   min-width: 0;
 }
-.text__yXnJ {
+.h1__yXnJ {
+  font-size: 3rem;
+  line-height: 200%;
+  letter-spacing: normal;
+  background: linear-gradient(0deg, #be6f0e 0%, #fce27f 100%) padding-box
+    /* clip: text **/;
+  color: transparent;
+  font-family: "Pacifico";
   width: 100%;
   height: auto;
   max-width: 800px;
   text-align: center;
+  background-clip: text;
+  -webkit-background-clip: text;
   min-width: 0;
 }
 .text__twOo7 {

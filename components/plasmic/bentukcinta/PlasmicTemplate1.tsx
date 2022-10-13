@@ -53,7 +53,7 @@ export const PlasmicTemplate1__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicTemplate1__ArgsType = {
   bgMasshead?: React.ReactNode;
-  children?: React.ReactNode;
+  brideNameTitle?: React.ReactNode;
   bulan?: React.ReactNode;
   tahun?: React.ReactNode;
   tanggal?: React.ReactNode;
@@ -80,7 +80,7 @@ export type PlasmicTemplate1__ArgsType = {
 type ArgPropType = keyof PlasmicTemplate1__ArgsType;
 export const PlasmicTemplate1__ArgProps = new Array<ArgPropType>(
   "bgMasshead",
-  "children",
+  "brideNameTitle",
   "bulan",
   "tahun",
   "tanggal",
@@ -110,11 +110,11 @@ export type PlasmicTemplate1__OverridesType = {
   hero?: p.Flex<"header">;
   imageContainer?: p.Flex<"div">;
   heroTitle?: p.Flex<"div">;
-  h1?: p.Flex<"h1">;
-  h3?: p.Flex<"h3">;
+  brideName?: p.Flex<"div">;
   details?: p.Flex<"section">;
   col?: p.Flex<"div">;
   title?: p.Flex<"div">;
+  h3?: p.Flex<"h3">;
   detailsPengantin?: p.Flex<"div">;
   colPria?: p.Flex<"div">;
   priaDetailsWrapper?: p.Flex<"div">;
@@ -138,7 +138,7 @@ export type PlasmicTemplate1__OverridesType = {
 
 export interface DefaultTemplate1Props {
   bgMasshead?: React.ReactNode;
-  children?: React.ReactNode;
+  brideNameTitle?: React.ReactNode;
   bulan?: React.ReactNode;
   tahun?: React.ReactNode;
   tanggal?: React.ReactNode;
@@ -259,17 +259,17 @@ function PlasmicTemplate1__RenderFunc(props: {
               {"UNDANGAN PERNIKAHAN"}
             </h6>
 
-            <h1
-              data-plasmic-name={"h1"}
-              data-plasmic-override={overrides.h1}
-              className={classNames(projectcss.all, projectcss.h1, sty.h1)}
+            <div
+              data-plasmic-name={"brideName"}
+              data-plasmic-override={overrides.brideName}
+              className={classNames(projectcss.all, sty.brideName)}
             >
               {p.renderPlasmicSlot({
                 defaultContents: "John & Marry",
-                value: args.children,
-                className: classNames(sty.slotTargetChildren)
+                value: args.brideNameTitle,
+                className: classNames(sty.slotTargetBrideNameTitle)
               })}
-            </h1>
+            </div>
 
             <h6
               className={classNames(
@@ -289,11 +289,11 @@ function PlasmicTemplate1__RenderFunc(props: {
               hasGap={true}
               className={classNames(projectcss.all, sty.freeBox__phdNj)}
             >
-              <p
+              <span
                 className={classNames(
                   projectcss.all,
-                  projectcss.p,
-                  sty.p__jjwSr
+                  projectcss.span,
+                  sty.span__jjwSr
                 )}
               >
                 {p.renderPlasmicSlot({
@@ -301,25 +301,27 @@ function PlasmicTemplate1__RenderFunc(props: {
                   value: args.bulan,
                   className: classNames(sty.slotTargetBulan)
                 })}
-              </p>
+              </span>
 
-              <h3
-                data-plasmic-name={"h3"}
-                data-plasmic-override={overrides.h3}
-                className={classNames(projectcss.all, projectcss.h3, sty.h3)}
+              <span
+                className={classNames(
+                  projectcss.all,
+                  projectcss.span,
+                  sty.span__jNNhQ
+                )}
               >
                 {p.renderPlasmicSlot({
                   defaultContents: "00",
                   value: args.tanggal,
                   className: classNames(sty.slotTargetTanggal)
                 })}
-              </h3>
+              </span>
 
-              <p
+              <span
                 className={classNames(
                   projectcss.all,
-                  projectcss.p,
-                  sty.p___9G9Nb
+                  projectcss.span,
+                  sty.span___9G9Nb
                 )}
               >
                 {p.renderPlasmicSlot({
@@ -327,7 +329,7 @@ function PlasmicTemplate1__RenderFunc(props: {
                   value: args.tahun,
                   className: classNames(sty.slotTargetTahun)
                 })}
-              </p>
+              </span>
             </p.Stack>
           </p.Stack>
         </header>
@@ -349,25 +351,29 @@ function PlasmicTemplate1__RenderFunc(props: {
               data-plasmic-override={overrides.title}
               className={classNames(projectcss.all, sty.title)}
             >
-              <div
+              <h3
+                data-plasmic-name={"h3"}
+                data-plasmic-override={overrides.h3}
                 className={classNames(
                   projectcss.all,
+                  projectcss.h3,
                   projectcss.__wab_text,
-                  sty.text__k47Nj
+                  sty.h3
                 )}
               >
                 {"OmSwastiastu"}
-              </div>
+              </h3>
 
-              <div
+              <h6
                 className={classNames(
                   projectcss.all,
+                  projectcss.h6,
                   projectcss.__wab_text,
-                  sty.text__bizXz
+                  sty.h6__bizXz
                 )}
               >
                 {"Mohon Doa Restu"}
-              </div>
+              </h6>
             </div>
           ) : null}
 
@@ -408,35 +414,32 @@ function PlasmicTemplate1__RenderFunc(props: {
                   hasGap={true}
                   className={classNames(projectcss.all, sty.priaDetailsWrapper)}
                 >
-                  <h6
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h6,
-                      sty.h6__jZz8W
-                    )}
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__jZz8W)}
                   >
                     {p.renderPlasmicSlot({
                       defaultContents: "John Stewart",
                       value: args.namaPria,
                       className: classNames(sty.slotTargetNamaPria)
                     })}
-                  </h6>
+                  </div>
 
-                  <div
+                  <span
                     className={classNames(
                       projectcss.all,
+                      projectcss.span,
                       projectcss.__wab_text,
-                      sty.text__fwAbN
+                      sty.span__fwAbN
                     )}
                   >
                     {"Putra dari pasangan"}
-                  </div>
+                  </span>
 
-                  <p
+                  <span
                     className={classNames(
                       projectcss.all,
-                      projectcss.p,
-                      sty.p__vy9Rd
+                      projectcss.span,
+                      sty.span__vy9Rd
                     )}
                   >
                     {p.renderPlasmicSlot({
@@ -444,13 +447,13 @@ function PlasmicTemplate1__RenderFunc(props: {
                       value: args.ortuPria,
                       className: classNames(sty.slotTargetOrtuPria)
                     })}
-                  </p>
+                  </span>
 
-                  <p
+                  <span
                     className={classNames(
                       projectcss.all,
-                      projectcss.p,
-                      sty.p___9WdA7
+                      projectcss.span,
+                      sty.span___9WdA7
                     )}
                   >
                     {p.renderPlasmicSlot({
@@ -458,7 +461,7 @@ function PlasmicTemplate1__RenderFunc(props: {
                       value: args.alamatPria,
                       className: classNames(sty.slotTargetAlamatPria)
                     })}
-                  </p>
+                  </span>
                 </p.Stack>
               ) : null}
             </div>
@@ -498,35 +501,32 @@ function PlasmicTemplate1__RenderFunc(props: {
                     sty.priaDetailsWrapper2
                   )}
                 >
-                  <h6
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h6,
-                      sty.h6___630JH
-                    )}
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___630JH)}
                   >
                     {p.renderPlasmicSlot({
                       defaultContents: "John Stewart",
                       value: args.namaPria2,
                       className: classNames(sty.slotTargetNamaPria2)
                     })}
-                  </h6>
+                  </div>
 
-                  <div
+                  <span
                     className={classNames(
                       projectcss.all,
+                      projectcss.span,
                       projectcss.__wab_text,
-                      sty.text__mUjfD
+                      sty.span__mUjfD
                     )}
                   >
                     {"Putra dari pasangan"}
-                  </div>
+                  </span>
 
-                  <p
+                  <span
                     className={classNames(
                       projectcss.all,
-                      projectcss.p,
-                      sty.p__ayBzi
+                      projectcss.span,
+                      sty.span__ayBzi
                     )}
                   >
                     {p.renderPlasmicSlot({
@@ -534,13 +534,13 @@ function PlasmicTemplate1__RenderFunc(props: {
                       value: args.ortuWanita,
                       className: classNames(sty.slotTargetOrtuWanita)
                     })}
-                  </p>
+                  </span>
 
-                  <p
+                  <span
                     className={classNames(
                       projectcss.all,
-                      projectcss.p,
-                      sty.p__c9QmR
+                      projectcss.span,
+                      sty.span__c9QmR
                     )}
                   >
                     {p.renderPlasmicSlot({
@@ -548,7 +548,7 @@ function PlasmicTemplate1__RenderFunc(props: {
                       value: args.alamatWanita,
                       className: classNames(sty.slotTargetAlamatWanita)
                     })}
-                  </p>
+                  </span>
                 </p.Stack>
               ) : null}
             </div>
@@ -745,15 +745,16 @@ function PlasmicTemplate1__RenderFunc(props: {
                 }
               </div>
 
-              <div
+              <h1
                 className={classNames(
                   projectcss.all,
+                  projectcss.h1,
                   projectcss.__wab_text,
-                  sty.text__p7HZz
+                  sty.h1__p7HZz
                 )}
               >
                 {"Om Shanti Shanti Shanti Om"}
-              </div>
+              </h1>
             </div>
           ) : null}
         </div>
@@ -770,15 +771,16 @@ function PlasmicTemplate1__RenderFunc(props: {
             data-plasmic-override={overrides.title2}
             className={classNames(projectcss.all, sty.title2)}
           >
-            <div
+            <h1
               className={classNames(
                 projectcss.all,
+                projectcss.h1,
                 projectcss.__wab_text,
-                sty.text__yXnJ
+                sty.h1__yXnJ
               )}
             >
-              {"OmSwastiastu"}
-            </div>
+              {"Gallery"}
+            </h1>
 
             <div
               className={classNames(
@@ -900,11 +902,11 @@ const PlasmicDescendants = {
     "hero",
     "imageContainer",
     "heroTitle",
-    "h1",
-    "h3",
+    "brideName",
     "details",
     "col",
     "title",
+    "h3",
     "detailsPengantin",
     "colPria",
     "priaDetailsWrapper",
@@ -926,15 +928,15 @@ const PlasmicDescendants = {
     "button"
   ],
   modal: ["modal"],
-  hero: ["hero", "imageContainer", "heroTitle", "h1", "h3"],
+  hero: ["hero", "imageContainer", "heroTitle", "brideName"],
   imageContainer: ["imageContainer"],
-  heroTitle: ["heroTitle", "h1", "h3"],
-  h1: ["h1"],
-  h3: ["h3"],
+  heroTitle: ["heroTitle", "brideName"],
+  brideName: ["brideName"],
   details: [
     "details",
     "col",
     "title",
+    "h3",
     "detailsPengantin",
     "colPria",
     "priaDetailsWrapper",
@@ -953,6 +955,7 @@ const PlasmicDescendants = {
   col: [
     "col",
     "title",
+    "h3",
     "detailsPengantin",
     "colPria",
     "priaDetailsWrapper",
@@ -968,7 +971,8 @@ const PlasmicDescendants = {
     "addressWrapper",
     "closing"
   ],
-  title: ["title"],
+  title: ["title", "h3"],
+  h3: ["h3"],
   detailsPengantin: [
     "detailsPengantin",
     "colPria",
@@ -1012,11 +1016,11 @@ type NodeDefaultElementType = {
   hero: "header";
   imageContainer: "div";
   heroTitle: "div";
-  h1: "h1";
-  h3: "h3";
+  brideName: "div";
   details: "section";
   col: "div";
   title: "div";
+  h3: "h3";
   detailsPengantin: "div";
   colPria: "div";
   priaDetailsWrapper: "div";
@@ -1103,11 +1107,11 @@ export const PlasmicTemplate1 = Object.assign(
     hero: makeNodeComponent("hero"),
     imageContainer: makeNodeComponent("imageContainer"),
     heroTitle: makeNodeComponent("heroTitle"),
-    h1: makeNodeComponent("h1"),
-    h3: makeNodeComponent("h3"),
+    brideName: makeNodeComponent("brideName"),
     details: makeNodeComponent("details"),
     col: makeNodeComponent("col"),
     title: makeNodeComponent("title"),
+    h3: makeNodeComponent("h3"),
     detailsPengantin: makeNodeComponent("detailsPengantin"),
     colPria: makeNodeComponent("colPria"),
     priaDetailsWrapper: makeNodeComponent("priaDetailsWrapper"),

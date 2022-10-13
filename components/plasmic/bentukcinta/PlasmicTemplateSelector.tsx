@@ -39,7 +39,6 @@ import { AudioPlayer } from "../../registerAudioplayer"; // plasmic-import: mA6G
 import { AntdImage } from "../../registerImage"; // plasmic-import: FkE2v0mpOg/codeComponent
 import YouTube from "@plasmicpkgs/react-youtube"; // plasmic-import: CHO21V9uYw/codeComponent
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: CMDBvOhaI4s/codeComponent
-import Template2 from "../../Template2"; // plasmic-import: ZsxWBfHDXcp/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -47,11 +46,11 @@ import projectcss from "./plasmic_bentukcinta.module.css"; // plasmic-import: 63
 import sty from "./PlasmicTemplateSelector.module.css"; // plasmic-import: tV2xuA4xJL/css
 
 export type PlasmicTemplateSelector__VariantMembers = {
-  template: "template1" | "template2";
+  template: "template1";
 };
 
 export type PlasmicTemplateSelector__VariantsArgs = {
-  template?: SingleChoiceArg<"template1" | "template2">;
+  template?: SingleChoiceArg<"template1">;
 };
 
 type VariantPropType = keyof PlasmicTemplateSelector__VariantsArgs;
@@ -61,13 +60,11 @@ export const PlasmicTemplateSelector__VariantProps = new Array<VariantPropType>(
 
 export type PlasmicTemplateSelector__ArgsType = {
   template1?: React.ReactNode;
-  template2?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicTemplateSelector__ArgsType;
 export const PlasmicTemplateSelector__ArgProps = new Array<ArgPropType>(
-  "template1",
-  "template2"
+  "template1"
 );
 
 export type PlasmicTemplateSelector__OverridesType = {
@@ -76,8 +73,7 @@ export type PlasmicTemplateSelector__OverridesType = {
 
 export interface DefaultTemplateSelectorProps {
   template1?: React.ReactNode;
-  template2?: React.ReactNode;
-  template?: SingleChoiceArg<"template1" | "template2">;
+  template?: SingleChoiceArg<"template1">;
   className?: string;
 }
 
@@ -123,37 +119,19 @@ function PlasmicTemplateSelector__RenderFunc(props: {
             variants,
             "template",
             "template1"
-          ),
-          [sty.roottemplate_template2]: hasVariant(
-            variants,
-            "template",
-            "template2"
           )
         }
       )}
     >
-      {(hasVariant(variants, "template", "template2") ? false : true)
-        ? p.renderPlasmicSlot({
-            defaultContents: (
-              <Template1
-                className={classNames("__wab_instance", sty.template1__af3U)}
-              />
-            ),
+      {p.renderPlasmicSlot({
+        defaultContents: (
+          <Template1
+            className={classNames("__wab_instance", sty.template1__af3U)}
+          />
+        ),
 
-            value: args.template1
-          })
-        : null}
-      {(hasVariant(variants, "template", "template2") ? true : false)
-        ? p.renderPlasmicSlot({
-            defaultContents: (
-              <Template2
-                className={classNames("__wab_instance", sty.template2__xs8Uz)}
-              />
-            ),
-
-            value: args.template2
-          })
-        : null}
+        value: args.template1
+      })}
     </div>
   ) as React.ReactElement | null;
 }
