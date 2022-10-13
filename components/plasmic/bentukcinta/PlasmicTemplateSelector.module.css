@@ -9,11 +9,11 @@
   min-width: 0;
   min-height: 0;
 }
-.template1__af3U:global(.__wab_instance) {
+.template1:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }
-.img__qryfD {
+.img__j8Y2B {
   position: absolute;
   object-fit: cover;
   max-width: 100%;
@@ -22,10 +22,10 @@
   width: 100%;
   min-width: 0;
 }
-.img__qryfD > picture > img {
+.img__j8Y2B > picture > img {
   object-fit: cover;
 }
-.img__qryfD > :global(.__wab_img-spacer) > img {
+.img__j8Y2B > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .img__gIk1D {

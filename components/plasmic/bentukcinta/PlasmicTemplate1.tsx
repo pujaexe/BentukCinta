@@ -34,7 +34,8 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import { Modal } from "../../registerModal"; // plasmic-import: rqrUD0ogIY/codeComponent
+import BrideTitleHero from "../../BrideTitleHero"; // plasmic-import: w1AsPdUUjj/component
+import HeroDateTime from "../../HeroDateTime"; // plasmic-import: lGTX7nAbs-/component
 import YouTube from "@plasmicpkgs/react-youtube"; // plasmic-import: CHO21V9uYw/codeComponent
 import { AntdImage } from "../../registerImage"; // plasmic-import: FkE2v0mpOg/codeComponent
 import { AudioPlayer } from "../../registerAudioplayer"; // plasmic-import: mA6Gaqg1fB/codeComponent
@@ -53,10 +54,6 @@ export const PlasmicTemplate1__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicTemplate1__ArgsType = {
   bgMasshead?: React.ReactNode;
-  brideNameTitle?: React.ReactNode;
-  bulan?: React.ReactNode;
-  tahun?: React.ReactNode;
-  tanggal?: React.ReactNode;
   imgPria?: React.ReactNode;
   namaPria?: React.ReactNode;
   ortuPria?: React.ReactNode;
@@ -80,10 +77,6 @@ export type PlasmicTemplate1__ArgsType = {
 type ArgPropType = keyof PlasmicTemplate1__ArgsType;
 export const PlasmicTemplate1__ArgProps = new Array<ArgPropType>(
   "bgMasshead",
-  "brideNameTitle",
-  "bulan",
-  "tahun",
-  "tanggal",
   "imgPria",
   "namaPria",
   "ortuPria",
@@ -106,11 +99,13 @@ export const PlasmicTemplate1__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicTemplate1__OverridesType = {
   root?: p.Flex<"div">;
-  modal?: p.Flex<typeof Modal>;
   hero?: p.Flex<"header">;
   imageContainer?: p.Flex<"div">;
   heroTitle?: p.Flex<"div">;
-  brideName?: p.Flex<"div">;
+  col2?: p.Flex<"div">;
+  brideTitleHero?: p.Flex<typeof BrideTitleHero>;
+  heroDateTime?: p.Flex<typeof HeroDateTime>;
+  h4?: p.Flex<"h4">;
   details?: p.Flex<"section">;
   col?: p.Flex<"div">;
   title?: p.Flex<"div">;
@@ -138,10 +133,6 @@ export type PlasmicTemplate1__OverridesType = {
 
 export interface DefaultTemplate1Props {
   bgMasshead?: React.ReactNode;
-  brideNameTitle?: React.ReactNode;
-  bulan?: React.ReactNode;
-  tahun?: React.ReactNode;
-  tanggal?: React.ReactNode;
   imgPria?: React.ReactNode;
   namaPria?: React.ReactNode;
   ortuPria?: React.ReactNode;
@@ -199,17 +190,10 @@ function PlasmicTemplate1__RenderFunc(props: {
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
+        projectcss.plasmic_tokens,
         sty.root
       )}
     >
-      {true ? (
-        <Modal
-          data-plasmic-name={"modal"}
-          data-plasmic-override={overrides.modal}
-          className={classNames("__wab_instance", sty.modal)}
-          isVisible={false}
-        />
-      ) : null}
       {true ? (
         <header
           data-plasmic-name={"hero"}
@@ -233,7 +217,16 @@ function PlasmicTemplate1__RenderFunc(props: {
                   displayMinWidth={"0" as const}
                   displayWidth={"100%" as const}
                   loading={"lazy" as const}
-                  src={"https://via.placeholder.com/1920x1080" as const}
+                  src={(() => {
+                    try {
+                      return $ctx.graphCmsItem.coverPhoto;
+                    } catch (e) {
+                      if (e instanceof TypeError) {
+                        return "https://via.placeholder.com/1920x1080";
+                      }
+                      throw e;
+                    }
+                  })()}
                 />
               ),
 
@@ -248,89 +241,123 @@ function PlasmicTemplate1__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.heroTitle)}
           >
-            <h6
-              className={classNames(
-                projectcss.all,
-                projectcss.h6,
-                projectcss.__wab_text,
-                sty.h6__yidOo
-              )}
-            >
-              {"UNDANGAN PERNIKAHAN"}
-            </h6>
-
             <div
-              data-plasmic-name={"brideName"}
-              data-plasmic-override={overrides.brideName}
-              className={classNames(projectcss.all, sty.brideName)}
+              data-plasmic-name={"col2"}
+              data-plasmic-override={overrides.col2}
+              className={classNames(projectcss.all, sty.col2)}
             >
-              {p.renderPlasmicSlot({
-                defaultContents: "John & Marry",
-                value: args.brideNameTitle,
-                className: classNames(sty.slotTargetBrideNameTitle)
-              })}
+              <h6
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h6,
+                  projectcss.__wab_text,
+                  sty.h6__yidOo
+                )}
+              >
+                {"UNDANGAN PERNIKAHAN"}
+              </h6>
+
+              {true ? (
+                <BrideTitleHero
+                  data-plasmic-name={"brideTitleHero"}
+                  data-plasmic-override={overrides.brideTitleHero}
+                  brideTitleHero={
+                    <h1
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h1,
+                        projectcss.__wab_text,
+                        sty.h1__mzAj6
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>{""}</React.Fragment>
+                        {
+                          <span
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.span,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.span__z7VlD
+                            )}
+                          >
+                            {(() => {
+                              try {
+                                return $ctx.graphCmsItem.title;
+                              } catch (e) {
+                                if (e instanceof TypeError) {
+                                  return "Jonh & Marry";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </span>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                      </React.Fragment>
+                    </h1>
+                  }
+                />
+              ) : null}
+
+              <h6
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h6,
+                  projectcss.__wab_text,
+                  sty.h6___4LbFi
+                )}
+              >
+                {
+                  "WE INVITE YOU TO CELEBRATE\nWITH US THE MOST SPECIAL DAY IN OUR LIFES"
+                }
+              </h6>
+
+              <HeroDateTime
+                data-plasmic-name={"heroDateTime"}
+                data-plasmic-override={overrides.heroDateTime}
+                className={classNames("__wab_instance", sty.heroDateTime)}
+                date={
+                  <h4
+                    data-plasmic-name={"h4"}
+                    data-plasmic-override={overrides.h4}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4
+                    )}
+                  >
+                    {"Date"}
+                  </h4>
+                }
+                month={
+                  <h6
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h6,
+                      projectcss.__wab_text,
+                      sty.h6__uhBWq
+                    )}
+                  >
+                    {"Month"}
+                  </h6>
+                }
+                year={
+                  <h6
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h6,
+                      projectcss.__wab_text,
+                      sty.h6__syJ5J
+                    )}
+                  >
+                    {"Year"}
+                  </h6>
+                }
+              />
             </div>
-
-            <h6
-              className={classNames(
-                projectcss.all,
-                projectcss.h6,
-                projectcss.__wab_text,
-                sty.h6___4LbFi
-              )}
-            >
-              {
-                "WE INVITE YOU TO CELEBRATE\nWITH US THE MOST SPECIAL DAY IN OUR LIFES"
-              }
-            </h6>
-
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__phdNj)}
-            >
-              <span
-                className={classNames(
-                  projectcss.all,
-                  projectcss.span,
-                  sty.span__jjwSr
-                )}
-              >
-                {p.renderPlasmicSlot({
-                  defaultContents: "Bulan",
-                  value: args.bulan,
-                  className: classNames(sty.slotTargetBulan)
-                })}
-              </span>
-
-              <span
-                className={classNames(
-                  projectcss.all,
-                  projectcss.span,
-                  sty.span__jNNhQ
-                )}
-              >
-                {p.renderPlasmicSlot({
-                  defaultContents: "00",
-                  value: args.tanggal,
-                  className: classNames(sty.slotTargetTanggal)
-                })}
-              </span>
-
-              <span
-                className={classNames(
-                  projectcss.all,
-                  projectcss.span,
-                  sty.span___9G9Nb
-                )}
-              >
-                {p.renderPlasmicSlot({
-                  defaultContents: "2022",
-                  value: args.tahun,
-                  className: classNames(sty.slotTargetTahun)
-                })}
-              </span>
-            </p.Stack>
           </p.Stack>
         </header>
       ) : null}
@@ -898,11 +925,13 @@ function PlasmicTemplate1__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "modal",
     "hero",
     "imageContainer",
     "heroTitle",
-    "brideName",
+    "col2",
+    "brideTitleHero",
+    "heroDateTime",
+    "h4",
     "details",
     "col",
     "title",
@@ -927,11 +956,21 @@ const PlasmicDescendants = {
     "buttonWrapper",
     "button"
   ],
-  modal: ["modal"],
-  hero: ["hero", "imageContainer", "heroTitle", "brideName"],
+  hero: [
+    "hero",
+    "imageContainer",
+    "heroTitle",
+    "col2",
+    "brideTitleHero",
+    "heroDateTime",
+    "h4"
+  ],
   imageContainer: ["imageContainer"],
-  heroTitle: ["heroTitle", "brideName"],
-  brideName: ["brideName"],
+  heroTitle: ["heroTitle", "col2", "brideTitleHero", "heroDateTime", "h4"],
+  col2: ["col2", "brideTitleHero", "heroDateTime", "h4"],
+  brideTitleHero: ["brideTitleHero"],
+  heroDateTime: ["heroDateTime", "h4"],
+  h4: ["h4"],
   details: [
     "details",
     "col",
@@ -1012,11 +1051,13 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  modal: typeof Modal;
   hero: "header";
   imageContainer: "div";
   heroTitle: "div";
-  brideName: "div";
+  col2: "div";
+  brideTitleHero: typeof BrideTitleHero;
+  heroDateTime: typeof HeroDateTime;
+  h4: "h4";
   details: "section";
   col: "div";
   title: "div";
@@ -1103,11 +1144,13 @@ export const PlasmicTemplate1 = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    modal: makeNodeComponent("modal"),
     hero: makeNodeComponent("hero"),
     imageContainer: makeNodeComponent("imageContainer"),
     heroTitle: makeNodeComponent("heroTitle"),
-    brideName: makeNodeComponent("brideName"),
+    col2: makeNodeComponent("col2"),
+    brideTitleHero: makeNodeComponent("brideTitleHero"),
+    heroDateTime: makeNodeComponent("heroDateTime"),
+    h4: makeNodeComponent("h4"),
     details: makeNodeComponent("details"),
     col: makeNodeComponent("col"),
     title: makeNodeComponent("title"),

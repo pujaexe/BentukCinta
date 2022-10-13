@@ -1,0 +1,24 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  position: relative;
+  min-width: 0;
+}
+.h1__wUgxd {
+  font-family: "Pacifico";
+  color: #ffffff;
+  width: 100%;
+  height: auto;
+  line-height: 200%;
+  min-width: 0;
+}
+.span___12JfN {
+  width: 100%;
+  line-height: 200%;
+  min-width: 0;
+}

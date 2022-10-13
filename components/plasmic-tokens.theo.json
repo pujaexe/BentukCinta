@@ -1,5 +1,96 @@
 {
-  "props": [],
+  "props": [
+    {
+      "name": "caption",
+      "type": "fontsize",
+      "value": "0.72rem",
+      "category": "fontsize",
+      "meta": {
+        "projectId": "6366ps4JUXGcyRNfgAokBX",
+        "id": "66xnIBv0-"
+      }
+    },
+    {
+      "name": "footnote",
+      "type": "fontsize",
+      "value": "0.63rem",
+      "category": "fontsize",
+      "meta": {
+        "projectId": "6366ps4JUXGcyRNfgAokBX",
+        "id": "G8OGw_mXF"
+      }
+    },
+    {
+      "name": "max-width-1280",
+      "type": "spacing",
+      "value": "80rem",
+      "category": "spacing",
+      "meta": {
+        "projectId": "6366ps4JUXGcyRNfgAokBX",
+        "id": "cRiS1Siki"
+      }
+    },
+    {
+      "name": "max-width-800",
+      "type": "spacing",
+      "value": "50rem",
+      "category": "spacing",
+      "meta": {
+        "projectId": "6366ps4JUXGcyRNfgAokBX",
+        "id": "ovKjHZVyx"
+      }
+    },
+    {
+      "name": "padding-1",
+      "type": "spacing",
+      "value": "1.5rem",
+      "category": "spacing",
+      "meta": {
+        "projectId": "6366ps4JUXGcyRNfgAokBX",
+        "id": "Zw7fJp9RW"
+      }
+    },
+    {
+      "name": "padding-2",
+      "type": "spacing",
+      "value": "2rem",
+      "category": "spacing",
+      "meta": {
+        "projectId": "6366ps4JUXGcyRNfgAokBX",
+        "id": "qxFJELq_O"
+      }
+    },
+    {
+      "name": "padding-3",
+      "type": "spacing",
+      "value": "2.88rem",
+      "category": "spacing",
+      "meta": {
+        "projectId": "6366ps4JUXGcyRNfgAokBX",
+        "id": "29cMIwjGl"
+      }
+    },
+    {
+      "name": "padding-4",
+      "type": "spacing",
+      "value": "4rem",
+      "category": "spacing",
+      "meta": {
+        "projectId": "6366ps4JUXGcyRNfgAokBX",
+        "id": "LblEU0oFI"
+      }
+    },
+    {
+      "name": "padding-5",
+      "type": "spacing",
+      "value": "9rem",
+      "category": "spacing",
+      "meta": {
+        "projectId": "6366ps4JUXGcyRNfgAokBX",
+        "id": "sR5VoODU8"
+      }
+    }
+  ],
   "global": {
     "meta": {
       "source": "plasmic.app"

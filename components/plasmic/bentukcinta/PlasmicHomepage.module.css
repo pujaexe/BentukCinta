@@ -38,12 +38,19 @@
   margin-top: 16px;
 }
 .h1 {
+  font-family: "Pacifico";
+  color: transparent;
+  background: linear-gradient(0deg, #be6f11 0%, #fce27f 100%) padding-box
+    /* clip: text **/;
+  line-height: 2;
+  font-weight: 400;
   position: relative;
-  width: 100%;
+  width: var(--token-ovKjHZVyx);
   height: auto;
   max-width: 800px;
   margin-bottom: 32px;
-  min-width: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 .graphCmsFetcher:global(.__wab_instance) {
   display: grid;

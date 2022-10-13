@@ -9,12 +9,6 @@
   min-width: 0;
   min-height: 0;
 }
-.modal:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  position: relative;
-  display: flex;
-}
 .hero {
   display: flex;
   position: relative;
@@ -61,7 +55,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  padding-bottom: 5rem;
+  padding-bottom: var(--token-LblEU0oFI);
   background: linear-gradient(0deg, #0c4627 13%, #0c462700 100%) 0% 0% / 100%
     100% repeat;
   min-width: 0;
@@ -84,109 +78,58 @@
   > img {
   margin-top: 24px;
 }
+.col2 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: var(--token-ovKjHZVyx);
+  height: auto;
+  max-width: 100%;
+}
 .h6__yidOo {
-  font-size: 0.75rem;
-  line-height: 150%;
-  letter-spacing: 4px;
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 50rem;
   text-align: center;
   color: #ffffff;
+  letter-spacing: 4px;
   font-family: "Poppins", sans-serif;
+  font-weight: 400;
   min-width: 0;
 }
-.brideName {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 50rem;
-  justify-content: center;
-  display: flex;
-  flex-direction: row;
-  min-width: 0;
-}
-.slotTargetBrideNameTitle {
+.h1__mzAj6 {
+  font-family: "Pacifico";
+  color: #ffffff;
   text-align: center;
+}
+.span__z7VlD {
+  width: 100%;
+  min-width: 0;
 }
 .h6___4LbFi {
-  font-size: 0.63rem;
-  line-height: 150%;
-  letter-spacing: 4px;
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 800px;
   text-align: center;
   color: #ffffff;
+  letter-spacing: 4px;
   font-family: "Poppins", sans-serif;
+  font-weight: 400;
   min-width: 0;
 }
-.freeBox__phdNj {
-  flex-direction: row;
-  display: flex;
+.heroDateTime:global(.__wab_instance) {
   position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 50rem;
-  min-width: 0;
 }
-.freeBox__phdNj > :global(.__wab_flex-container) {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
-  margin-left: calc(0px - 24px);
-  width: calc(100% + 24px);
+.h6__uhBWq {
+  color: #ffffff;
 }
-.freeBox__phdNj > :global(.__wab_flex-container) > *,
-.freeBox__phdNj > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.freeBox__phdNj > :global(.__wab_flex-container) > picture > img,
-.freeBox__phdNj
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  margin-left: 24px;
+.h4 {
+  color: #ffffff;
 }
-.span__jjwSr {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 800px;
-  justify-content: flex-end;
-  display: flex;
-  flex-direction: row;
-  min-width: 0;
-}
-.slotTargetBulan {
-  font-family: "Poppins", sans-serif;
-  text-align: right;
-}
-.span__jNNhQ {
-  position: relative;
-  width: auto;
-  height: auto;
-  max-width: 800px;
-  display: flex;
-  flex-direction: row;
-}
-.slotTargetTanggal {
-  font-family: "Poppins", sans-serif;
-}
-.span___9G9Nb {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 800px;
-  display: flex;
-  flex-direction: row;
-  min-width: 0;
-}
-.slotTargetTahun {
-  font-family: "Poppins", sans-serif;
-  text-align: left;
+.h6__syJ5J {
+  color: #ffffff;
 }
 .details {
   display: flex;
@@ -225,13 +168,12 @@
   min-width: 0;
 }
 .h3 {
-  background: linear-gradient(0deg, #be6f0e 0%, #fce27f 100%) padding-box
-    /* clip: text **/;
-  color: transparent;
   font-family: "Pacifico";
-  font-size: 3rem;
-  line-height: 200%;
-  letter-spacing: normal;
+  color: transparent;
+  background: linear-gradient(0deg, #be6f11 0%, #fce27f 100%) padding-box
+    /* clip: text **/;
+  line-height: 2;
+  font-weight: 400;
   width: 100%;
   height: auto;
   max-width: 800px;
@@ -241,13 +183,12 @@
   min-width: 0;
 }
 .h6__bizXz {
-  background: linear-gradient(0deg, #be6f0e 0%, #fce27f 100%) padding-box
-    /* clip: text **/;
-  color: transparent;
   font-family: "Pacifico";
-  font-size: 1.5rem;
-  line-height: 150%;
-  letter-spacing: normal;
+  color: transparent;
+  background: linear-gradient(0deg, #be6f11 0%, #fce27f 100%) padding-box
+    /* clip: text **/;
+  line-height: 2;
+  font-weight: 400;
   width: 100%;
   height: auto;
   max-width: 800px;
@@ -352,9 +293,6 @@
   text-align: center;
 }
 .span__fwAbN {
-  font-size: 0.75rem;
-  line-height: 150%;
-  letter-spacing: normal;
   width: 100%;
   height: auto;
   max-width: 800px;
@@ -451,9 +389,6 @@
   text-align: center;
 }
 .span__mUjfD {
-  font-size: 0.75rem;
-  line-height: 150%;
-  letter-spacing: normal;
   width: 100%;
   height: auto;
   max-width: 800px;
@@ -667,13 +602,12 @@
   min-width: 0;
 }
 .h1__p7HZz {
-  background: linear-gradient(0deg, #be6f0e 0%, #fce27f 100%) padding-box
-    /* clip: text **/;
-  color: transparent;
   font-family: "Pacifico";
-  font-size: 3rem;
-  line-height: 200%;
-  letter-spacing: normal;
+  color: transparent;
+  background: linear-gradient(0deg, #be6f11 0%, #fce27f 100%) padding-box
+    /* clip: text **/;
+  line-height: 2;
+  font-weight: 400;
   width: 100%;
   height: auto;
   max-width: 800px;
@@ -708,13 +642,12 @@
   min-width: 0;
 }
 .h1__yXnJ {
-  font-size: 3rem;
-  line-height: 200%;
-  letter-spacing: normal;
-  background: linear-gradient(0deg, #be6f0e 0%, #fce27f 100%) padding-box
-    /* clip: text **/;
-  color: transparent;
   font-family: "Pacifico";
+  color: transparent;
+  background: linear-gradient(0deg, #be6f11 0%, #fce27f 100%) padding-box
+    /* clip: text **/;
+  line-height: 2;
+  font-weight: 400;
   width: 100%;
   height: auto;
   max-width: 800px;

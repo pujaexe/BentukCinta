@@ -34,6 +34,8 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
+import TemplateSelector from "../../TemplateSelector"; // plasmic-import: tV2xuA4xJL/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -52,6 +54,9 @@ export const PlasmicInvitation__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicInvitation__OverridesType = {
   root?: p.Flex<"div">;
+  graphCmsFetcher?: p.Flex<typeof GraphCMSFetcher>;
+  freeBox?: p.Flex<"div">;
+  templateSelector?: p.Flex<typeof TemplateSelector>;
 };
 
 export interface DefaultInvitationProps {}
@@ -102,22 +107,72 @@ function PlasmicInvitation__RenderFunc(props: {
             projectcss.root_reset,
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
+            projectcss.plasmic_tokens,
             sty.root
           )}
-        />
+        >
+          <GraphCMSFetcher
+            data-plasmic-name={"graphCmsFetcher"}
+            data-plasmic-override={overrides.graphCmsFetcher}
+            className={classNames("__wab_instance", sty.graphCmsFetcher)}
+            noLayout={true}
+            query={(() => {
+              try {
+                return {
+                  query:
+                    'query MyQuery {\n pengantin(where: {slug: "' +
+                    $ctx.params.slug +
+                    '"}) {\n slug\n title\n eventLocation\n gmapsEmbed\n evenDateTime\n eventMap {\n latitude\n longitude\n }\n phone1\n phone2\n pengantinPria\n pengantinWanita\n bapakPria\n bapakWanita\n ibuPria\n ibuWanita\n alamatPria\n alamatWanita\n coverPhoto\n photoPria\n photoWanita\n youtubeUrl\n templateUse\n audioUrl\n }\n}\n',
+                  variables: {}
+                };
+              } catch (e) {
+                if (e instanceof TypeError) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
+          >
+            <ph.DataCtxReader>
+              {$ctx => (
+                <div
+                  data-plasmic-name={"freeBox"}
+                  data-plasmic-override={overrides.freeBox}
+                  className={classNames(projectcss.all, sty.freeBox)}
+                >
+                  <TemplateSelector
+                    data-plasmic-name={"templateSelector"}
+                    data-plasmic-override={overrides.templateSelector}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.templateSelector
+                    )}
+                    template={$ctx.graphCmsItem.templateUse}
+                  />
+                </div>
+              )}
+            </ph.DataCtxReader>
+          </GraphCMSFetcher>
+        </div>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: ["root", "graphCmsFetcher", "freeBox", "templateSelector"],
+  graphCmsFetcher: ["graphCmsFetcher", "freeBox", "templateSelector"],
+  freeBox: ["freeBox", "templateSelector"],
+  templateSelector: ["templateSelector"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  graphCmsFetcher: typeof GraphCMSFetcher;
+  freeBox: "div";
+  templateSelector: typeof TemplateSelector;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -181,6 +236,9 @@ export const PlasmicInvitation = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    graphCmsFetcher: makeNodeComponent("graphCmsFetcher"),
+    freeBox: makeNodeComponent("freeBox"),
+    templateSelector: makeNodeComponent("templateSelector"),
 
     // Metadata about props expected for PlasmicInvitation
     internalVariantProps: PlasmicInvitation__VariantProps,

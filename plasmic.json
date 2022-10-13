@@ -48,8 +48,7 @@
           "name": "GraphCMSCredentialsProvider",
           "componentImportPath": "@plasmicpkgs/plasmic-graphcms"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "6366ps4JUXGcyRNfgAokBX",
@@ -107,6 +106,32 @@
             "modulePath": "Template1.tsx"
           },
           "cssFilePath": "plasmic/bentukcinta/PlasmicTemplate1.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "w1AsPdUUjj",
+          "name": "BrideTitleHero",
+          "type": "managed",
+          "projectId": "6366ps4JUXGcyRNfgAokBX",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicBrideTitleHero.tsx",
+          "importSpec": {
+            "modulePath": "BrideTitleHero.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicBrideTitleHero.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "lGTX7nAbs-",
+          "name": "HeroDateTime",
+          "type": "managed",
+          "projectId": "6366ps4JUXGcyRNfgAokBX",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicHeroDateTime.tsx",
+          "importSpec": {
+            "modulePath": "HeroDateTime.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicHeroDateTime.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }
@@ -175,8 +200,7 @@
           "name": "DataProvider",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "enk3K4vZ6pmH6kVCoZJXGn",
@@ -195,8 +219,7 @@
           "name": "YouTube",
           "componentImportPath": "@plasmicpkgs/react-youtube"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     }
   ],
   "globalVariants": {
