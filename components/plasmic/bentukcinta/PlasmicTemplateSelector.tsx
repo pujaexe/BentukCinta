@@ -37,6 +37,7 @@ import {
 import Template1 from "../../Template1"; // plasmic-import: GJ6j9vTAsC/component
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: CMDBvOhaI4s/codeComponent
 import BrideCard from "../../BrideCard"; // plasmic-import: D8Nie4k4_Z/component
+import Template2 from "../../Template2"; // plasmic-import: ujAmoQgB-2l/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -44,11 +45,11 @@ import projectcss from "./plasmic_bentukcinta.module.css"; // plasmic-import: 63
 import sty from "./PlasmicTemplateSelector.module.css"; // plasmic-import: tV2xuA4xJL/css
 
 export type PlasmicTemplateSelector__VariantMembers = {
-  template: "template1";
+  template: "template1" | "template2";
 };
 
 export type PlasmicTemplateSelector__VariantsArgs = {
-  template?: SingleChoiceArg<"template1">;
+  template?: SingleChoiceArg<"template1" | "template2">;
 };
 
 type VariantPropType = keyof PlasmicTemplateSelector__VariantsArgs;
@@ -63,10 +64,11 @@ export const PlasmicTemplateSelector__ArgProps = new Array<ArgPropType>();
 export type PlasmicTemplateSelector__OverridesType = {
   root?: p.Flex<"div">;
   template1?: p.Flex<typeof Template1>;
+  template2?: p.Flex<typeof Template2>;
 };
 
 export interface DefaultTemplateSelectorProps {
-  template?: SingleChoiceArg<"template1">;
+  template?: SingleChoiceArg<"template1" | "template2">;
   className?: string;
 }
 
@@ -113,22 +115,54 @@ function PlasmicTemplateSelector__RenderFunc(props: {
             variants,
             "template",
             "template1"
+          ),
+          [sty.roottemplate_template2]: hasVariant(
+            variants,
+            "template",
+            "template2"
           )
         }
       )}
     >
-      <Template1
-        data-plasmic-name={"template1"}
-        data-plasmic-override={overrides.template1}
-        className={classNames("__wab_instance", sty.template1)}
-      />
+      {(hasVariant(variants, "template", "template2") ? true : true) ? (
+        <Template1
+          data-plasmic-name={"template1"}
+          data-plasmic-override={overrides.template1}
+          className={classNames("__wab_instance", sty.template1, {
+            [sty.template1template_template1]: hasVariant(
+              variants,
+              "template",
+              "template1"
+            ),
+            [sty.template1template_template2]: hasVariant(
+              variants,
+              "template",
+              "template2"
+            )
+          })}
+        />
+      ) : null}
+      {(hasVariant(variants, "template", "template2") ? true : true) ? (
+        <Template2
+          data-plasmic-name={"template2"}
+          data-plasmic-override={overrides.template2}
+          className={classNames("__wab_instance", sty.template2, {
+            [sty.template2template_template2]: hasVariant(
+              variants,
+              "template",
+              "template2"
+            )
+          })}
+        />
+      ) : null}
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "template1"],
-  template1: ["template1"]
+  root: ["root", "template1", "template2"],
+  template1: ["template1"],
+  template2: ["template2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -136,6 +170,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   template1: typeof Template1;
+  template2: typeof Template2;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -200,6 +235,7 @@ export const PlasmicTemplateSelector = Object.assign(
   {
     // Helper components rendering sub-elements
     template1: makeNodeComponent("template1"),
+    template2: makeNodeComponent("template2"),
 
     // Metadata about props expected for PlasmicTemplateSelector
     internalVariantProps: PlasmicTemplateSelector__VariantProps,

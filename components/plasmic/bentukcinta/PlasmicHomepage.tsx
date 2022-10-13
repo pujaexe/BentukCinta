@@ -57,7 +57,6 @@ export type PlasmicHomepage__OverridesType = {
   section?: p.Flex<"section">;
   h1?: p.Flex<"h1">;
   graphCmsFetcher?: p.Flex<typeof GraphCMSFetcher>;
-  freeBox?: p.Flex<"div">;
   link?: p.Flex<"a"> & Partial<LinkProps>;
   graphCmsField?: p.Flex<typeof GraphCMSField>;
 };
@@ -144,63 +143,63 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.h1
               )}
             >
-              {"Bentukcintrong"}
+              {"Bentuk Cinta"}
             </h1>
 
-            <GraphCMSFetcher
-              data-plasmic-name={"graphCmsFetcher"}
-              data-plasmic-override={overrides.graphCmsFetcher}
-              className={classNames("__wab_instance", sty.graphCmsFetcher)}
-              noLayout={false}
-              query={{
-                query:
-                  "query MyQuery {\n  pengantins {\n    id\n    slug\n    title\n  }\n}\n",
-                variables: {}
-              }}
-            >
-              <ph.DataCtxReader>
-                {$ctx => (
-                  <div
-                    data-plasmic-name={"freeBox"}
-                    data-plasmic-override={overrides.freeBox}
-                    className={classNames(projectcss.all, sty.freeBox)}
-                  >
-                    <p.PlasmicLink
-                      data-plasmic-name={"link"}
-                      data-plasmic-override={overrides.link}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        sty.link
-                      )}
-                      component={Link}
-                      href={`/${(() => {
-                        try {
-                          return $ctx.graphCmsItem.slug;
-                        } catch (e) {
-                          if (e instanceof TypeError) {
-                            return "";
-                          }
-                          throw e;
-                        }
-                      })()}`}
-                      platform={"nextjs"}
-                      target={"_blank" as const}
+            <div className={classNames(projectcss.all, sty.freeBox__ftCi)}>
+              <GraphCMSFetcher
+                data-plasmic-name={"graphCmsFetcher"}
+                data-plasmic-override={overrides.graphCmsFetcher}
+                className={classNames("__wab_instance", sty.graphCmsFetcher)}
+                noLayout={true}
+                query={{
+                  query:
+                    "query MyQuery {\n  pengantins {\n    id\n    slug\n    title\n  }\n}\n",
+                  variables: {}
+                }}
+              >
+                <ph.DataCtxReader>
+                  {$ctx => (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__kBxD)}
                     >
-                      <GraphCMSField
-                        data-plasmic-name={"graphCmsField"}
-                        data-plasmic-override={overrides.graphCmsField}
+                      <p.PlasmicLink
+                        data-plasmic-name={"link"}
+                        data-plasmic-override={overrides.link}
                         className={classNames(
-                          "__wab_instance",
-                          sty.graphCmsField
+                          projectcss.all,
+                          projectcss.a,
+                          sty.link
                         )}
-                        path={["slug"]}
-                      />
-                    </p.PlasmicLink>
-                  </div>
-                )}
-              </ph.DataCtxReader>
-            </GraphCMSFetcher>
+                        component={Link}
+                        href={`/${(() => {
+                          try {
+                            return $ctx.graphCmsItem.slug;
+                          } catch (e) {
+                            if (e instanceof TypeError) {
+                              return "";
+                            }
+                            throw e;
+                          }
+                        })()}`}
+                        platform={"nextjs"}
+                        target={"_blank" as const}
+                      >
+                        <GraphCMSField
+                          data-plasmic-name={"graphCmsField"}
+                          data-plasmic-override={overrides.graphCmsField}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.graphCmsField
+                          )}
+                          path={["slug"]}
+                        />
+                      </p.PlasmicLink>
+                    </div>
+                  )}
+                </ph.DataCtxReader>
+              </GraphCMSFetcher>
+            </div>
           </p.Stack>
         </div>
       </div>
@@ -209,26 +208,10 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "section",
-    "h1",
-    "graphCmsFetcher",
-    "freeBox",
-    "link",
-    "graphCmsField"
-  ],
-  section: [
-    "section",
-    "h1",
-    "graphCmsFetcher",
-    "freeBox",
-    "link",
-    "graphCmsField"
-  ],
+  root: ["root", "section", "h1", "graphCmsFetcher", "link", "graphCmsField"],
+  section: ["section", "h1", "graphCmsFetcher", "link", "graphCmsField"],
   h1: ["h1"],
-  graphCmsFetcher: ["graphCmsFetcher", "freeBox", "link", "graphCmsField"],
-  freeBox: ["freeBox", "link", "graphCmsField"],
+  graphCmsFetcher: ["graphCmsFetcher", "link", "graphCmsField"],
   link: ["link", "graphCmsField"],
   graphCmsField: ["graphCmsField"]
 } as const;
@@ -240,7 +223,6 @@ type NodeDefaultElementType = {
   section: "section";
   h1: "h1";
   graphCmsFetcher: typeof GraphCMSFetcher;
-  freeBox: "div";
   link: "a";
   graphCmsField: typeof GraphCMSField;
 };
@@ -309,7 +291,6 @@ export const PlasmicHomepage = Object.assign(
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
     graphCmsFetcher: makeNodeComponent("graphCmsFetcher"),
-    freeBox: makeNodeComponent("freeBox"),
     link: makeNodeComponent("link"),
     graphCmsField: makeNodeComponent("graphCmsField"),
 

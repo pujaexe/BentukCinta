@@ -148,9 +148,41 @@
           "cssFilePath": "plasmic/bentukcinta/PlasmicBrideCard.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "ujAmoQgB-2l",
+          "name": "Template2",
+          "type": "managed",
+          "projectId": "6366ps4JUXGcyRNfgAokBX",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicTemplate2.tsx",
+          "importSpec": {
+            "modulePath": "Template2.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicTemplate2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "m2k6x_tpZv",
+          "name": "FloatingWhatsapp",
+          "type": "managed",
+          "projectId": "6366ps4JUXGcyRNfgAokBX",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicFloatingWhatsapp.tsx",
+          "importSpec": {
+            "modulePath": "FloatingWhatsapp.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicFloatingWhatsapp.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
-      "icons": [],
+      "icons": [
+        {
+          "id": "w2Zl9wBm8_",
+          "name": "WhatsappSvgrepoCom1SvgIcon",
+          "moduleFilePath": "plasmic/bentukcinta/icons/PlasmicIcon__WhatsappSvgrepoCom1Svg.tsx"
+        }
+      ],
       "images": [],
       "indirect": false,
       "globalContextsFilePath": "plasmic/bentukcinta/PlasmicGlobalContextsProvider.tsx",

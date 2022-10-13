@@ -9,34 +9,6 @@
   min-width: 0;
   min-height: 0;
 }
-.floatingWhatsapp:global(.__wab_instance) {
-  position: fixed;
-  top: auto;
-  left: auto;
-  z-index: 50;
-  bottom: 40px;
-  right: 40px;
-  flex-shrink: 0;
-}
-.link__xoX57 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: #25d366;
-  box-shadow: 0px 12px 24px 0px #25d36633;
-  border-radius: 50px;
-}
-.svg {
-  position: relative;
-  object-fit: cover;
-  color: #ffffff;
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-}
 .head:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -81,7 +53,7 @@
     flex-shrink: 0;
   }
 }
-.img__t4FxX {
+.img___5JBmP {
   position: absolute;
   object-fit: cover;
   max-width: 100%;
@@ -92,10 +64,10 @@
   min-width: 0;
   min-height: 0;
 }
-.img__t4FxX > picture > img {
+.img___5JBmP > picture > img {
   object-fit: cover;
 }
-.img__t4FxX > :global(.__wab_img-spacer) > img {
+.img___5JBmP > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .heroTitle {
@@ -106,8 +78,7 @@
   height: auto;
   max-width: 100%;
   padding-bottom: var(--token-LblEU0oFI);
-  background: linear-gradient(0deg, #0c4627 13%, #0c462700 100%) 0% 0% / 100%
-    100% repeat;
+  background: none;
   min-width: 0;
 }
 .heroTitle > :global(.__wab_flex-container) {
@@ -148,7 +119,7 @@
   height: auto;
   max-width: 100%;
 }
-.h6__yidOo {
+.h6__tHXac {
   position: relative;
   width: 100%;
   height: auto;
@@ -159,7 +130,7 @@
   font-weight: 400;
   min-width: 0;
 }
-.h1__mzAj6 {
+.h1___4Un8U {
   font-family: "Pacifico";
   color: #ffffff;
   text-align: center;
@@ -168,7 +139,7 @@
   width: 100%;
   min-width: 0;
 }
-.h6___4LbFi {
+.h6___31Omm {
   position: relative;
   width: 100%;
   height: auto;
@@ -182,14 +153,14 @@
 .heroDateTime:global(.__wab_instance) {
   position: relative;
 }
-.h6__uhBWq {
+.h6__jghE {
   color: #ffffff;
 }
 .h4 {
   color: #ffffff;
   font-weight: 700;
 }
-.h6__syJ5J {
+.h6__vvdBv {
   color: #ffffff;
 }
 .details {
@@ -248,7 +219,7 @@
   max-width: 50rem;
   min-width: 0;
 }
-.h1__k47Nj {
+.h1___6KhMk {
   font-family: "Pacifico";
   color: transparent;
   background: linear-gradient(0deg, #be6f11 0%, #fce27f 100%) padding-box
@@ -348,10 +319,10 @@
   align-items: center;
   min-width: 0;
 }
-.brideCard__pamXq:global(.__wab_instance) {
+.brideCard__oGbhT:global(.__wab_instance) {
   position: relative;
 }
-.h4__oaCwf {
+.h4__mkRvD {
   font-family: "Pacifico";
   color: transparent;
   background: linear-gradient(0deg, #be6f11 0%, #fce27f 100%) padding-box
@@ -364,10 +335,10 @@
   -webkit-background-clip: text;
   min-width: 0;
 }
-.text__fBbvg {
+.text__h0Fw {
   font-size: var(--token-66xnIBv0-);
 }
-.img___50Mh8 {
+.img__dC6Hf {
   position: relative;
   object-fit: cover;
   max-width: 100%;
@@ -375,10 +346,10 @@
   height: 200px;
   margin-bottom: 0;
 }
-.img___50Mh8 > picture > img {
+.img__dC6Hf > picture > img {
   object-fit: cover;
 }
-.img___50Mh8 > :global(.__wab_img-spacer) > img {
+.img__dC6Hf > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .colWanita {
@@ -392,10 +363,10 @@
   align-items: center;
   min-width: 0;
 }
-.brideCard__ucXrm:global(.__wab_instance) {
+.brideCard__oxJst:global(.__wab_instance) {
   position: relative;
 }
-.h4__hQcJg {
+.h4__qlFl {
   font-family: "Pacifico";
   color: transparent;
   background: linear-gradient(0deg, #be6f11 0%, #fce27f 100%) padding-box
@@ -408,10 +379,10 @@
   -webkit-background-clip: text;
   min-width: 0;
 }
-.text__z7Ns0 {
+.text__w1ZeW {
   font-size: var(--token-66xnIBv0-);
 }
-.img__exhXa {
+.img__kaWt0 {
   position: relative;
   object-fit: cover;
   max-width: 100%;
@@ -419,10 +390,10 @@
   height: 200px;
   margin-bottom: 0;
 }
-.img__exhXa > picture > img {
+.img__kaWt0 > picture > img {
   object-fit: cover;
 }
-.img__exhXa > :global(.__wab_img-spacer) > img {
+.img__kaWt0 > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .greetings {
@@ -453,14 +424,14 @@
   > img {
   margin-top: 24px;
 }
-.text__jEfIw {
+.text__vaTrz {
   width: 100%;
   height: auto;
   max-width: 800px;
   text-align: center;
   min-width: 0;
 }
-.text___1OHhX {
+.text__vVpXe {
   width: 100%;
   height: auto;
   max-width: 800px;
@@ -505,14 +476,14 @@
   max-width: 30rem;
   min-width: 0;
 }
-.text__jwdWz {
+.text__kZqd4 {
   width: 150px;
   height: auto;
   max-width: 800px;
   text-align: left;
   flex-shrink: 0;
 }
-.text__nosg0 {
+.text__tyMno {
   width: auto;
   height: auto;
   max-width: 800px;
@@ -566,14 +537,14 @@
   max-width: 30rem;
   min-width: 0;
 }
-.text___9DSTt {
+.text__yzBM {
   width: 150px;
   height: auto;
   max-width: 800px;
   text-align: left;
   flex-shrink: 0;
 }
-.text__zm7F {
+.text__p5YmD {
   width: auto;
   height: auto;
   max-width: 800px;
@@ -603,14 +574,14 @@
   max-width: 30rem;
   min-width: 0;
 }
-.text__f8Qf {
+.text__i4ESu {
   width: 150px;
   height: auto;
   max-width: 800px;
   text-align: left;
   flex-shrink: 0;
 }
-.text___0Bmt7 {
+.text__gnjgm {
   width: auto;
   height: auto;
   max-width: 800px;
@@ -656,14 +627,14 @@
   > img {
   margin-top: 24px;
 }
-.text__rfKky {
+.text__gyPcT {
   width: 100%;
   height: auto;
   max-width: 800px;
   text-align: center;
   min-width: 0;
 }
-.h1__p7HZz {
+.h1__eJfhZ {
   font-family: "Pacifico";
   color: transparent;
   background: linear-gradient(0deg, #be6f11 0%, #fce27f 100%) padding-box
@@ -710,7 +681,7 @@
     padding-right: var(--token-Zw7fJp9RW);
   }
 }
-.h1__yXnJ {
+.h1__rkeGi {
   font-family: "Pacifico";
   color: transparent;
   background: linear-gradient(0deg, #be6f11 0%, #fce27f 100%) padding-box
@@ -725,7 +696,7 @@
   -webkit-background-clip: text;
   min-width: 0;
 }
-.text__twOo7 {
+.text__zfzkj {
   width: 100%;
   height: auto;
   max-width: 800px;
@@ -751,7 +722,7 @@
   position: relative;
   flex-shrink: 0;
 }
-.freeBox___9Todx {
+.freeBox__uUeMv {
   display: grid;
   position: relative;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -762,7 +733,7 @@
   padding-bottom: var(--token-LblEU0oFI);
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .freeBox___9Todx {
+  .freeBox__uUeMv {
     grid-row-gap: 24px;
     grid-column-gap: 24px;
     padding-left: var(--token-Zw7fJp9RW);
@@ -770,7 +741,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-.freeBox__jxbOx {
+.freeBox__uocpc {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -782,7 +753,7 @@
   min-width: 0;
   padding: 8px;
 }
-.freeBox___8Xvr {
+.freeBox__iIpP8 {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -797,7 +768,7 @@
   border-radius: 12px;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .freeBox___8Xvr {
+  .freeBox__iIpP8 {
     width: 100%;
     height: 150px;
     min-width: 0;
@@ -863,7 +834,7 @@
     padding-right: var(--token-Zw7fJp9RW);
   }
 }
-.iframe__mKseR:global(.__wab_instance) {
+.iframe__mbG1:global(.__wab_instance) {
   width: 1280px;
   height: 399px;
   max-width: 100%;
@@ -892,7 +863,7 @@
   height: auto;
   max-width: 100%;
 }
-.link__g8QWv {
+.link__tg6VS {
   position: relative;
   color: #000000;
   background: linear-gradient(0deg, #be6f11 0%, #fce27f 100%);
@@ -914,7 +885,7 @@
   padding-bottom: var(--token-qxFJELq_O);
   min-width: 0;
 }
-.freeBox__ai0Mk {
+.freeBox___15Xxw {
   flex-direction: row;
   display: flex;
   position: relative;
@@ -922,31 +893,31 @@
   height: auto;
   max-width: 100%;
 }
-.freeBox__ai0Mk > :global(.__wab_flex-container) {
+.freeBox___15Xxw > :global(.__wab_flex-container) {
   flex-direction: row;
   justify-content: center;
   align-items: center;
   margin-left: calc(0px - 8px);
   width: calc(100% + 8px);
 }
-.freeBox__ai0Mk > :global(.__wab_flex-container) > *,
-.freeBox__ai0Mk > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.freeBox__ai0Mk > :global(.__wab_flex-container) > picture > img,
-.freeBox__ai0Mk
+.freeBox___15Xxw > :global(.__wab_flex-container) > *,
+.freeBox___15Xxw > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox___15Xxw > :global(.__wab_flex-container) > picture > img,
+.freeBox___15Xxw
   > :global(.__wab_flex-container)
   > :global(.__wab_slot)
   > picture
   > img {
   margin-left: 8px;
 }
-.text__op7R {
+.text__qnetc {
   width: auto;
   height: auto;
   max-width: 800px;
   color: #ffffff;
   text-align: center;
 }
-.link___2Ysub {
+.link {
   width: auto;
   height: auto;
   max-width: 800px;
