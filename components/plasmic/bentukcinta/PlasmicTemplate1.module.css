@@ -206,6 +206,11 @@
   background: #ffffff;
   min-width: 0;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .details {
+    padding-bottom: 0rem;
+  }
+}
 .row {
   flex-direction: column;
   display: flex;
@@ -315,8 +320,8 @@
     min-width: 0;
     margin-left: calc(0px - 24px);
     width: calc(100% + 24px);
-    margin-top: calc(0px - 32px);
-    height: calc(100% + 32px);
+    margin-top: calc(0px - 42px);
+    height: calc(100% + 42px);
   }
 }
 @media (min-width: 0px) and (max-width: 768px) {
@@ -334,7 +339,7 @@
     > picture
     > img {
     margin-left: 24px;
-    margin-top: 32px;
+    margin-top: 42px;
   }
 }
 .colPria {

@@ -1,0 +1,202 @@
+.root {
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  position: relative;
+  min-width: 0;
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid #f5f7fb;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
+  margin-top: calc(0px - 24px);
+  height: calc(100% + 24px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-top: 24px;
+}
+.rootisHighlight {
+  background: #725dff;
+  border-style: none;
+}
+.title {
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.title > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-width: 0;
+  margin-top: calc(0px - 8px);
+  height: calc(100% + 8px);
+}
+.title > :global(.__wab_flex-container) > *,
+.title > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.title > :global(.__wab_flex-container) > picture > img,
+.title > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-top: 8px;
+}
+.slotTargetChildren {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 150%;
+  text-align: center;
+}
+.slotTargetChildrenisHighlight {
+  color: #ffffff;
+}
+.price {
+  flex-direction: row;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.price > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  margin-left: calc(0px - 6px);
+  width: calc(100% + 6px);
+}
+.price > :global(.__wab_flex-container) > *,
+.price > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.price > :global(.__wab_flex-container) > picture > img,
+.price > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-left: 6px;
+}
+.slotTargetHargaisHighlight {
+  color: #ffffff;
+}
+.text__zkVdl {
+  width: auto;
+  height: auto;
+  max-width: 800px;
+  font-size: 1rem;
+  text-decoration-line: line-through;
+}
+.text__vy7Q6 {
+  width: auto;
+  height: auto;
+  max-width: 800px;
+  font-size: 1rem;
+}
+.item {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  grid-row-gap: 12px;
+  min-width: 0;
+}
+.itemisAddDescription {
+  display: none;
+}
+.slotTargetItemisHighlight {
+  color: #ffffff;
+}
+.freeBox__wsMd2 {
+  flex-direction: row;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.freeBox__wsMd2 > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  margin-left: calc(0px - 12px);
+  width: calc(100% + 12px);
+}
+.freeBox__wsMd2 > :global(.__wab_flex-container) > *,
+.freeBox__wsMd2 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__wsMd2 > :global(.__wab_flex-container) > picture > img,
+.freeBox__wsMd2
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 12px;
+}
+.text__mRYc3 {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 800px;
+}
+.text__mv4OX {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  min-width: 0;
+}
+.addedDescription {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  flex-direction: row;
+  min-width: 0;
+  display: none;
+}
+.addedDescriptionisHighlight {
+  display: none;
+}
+.addedDescriptionisAddDescription {
+  display: flex;
+}
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  background: #725dff;
+  box-shadow: none;
+  min-width: 0;
+  border-radius: 12px;
+  padding: 12px 24px;
+}
+.linkisHighlight {
+  background: #ffffff;
+}
+.h6 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  align-self: auto;
+  color: #ffffff;
+  padding-top: 0px;
+  min-width: 0;
+}
+.h6isHighlight {
+  color: #725dff;
+}

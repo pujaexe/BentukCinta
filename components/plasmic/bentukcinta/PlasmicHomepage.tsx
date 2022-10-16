@@ -34,13 +34,27 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import FiturCard from "../../FiturCard"; // plasmic-import: bQ8noILEe4/component
+import PriceCard from "../../PriceCard"; // plasmic-import: q8Lmfm3hoF/component
 import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
 import { GraphCMSField } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: _3Kx5FMtA8n/codeComponent
+
+import { useScreenVariants as useScreenVariantslPlKhvYjoqxXf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: lPlKHVYjoqxXF/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_bentukcinta.module.css"; // plasmic-import: 6366ps4JUXGcyRNfgAokBX/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: cWWh_VXruR120/css
+
+import InfoSvgrepoComsvgIcon from "./icons/PlasmicIcon__InfoSvgrepoComsvg"; // plasmic-import: f1NunFb58W/icon
+import CameraSvgrepoCom1SvgIcon from "./icons/PlasmicIcon__CameraSvgrepoCom1Svg"; // plasmic-import: ZxNANnHwpx/icon
+import GpsLocationLocatorSvgrepoComsvgIcon from "./icons/PlasmicIcon__GpsLocationLocatorSvgrepoComsvg"; // plasmic-import: drHf3YSXFW/icon
+import CommentDotsSvgrepoComsvgIcon from "./icons/PlasmicIcon__CommentDotsSvgrepoComsvg"; // plasmic-import: 504XqCjwr2/icon
+import SoundSvgrepoComsvgIcon from "./icons/PlasmicIcon__SoundSvgrepoComsvg"; // plasmic-import: KSPMBHFJ3A/icon
+import WhatsappSvgrepoCom1SvgIcon from "./icons/PlasmicIcon__WhatsappSvgrepoCom1Svg"; // plasmic-import: w2Zl9wBm8_/icon
+import PlasmicLogosvgIcon from "./icons/PlasmicIcon__PlasmicLogosvg"; // plasmic-import: mSn2UckVtI/icon
+import HygraphsvgIcon from "./icons/PlasmicIcon__Hygraphsvg"; // plasmic-import: 6hITHOMuHn/icon
+import NexjssvgIcon from "./icons/PlasmicIcon__Nexjssvg"; // plasmic-import: ZDvhChlwlY/icon
 
 export type PlasmicHomepage__VariantMembers = {};
 
@@ -57,17 +71,52 @@ export type PlasmicHomepage__OverridesType = {
   navBar?: p.Flex<"div">;
   alingLeft?: p.Flex<"div">;
   logo?: p.Flex<"div">;
-  h5?: p.Flex<"h5">;
   navMenu?: p.Flex<"div">;
   tentangKami?: p.Flex<"a"> & Partial<LinkProps>;
   harga?: p.Flex<"a"> & Partial<LinkProps>;
   faq?: p.Flex<"a"> & Partial<LinkProps>;
   alingRigth?: p.Flex<"div">;
-  section?: p.Flex<"section">;
-  h1?: p.Flex<"h1">;
-  img?: p.Flex<typeof p.PlasmicImg>;
+  header?: p.Flex<"header">;
+  udangan?: p.Flex<"div">;
+  udangan2?: p.Flex<"div">;
+  about?: p.Flex<"section">;
+  row?: p.Flex<"div">;
+  item?: p.Flex<"div">;
+  item2?: p.Flex<"div">;
+  item3?: p.Flex<"div">;
+  item4?: p.Flex<"div">;
+  feature?: p.Flex<"section">;
+  row2?: p.Flex<"div">;
+  title?: p.Flex<"div">;
+  price?: p.Flex<"section">;
+  row3?: p.Flex<"div">;
+  title2?: p.Flex<"div">;
+  items?: p.Flex<"div">;
+  items2?: p.Flex<"div">;
+  items3?: p.Flex<"div">;
+  items4?: p.Flex<"div">;
+  items5?: p.Flex<"div">;
+  items6?: p.Flex<"div">;
+  items7?: p.Flex<"div">;
+  items8?: p.Flex<"div">;
+  items13?: p.Flex<"div">;
+  items14?: p.Flex<"div">;
+  items15?: p.Flex<"div">;
+  items16?: p.Flex<"div">;
+  items9?: p.Flex<"div">;
+  items10?: p.Flex<"div">;
+  items11?: p.Flex<"div">;
+  items12?: p.Flex<"div">;
+  contact?: p.Flex<"section">;
+  row4?: p.Flex<"div">;
+  title3?: p.Flex<"div">;
+  portfolio?: p.Flex<"section">;
   graphCmsFetcher?: p.Flex<typeof GraphCMSFetcher>;
   graphCmsField?: p.Flex<typeof GraphCMSField>;
+  partner?: p.Flex<"section">;
+  footer?: p.Flex<"footer">;
+  logo2?: p.Flex<"div">;
+  ul?: p.Flex<"ul">;
 };
 
 export interface DefaultHomepageProps {}
@@ -96,6 +145,10 @@ function PlasmicHomepage__RenderFunc(props: {
     ...args,
     ...variants
   };
+
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantslPlKhvYjoqxXf()
+  });
 
   return (
     <React.Fragment>
@@ -152,13 +205,11 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.logo)}
                 >
                   <h5
-                    data-plasmic-name={"h5"}
-                    data-plasmic-override={overrides.h5}
                     className={classNames(
                       projectcss.all,
                       projectcss.h5,
                       projectcss.__wab_text,
-                      sty.h5
+                      sty.h5__eMv3U
                     )}
                   >
                     {"Bentuk Cinta"}
@@ -266,61 +317,1321 @@ function PlasmicHomepage__RenderFunc(props: {
           </div>
 
           <p.Stack
-            as={"section"}
-            data-plasmic-name={"section"}
-            data-plasmic-override={overrides.section}
+            as={"header"}
+            data-plasmic-name={"header"}
+            data-plasmic-override={overrides.header}
             hasGap={true}
-            className={classNames(projectcss.all, sty.section)}
+            className={classNames(projectcss.all, sty.header)}
+            id={"home" as const}
           >
-            <h1
-              data-plasmic-name={"h1"}
-              data-plasmic-override={overrides.h1}
-              className={classNames(
-                projectcss.all,
-                projectcss.h1,
-                projectcss.__wab_text,
-                sty.h1
-              )}
-            >
-              {"Ciee masih ngundang pake kartu! Online Donk!"}
-            </h1>
+            <div className={classNames(projectcss.all, sty.columns__dAsKi)}>
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.column__lCuwH)}
+              >
+                {true ? (
+                  <p.Stack
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__lLx6J)}
+                  >
+                    <h1
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h1,
+                        projectcss.__wab_text,
+                        sty.h1__t9FK8
+                      )}
+                    >
+                      {"Ciee masih ngundang pake kartu! Online Donk!"}
+                    </h1>
 
-            <h6
-              className={classNames(
-                projectcss.all,
-                projectcss.h6,
-                projectcss.__wab_text,
-                sty.h6___7AAcH
-              )}
-            >
-              {
-                "Bentukcinta.com siap membantu mu bikinin undangan online yang keren, kekinian dan hemat waktu, biar kamu ga ngundang pake cara lama,"
-              }
-            </h6>
+                    <dd
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.dd___7AAcH
+                      )}
+                    >
+                      {
+                        "Bentuk cinta siap membantumu dengan sepenuh hati untuk ngundang pake cara baru"
+                      }
+                    </dd>
+                  </p.Stack>
+                ) : null}
+                {true ? (
+                  <p.Stack
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__xj8Yc)}
+                  >
+                    <p.PlasmicLink
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        sty.link__k3BmE
+                      )}
+                      component={Link}
+                      platform={"nextjs"}
+                    >
+                      <h6
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h6,
+                          projectcss.__wab_text,
+                          sty.h6___6Ip8M
+                        )}
+                      >
+                        {"Pelajari Selengkapnya"}
+                      </h6>
+                    </p.PlasmicLink>
 
-            <div className={classNames(projectcss.all, sty.freeBox___46RYd)}>
-              <p.PlasmicImg
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
-                alt={""}
-                className={classNames(sty.img)}
-                displayHeight={"auto" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"100%" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"auto" as const}
-                loading={"lazy" as const}
-                src={{
-                  src: "/plasmic/bentukcinta/images/phoneImageMinpng.png",
-                  fullWidth: 600,
-                  fullHeight: 710,
-                  aspectRatio: undefined
-                }}
-              />
+                    <p.PlasmicLink
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        sty.link__uW3Ui
+                      )}
+                      component={Link}
+                      platform={"nextjs"}
+                    >
+                      <h6
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h6,
+                          projectcss.__wab_text,
+                          sty.h6__lKJ
+                        )}
+                      >
+                        {"Pelajari Selengkapnya"}
+                      </h6>
+                    </p.PlasmicLink>
+                  </p.Stack>
+                ) : null}
+
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__rd5T0)}
+                >
+                  <div
+                    data-plasmic-name={"udangan"}
+                    data-plasmic-override={overrides.udangan}
+                    className={classNames(projectcss.all, sty.udangan)}
+                  >
+                    <h3
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h3,
+                        projectcss.__wab_text,
+                        sty.h3__lDkzc
+                      )}
+                    >
+                      {"100+"}
+                    </h3>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__xIKX
+                      )}
+                    >
+                      {"Undangan"}
+                    </div>
+                  </div>
+
+                  <div
+                    data-plasmic-name={"udangan2"}
+                    data-plasmic-override={overrides.udangan2}
+                    className={classNames(projectcss.all, sty.udangan2)}
+                  >
+                    <h3
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h3,
+                        projectcss.__wab_text,
+                        sty.h3__p4Vqh
+                      )}
+                    >
+                      {"5+"}
+                    </h3>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__uluIo
+                      )}
+                    >
+                      {"Template"}
+                    </div>
+                  </div>
+                </p.Stack>
+              </p.Stack>
+
+              {(
+                hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
+              ) ? (
+                <div className={classNames(projectcss.all, sty.column___40O0S)}>
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img__wjx6R)}
+                    displayHeight={"auto" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"70%" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"auto" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: "/plasmic/bentukcinta/images/bgHeroBentukcintapng.png",
+                      fullWidth: 599,
+                      fullHeight: 644,
+                      aspectRatio: undefined
+                    }}
+                  />
+
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img__sWvd1)}
+                    displayHeight={"auto" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"100%" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"60%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: "/plasmic/bentukcinta/images/elipBgpng.png",
+                      fullWidth: 512,
+                      fullHeight: 547,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
+              ) : null}
             </div>
+          </p.Stack>
 
-            <div className={classNames(projectcss.all, sty.freeBox__ftCi)}>
+          <p.Stack
+            as={"section"}
+            data-plasmic-name={"about"}
+            data-plasmic-override={overrides.about}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.about)}
+            id={"about" as const}
+          >
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"row"}
+              data-plasmic-override={overrides.row}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.row)}
+            >
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.columns__cyDe6)}
+              >
+                <div className={classNames(projectcss.all, sty.column__qaVd)}>
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img___7OA6)}
+                    displayHeight={"auto" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"100%" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"60%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: "/plasmic/bentukcinta/images/phoneImageMinpng.png",
+                      fullWidth: 600,
+                      fullHeight: 710,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
+
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.column__d49Yd)}
+                >
+                  {true ? (
+                    <p.Stack
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__ehkTt)}
+                    >
+                      <h1
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h1,
+                          projectcss.__wab_text,
+                          sty.h1__cizVw
+                        )}
+                      >
+                        {"Kenapa Bentukcinta?"}
+                      </h1>
+
+                      <dd
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.dd__xs1Wz
+                        )}
+                      >
+                        {
+                          "BentukCinta.com merupakan platform undangan pernikahan yang berbasis website responsive atau yang lebih dikenal dengan undangan digital / undangan online. Kami hadir untuk memudahkan urusan undangan pernikahan kalian. Semua ada di ujung jarimu, tidak perlu repot lagi."
+                        }
+                      </dd>
+                    </p.Stack>
+                  ) : null}
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__cjmw0)}
+                  >
+                    <p.Stack
+                      as={"div"}
+                      data-plasmic-name={"item"}
+                      data-plasmic-override={overrides.item}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.item)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__gbPhc
+                        )}
+                      >
+                        {"💌"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__yNIj
+                        )}
+                      >
+                        {"Praktis"}
+                      </div>
+                    </p.Stack>
+
+                    <p.Stack
+                      as={"div"}
+                      data-plasmic-name={"item2"}
+                      data-plasmic-override={overrides.item2}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.item2)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__pthRt
+                        )}
+                      >
+                        {"🕐"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__ggDgx
+                        )}
+                      >
+                        {"Hemat Waktu"}
+                      </div>
+                    </p.Stack>
+
+                    <p.Stack
+                      as={"div"}
+                      data-plasmic-name={"item3"}
+                      data-plasmic-override={overrides.item3}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.item3)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__m5SEj
+                        )}
+                      >
+                        {"💪"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___3I8JH
+                        )}
+                      >
+                        {"Hemat Tenaga"}
+                      </div>
+                    </p.Stack>
+
+                    <p.Stack
+                      as={"div"}
+                      data-plasmic-name={"item4"}
+                      data-plasmic-override={overrides.item4}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.item4)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__nmNfm
+                        )}
+                      >
+                        {"🤑"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__imXr5
+                        )}
+                      >
+                        {"Hemat Biaya"}
+                      </div>
+                    </p.Stack>
+                  </div>
+
+                  {true ? (
+                    <p.Stack
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__ouGnw)}
+                    >
+                      <p.PlasmicLink
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          sty.link__tnF1
+                        )}
+                        component={Link}
+                        platform={"nextjs"}
+                      >
+                        <h6
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h6,
+                            projectcss.__wab_text,
+                            sty.h6___1Nc6K
+                          )}
+                        >
+                          {"Buat Undangan Sekarang"}
+                        </h6>
+                      </p.PlasmicLink>
+                    </p.Stack>
+                  ) : null}
+                </p.Stack>
+              </p.Stack>
+            </p.Stack>
+          </p.Stack>
+
+          <p.Stack
+            as={"section"}
+            data-plasmic-name={"feature"}
+            data-plasmic-override={overrides.feature}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.feature)}
+            id={"feature" as const}
+          >
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"row2"}
+              data-plasmic-override={overrides.row2}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.row2)}
+            >
+              {true ? (
+                <div
+                  data-plasmic-name={"title"}
+                  data-plasmic-override={overrides.title}
+                  className={classNames(projectcss.all, sty.title)}
+                >
+                  <h1
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h1,
+                      projectcss.__wab_text,
+                      sty.h1___2FnT
+                    )}
+                  >
+                    {"Fasilitas Undangan"}
+                  </h1>
+
+                  <dd
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.dd___3Hf3
+                    )}
+                  >
+                    {
+                      "Bentukcinta.com menawarkan berbagai fitur untuk undangan online mu agar undangan onlinemu menjadi lebih berguna dan elegan"
+                    }
+                  </dd>
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__q1L7Y)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__wzRp4)}
+                    >
+                      <FiturCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.fiturCard__cYwMw
+                        )}
+                        slot={"Informasi Undangan"}
+                        slot2={
+                          "Memberikan informasi detail pasangan dan lokasi waktu upacara."
+                        }
+                      >
+                        <InfoSvgrepoComsvgIcon
+                          className={classNames(projectcss.all, sty.svg__hdr3A)}
+                          role={"img"}
+                        />
+                      </FiturCard>
+                    </div>
+
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__bg4H6)}
+                    >
+                      <FiturCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.fiturCard___85HQg
+                        )}
+                        slot={"Gallery Photo dan Video"}
+                        slot2={
+                          "Berbagi moment indah terbaik kalian dengan foto dan video yang berkualitas."
+                        }
+                      >
+                        <CameraSvgrepoCom1SvgIcon
+                          className={classNames(projectcss.all, sty.svg__hqga8)}
+                          role={"img"}
+                        />
+                      </FiturCard>
+                    </div>
+
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__dBsfI)}
+                    >
+                      <FiturCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.fiturCard__uIdYf
+                        )}
+                        slot={"Peta Lokasi Upacara"}
+                        slot2={
+                          "Terhubung dengan google map, untuk mempermudah mencari lokasi."
+                        }
+                      >
+                        <GpsLocationLocatorSvgrepoComsvgIcon
+                          className={classNames(projectcss.all, sty.svg__iYf8)}
+                          role={"img"}
+                        />
+                      </FiturCard>
+                    </div>
+
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__rqiu)}
+                    >
+                      <FiturCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.fiturCard__jo0XM
+                        )}
+                        slot={"Kolom Komentar"}
+                        slot2={
+                          "Tamu dapat memberi ucapan selamat, doa restu untuk kalian yang berbahagia."
+                        }
+                      >
+                        <CommentDotsSvgrepoComsvgIcon
+                          className={classNames(projectcss.all, sty.svg__uGb3J)}
+                          role={"img"}
+                        />
+                      </FiturCard>
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___2Cdml
+                      )}
+                    >
+                      <FiturCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.fiturCard__bCdyc
+                        )}
+                        slot={"Background Lagu"}
+                        slot2={
+                          "Ceriakan undangan pernikahan dengan berlatar music favorit kalian."
+                        }
+                      >
+                        <SoundSvgrepoComsvgIcon
+                          className={classNames(projectcss.all, sty.svg__eKrmg)}
+                          role={"img"}
+                        />
+                      </FiturCard>
+                    </div>
+
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__opkZa)}
+                    >
+                      <FiturCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.fiturCard__rgvl7
+                        )}
+                        slot={"Layanan WhatsApp"}
+                        slot2={
+                          "Sewaktu-waktu tamu ingin info lebih lanjut bisa chat via button WhatsApp."
+                        }
+                      >
+                        <WhatsappSvgrepoCom1SvgIcon
+                          className={classNames(projectcss.all, sty.svg__jvBuS)}
+                          role={"img"}
+                        />
+                      </FiturCard>
+                    </div>
+                  </div>
+                </div>
+              ) : null}
+            </p.Stack>
+          </p.Stack>
+
+          <p.Stack
+            as={"section"}
+            data-plasmic-name={"price"}
+            data-plasmic-override={overrides.price}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.price)}
+            id={"price" as const}
+          >
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"row3"}
+              data-plasmic-override={overrides.row3}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.row3)}
+            >
+              {true ? (
+                <div
+                  data-plasmic-name={"title2"}
+                  data-plasmic-override={overrides.title2}
+                  className={classNames(projectcss.all, sty.title2)}
+                >
+                  <h1
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h1,
+                      projectcss.__wab_text,
+                      sty.h1__fjCBp
+                    )}
+                  >
+                    {"Premium"}
+                  </h1>
+
+                  <dd
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.dd__eTKg4
+                    )}
+                  >
+                    {"Berikut adalah paket yang bisa kamu pilih"}
+                  </dd>
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___7ZipU)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__vfsIu)}
+                    >
+                      <PriceCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.priceCard___0YTJm
+                        )}
+                        item={
+                          <React.Fragment>
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items"}
+                              data-plasmic-override={overrides.items}
+                              hasGap={true}
+                              className={classNames(projectcss.all, sty.items)}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___5S2YK
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___8Ac0M
+                                )}
+                              >
+                                {"Pilih Tema Standar"}
+                              </div>
+                            </p.Stack>
+
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items2"}
+                              data-plasmic-override={overrides.items2}
+                              hasGap={true}
+                              className={classNames(projectcss.all, sty.items2)}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__n8X7H
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__naJb1
+                                )}
+                              >
+                                {"1 Foto Sampul"}
+                              </div>
+                            </p.Stack>
+
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items3"}
+                              data-plasmic-override={overrides.items3}
+                              hasGap={true}
+                              className={classNames(projectcss.all, sty.items3)}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__xBSot
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___0DoDd
+                                )}
+                              >
+                                {"Foto Galery max. 4 Foto"}
+                              </div>
+                            </p.Stack>
+
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items4"}
+                              data-plasmic-override={overrides.items4}
+                              hasGap={true}
+                              className={classNames(projectcss.all, sty.items4)}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___5BaVn
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__bWscD
+                                )}
+                              >
+                                {"Peta Lokasi"}
+                              </div>
+                            </p.Stack>
+                          </React.Fragment>
+                        }
+                      >
+                        {"Dasar"}
+                      </PriceCard>
+                    </div>
+
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__infz6)}
+                    >
+                      <PriceCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.priceCard__viu9K
+                        )}
+                        harga={
+                          <React.Fragment>
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text___18CFh
+                              )}
+                            >
+                              {"Rp 200.000"}
+                            </div>
+
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__eEgOg
+                              )}
+                            >
+                              {"Rp 100.000"}
+                            </div>
+                          </React.Fragment>
+                        }
+                        isHighlight={true}
+                        item={
+                          <React.Fragment>
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items5"}
+                              data-plasmic-override={overrides.items5}
+                              hasGap={true}
+                              className={classNames(projectcss.all, sty.items5)}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___0IYuz
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___5SeEc
+                                )}
+                              >
+                                {"Pilih Tema Premium"}
+                              </div>
+                            </p.Stack>
+
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items6"}
+                              data-plasmic-override={overrides.items6}
+                              hasGap={true}
+                              className={classNames(projectcss.all, sty.items6)}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___3Xudo
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__yO5Fv
+                                )}
+                              >
+                                {"3 Foto Sampul"}
+                              </div>
+                            </p.Stack>
+
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items7"}
+                              data-plasmic-override={overrides.items7}
+                              hasGap={true}
+                              className={classNames(projectcss.all, sty.items7)}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__gN58
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__dj0WK
+                                )}
+                              >
+                                {"12 Foto Gallery"}
+                              </div>
+                            </p.Stack>
+
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items8"}
+                              data-plasmic-override={overrides.items8}
+                              hasGap={true}
+                              className={classNames(projectcss.all, sty.items8)}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__ry7X
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__ablqO
+                                )}
+                              >
+                                {"Video Gallery"}
+                              </div>
+                            </p.Stack>
+
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items13"}
+                              data-plasmic-override={overrides.items13}
+                              hasGap={true}
+                              className={classNames(
+                                projectcss.all,
+                                sty.items13
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__ojUYj
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__n5Dqd
+                                )}
+                              >
+                                {"Lagu Backsound"}
+                              </div>
+                            </p.Stack>
+
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items14"}
+                              data-plasmic-override={overrides.items14}
+                              hasGap={true}
+                              className={classNames(
+                                projectcss.all,
+                                sty.items14
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___3KsG4
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__eXxAn
+                                )}
+                              >
+                                {"WhatsApp"}
+                              </div>
+                            </p.Stack>
+
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items15"}
+                              data-plasmic-override={overrides.items15}
+                              hasGap={true}
+                              className={classNames(
+                                projectcss.all,
+                                sty.items15
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__k5OSx
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__oiv2D
+                                )}
+                              >
+                                {"Peta Lokasi"}
+                              </div>
+                            </p.Stack>
+
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items16"}
+                              data-plasmic-override={overrides.items16}
+                              hasGap={true}
+                              className={classNames(
+                                projectcss.all,
+                                sty.items16
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__ujVzh
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__gB94
+                                )}
+                              >
+                                {"Komentar Facebook"}
+                              </div>
+                            </p.Stack>
+                          </React.Fragment>
+                        }
+                      >
+                        {"Premium"}
+                      </PriceCard>
+                    </div>
+
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__n69Qg)}
+                    >
+                      <PriceCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.priceCard__tqj3F
+                        )}
+                        harga={
+                          <React.Fragment>
+                            {true ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___8LGxo
+                                )}
+                              >
+                                {"Rp 100.000"}
+                              </div>
+                            ) : null}
+
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__xiPwr
+                              )}
+                            >
+                              {"Hubungi Kami"}
+                            </div>
+                          </React.Fragment>
+                        }
+                        isAddDescription={true}
+                        item={
+                          <React.Fragment>
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items9"}
+                              data-plasmic-override={overrides.items9}
+                              hasGap={true}
+                              className={classNames(projectcss.all, sty.items9)}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__aJqH
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__eL2Pn
+                                )}
+                              >
+                                {"Pilih Tema Standar"}
+                              </div>
+                            </p.Stack>
+
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items10"}
+                              data-plasmic-override={overrides.items10}
+                              hasGap={true}
+                              className={classNames(
+                                projectcss.all,
+                                sty.items10
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__n8X7H
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__naJb1
+                                )}
+                              >
+                                {"3 Foto Sampul"}
+                              </div>
+                            </p.Stack>
+
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items11"}
+                              data-plasmic-override={overrides.items11}
+                              hasGap={true}
+                              className={classNames(
+                                projectcss.all,
+                                sty.items11
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__xBSot
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___0DoDd
+                                )}
+                              >
+                                {"foto"}
+                              </div>
+                            </p.Stack>
+
+                            <p.Stack
+                              as={"div"}
+                              data-plasmic-name={"items12"}
+                              data-plasmic-override={overrides.items12}
+                              hasGap={true}
+                              className={classNames(
+                                projectcss.all,
+                                sty.items12
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___5BaVn
+                                )}
+                              >
+                                {"✅"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__bWscD
+                                )}
+                              >
+                                {"Peta Lokasi"}
+                              </div>
+                            </p.Stack>
+                          </React.Fragment>
+                        }
+                        slot={
+                          "Mari kita bicarakan dari hati ke hati Siapa tau jodohkan?"
+                        }
+                      >
+                        {"Kustom"}
+                      </PriceCard>
+                    </div>
+                  </div>
+                </div>
+              ) : null}
+            </p.Stack>
+          </p.Stack>
+
+          <p.Stack
+            as={"section"}
+            data-plasmic-name={"contact"}
+            data-plasmic-override={overrides.contact}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.contact)}
+            id={"contact" as const}
+          >
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"row4"}
+              data-plasmic-override={overrides.row4}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.row4)}
+            >
+              {true ? (
+                <p.Stack
+                  as={"div"}
+                  data-plasmic-name={"title3"}
+                  data-plasmic-override={overrides.title3}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.title3)}
+                >
+                  {true ? (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__ukHu3)}
+                    >
+                      <h4
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h4,
+                          projectcss.__wab_text,
+                          sty.h4__u0L9T
+                        )}
+                      >
+                        {"Yuk bisa yuk, kita onlinekan"}
+                      </h4>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__yzogd
+                        )}
+                      >
+                        {
+                          "Jadikan Bentukcinta bagian dari sejarah perjalan cinta anda sekarang juga"
+                        }
+                      </div>
+                    </div>
+                  ) : null}
+
+                  <p.PlasmicLink
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      sty.link__pSiEc
+                    )}
+                    component={Link}
+                    platform={"nextjs"}
+                  >
+                    <h6
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h6,
+                        projectcss.__wab_text,
+                        sty.h6___3Vswd
+                      )}
+                    >
+                      {"Buat Undangan Sekarang"}
+                    </h6>
+                  </p.PlasmicLink>
+                </p.Stack>
+              ) : null}
+            </p.Stack>
+          </p.Stack>
+
+          <p.Stack
+            as={"section"}
+            data-plasmic-name={"portfolio"}
+            data-plasmic-override={overrides.portfolio}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.portfolio)}
+            id={"portfolio" as const}
+          >
+            <h4
+              className={classNames(
+                projectcss.all,
+                projectcss.h4,
+                projectcss.__wab_text,
+                sty.h4__aUc2G
+              )}
+            >
+              {"Mereka sudah menggunakan Bentuk Cinta"}
+            </h4>
+
+            <div className={classNames(projectcss.all, sty.freeBox__hbbK)}>
               <GraphCMSFetcher
                 data-plasmic-name={"graphCmsFetcher"}
                 data-plasmic-override={overrides.graphCmsFetcher}
@@ -335,13 +1646,13 @@ function PlasmicHomepage__RenderFunc(props: {
                 <ph.DataCtxReader>
                   {$ctx => (
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__kBxD)}
+                      className={classNames(projectcss.all, sty.freeBox__sjCgq)}
                     >
                       <p.PlasmicLink
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
-                          sty.link__twWtR
+                          sty.link__pFLzA
                         )}
                         component={Link}
                         href={`/${(() => {
@@ -373,6 +1684,198 @@ function PlasmicHomepage__RenderFunc(props: {
               </GraphCMSFetcher>
             </div>
           </p.Stack>
+
+          <p.Stack
+            as={"section"}
+            data-plasmic-name={"partner"}
+            data-plasmic-override={overrides.partner}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.partner)}
+            id={"partner" as const}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__q2Q69)}>
+              <PlasmicLogosvgIcon
+                className={classNames(projectcss.all, sty.svg___5Cvnz)}
+                role={"img"}
+              />
+
+              <HygraphsvgIcon
+                className={classNames(projectcss.all, sty.svg___453QJ)}
+                role={"img"}
+              />
+
+              <NexjssvgIcon
+                className={classNames(projectcss.all, sty.svg__lH6Nj)}
+                role={"img"}
+              />
+            </div>
+          </p.Stack>
+
+          <p.Stack
+            as={"footer"}
+            data-plasmic-name={"footer"}
+            data-plasmic-override={overrides.footer}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.footer)}
+          >
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.columns__qcFqX)}
+            >
+              <div className={classNames(projectcss.all, sty.column__ratQz)}>
+                {true ? (
+                  <div
+                    data-plasmic-name={"logo2"}
+                    data-plasmic-override={overrides.logo2}
+                    className={classNames(projectcss.all, sty.logo2)}
+                  >
+                    <h5
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h5,
+                        projectcss.__wab_text,
+                        sty.h5__di4S1
+                      )}
+                    >
+                      {"Bentuk Cinta"}
+                    </h5>
+                  </div>
+                ) : null}
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__jt3L
+                  )}
+                >
+                  {
+                    "Jasa undangan pernikahan digital / undangan pernikahan online di Bali. Membantu untuk memudahakan urusan undangan pernikahan anda hemat biaya, hemat tenaga dan hemat waktu."
+                  }
+                </div>
+              </div>
+
+              <div className={classNames(projectcss.all, sty.column__k6Gd4)}>
+                <h6
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h6,
+                    projectcss.__wab_text,
+                    sty.h6__qb6Ou
+                  )}
+                >
+                  {"Links"}
+                </h6>
+
+                <ul
+                  data-plasmic-name={"ul"}
+                  data-plasmic-override={overrides.ul}
+                  className={classNames(projectcss.all, projectcss.ul, sty.ul)}
+                >
+                  <li
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.li,
+                      projectcss.__wab_text,
+                      sty.li___9LOo
+                    )}
+                  >
+                    {"Beranda"}
+                  </li>
+
+                  <li
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.li,
+                      projectcss.__wab_text,
+                      sty.li__ua9Q3
+                    )}
+                  >
+                    {"Tentang Kami"}
+                  </li>
+
+                  <li
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.li,
+                      projectcss.__wab_text,
+                      sty.li___3RjK4
+                    )}
+                  >
+                    {"Harga"}
+                  </li>
+                </ul>
+              </div>
+
+              <div className={classNames(projectcss.all, sty.column__xqkOo)}>
+                <h6
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h6,
+                    projectcss.__wab_text,
+                    sty.h6__srEbH
+                  )}
+                >
+                  {"Alamat"}
+                </h6>
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__r5Fr8
+                  )}
+                >
+                  {
+                    "Jln. Ngurah Rai, Gg. XX, No. 9X, Br. Pande - Blahbatuh, Gianyar-Bali"
+                  }
+                </div>
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__m1Rdl
+                  )}
+                >
+                  {"+62 819-1656-7373\n+62 819-1617-2944"}
+                </div>
+              </div>
+            </p.Stack>
+
+            {true ? (
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__a59G)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__twTIm
+                  )}
+                >
+                  {"Build with 💖 by"}
+                </div>
+
+                <p.PlasmicLink
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__qGmBn
+                  )}
+                  component={Link}
+                  href={`/`}
+                  platform={"nextjs"}
+                >
+                  {"Bentukcinta.com"}
+                </p.PlasmicLink>
+              </p.Stack>
+            ) : null}
+          </p.Stack>
         </div>
       </div>
     </React.Fragment>
@@ -385,50 +1888,168 @@ const PlasmicDescendants = {
     "navBar",
     "alingLeft",
     "logo",
-    "h5",
     "navMenu",
     "tentangKami",
     "harga",
     "faq",
     "alingRigth",
-    "section",
-    "h1",
-    "img",
+    "header",
+    "udangan",
+    "udangan2",
+    "about",
+    "row",
+    "item",
+    "item2",
+    "item3",
+    "item4",
+    "feature",
+    "row2",
+    "title",
+    "price",
+    "row3",
+    "title2",
+    "items",
+    "items2",
+    "items3",
+    "items4",
+    "items5",
+    "items6",
+    "items7",
+    "items8",
+    "items13",
+    "items14",
+    "items15",
+    "items16",
+    "items9",
+    "items10",
+    "items11",
+    "items12",
+    "contact",
+    "row4",
+    "title3",
+    "portfolio",
     "graphCmsFetcher",
-    "graphCmsField"
+    "graphCmsField",
+    "partner",
+    "footer",
+    "logo2",
+    "ul"
   ],
   navBar: [
     "navBar",
     "alingLeft",
     "logo",
-    "h5",
     "navMenu",
     "tentangKami",
     "harga",
     "faq",
     "alingRigth"
   ],
-  alingLeft: [
-    "alingLeft",
-    "logo",
-    "h5",
-    "navMenu",
-    "tentangKami",
-    "harga",
-    "faq"
-  ],
-  logo: ["logo", "h5"],
-  h5: ["h5"],
+  alingLeft: ["alingLeft", "logo", "navMenu", "tentangKami", "harga", "faq"],
+  logo: ["logo"],
   navMenu: ["navMenu", "tentangKami", "harga", "faq"],
   tentangKami: ["tentangKami"],
   harga: ["harga"],
   faq: ["faq"],
   alingRigth: ["alingRigth"],
-  section: ["section", "h1", "img", "graphCmsFetcher", "graphCmsField"],
-  h1: ["h1"],
-  img: ["img"],
+  header: ["header", "udangan", "udangan2"],
+  udangan: ["udangan"],
+  udangan2: ["udangan2"],
+  about: ["about", "row", "item", "item2", "item3", "item4"],
+  row: ["row", "item", "item2", "item3", "item4"],
+  item: ["item"],
+  item2: ["item2"],
+  item3: ["item3"],
+  item4: ["item4"],
+  feature: ["feature", "row2", "title"],
+  row2: ["row2", "title"],
+  title: ["title"],
+  price: [
+    "price",
+    "row3",
+    "title2",
+    "items",
+    "items2",
+    "items3",
+    "items4",
+    "items5",
+    "items6",
+    "items7",
+    "items8",
+    "items13",
+    "items14",
+    "items15",
+    "items16",
+    "items9",
+    "items10",
+    "items11",
+    "items12"
+  ],
+  row3: [
+    "row3",
+    "title2",
+    "items",
+    "items2",
+    "items3",
+    "items4",
+    "items5",
+    "items6",
+    "items7",
+    "items8",
+    "items13",
+    "items14",
+    "items15",
+    "items16",
+    "items9",
+    "items10",
+    "items11",
+    "items12"
+  ],
+  title2: [
+    "title2",
+    "items",
+    "items2",
+    "items3",
+    "items4",
+    "items5",
+    "items6",
+    "items7",
+    "items8",
+    "items13",
+    "items14",
+    "items15",
+    "items16",
+    "items9",
+    "items10",
+    "items11",
+    "items12"
+  ],
+  items: ["items"],
+  items2: ["items2"],
+  items3: ["items3"],
+  items4: ["items4"],
+  items5: ["items5"],
+  items6: ["items6"],
+  items7: ["items7"],
+  items8: ["items8"],
+  items13: ["items13"],
+  items14: ["items14"],
+  items15: ["items15"],
+  items16: ["items16"],
+  items9: ["items9"],
+  items10: ["items10"],
+  items11: ["items11"],
+  items12: ["items12"],
+  contact: ["contact", "row4", "title3"],
+  row4: ["row4", "title3"],
+  title3: ["title3"],
+  portfolio: ["portfolio", "graphCmsFetcher", "graphCmsField"],
   graphCmsFetcher: ["graphCmsFetcher", "graphCmsField"],
-  graphCmsField: ["graphCmsField"]
+  graphCmsField: ["graphCmsField"],
+  partner: ["partner"],
+  footer: ["footer", "logo2", "ul"],
+  logo2: ["logo2"],
+  ul: ["ul"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -438,17 +2059,52 @@ type NodeDefaultElementType = {
   navBar: "div";
   alingLeft: "div";
   logo: "div";
-  h5: "h5";
   navMenu: "div";
   tentangKami: "a";
   harga: "a";
   faq: "a";
   alingRigth: "div";
-  section: "section";
-  h1: "h1";
-  img: typeof p.PlasmicImg;
+  header: "header";
+  udangan: "div";
+  udangan2: "div";
+  about: "section";
+  row: "div";
+  item: "div";
+  item2: "div";
+  item3: "div";
+  item4: "div";
+  feature: "section";
+  row2: "div";
+  title: "div";
+  price: "section";
+  row3: "div";
+  title2: "div";
+  items: "div";
+  items2: "div";
+  items3: "div";
+  items4: "div";
+  items5: "div";
+  items6: "div";
+  items7: "div";
+  items8: "div";
+  items13: "div";
+  items14: "div";
+  items15: "div";
+  items16: "div";
+  items9: "div";
+  items10: "div";
+  items11: "div";
+  items12: "div";
+  contact: "section";
+  row4: "div";
+  title3: "div";
+  portfolio: "section";
   graphCmsFetcher: typeof GraphCMSFetcher;
   graphCmsField: typeof GraphCMSField;
+  partner: "section";
+  footer: "footer";
+  logo2: "div";
+  ul: "ul";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -515,17 +2171,52 @@ export const PlasmicHomepage = Object.assign(
     navBar: makeNodeComponent("navBar"),
     alingLeft: makeNodeComponent("alingLeft"),
     logo: makeNodeComponent("logo"),
-    h5: makeNodeComponent("h5"),
     navMenu: makeNodeComponent("navMenu"),
     tentangKami: makeNodeComponent("tentangKami"),
     harga: makeNodeComponent("harga"),
     faq: makeNodeComponent("faq"),
     alingRigth: makeNodeComponent("alingRigth"),
-    section: makeNodeComponent("section"),
-    h1: makeNodeComponent("h1"),
-    img: makeNodeComponent("img"),
+    header: makeNodeComponent("header"),
+    udangan: makeNodeComponent("udangan"),
+    udangan2: makeNodeComponent("udangan2"),
+    about: makeNodeComponent("about"),
+    row: makeNodeComponent("row"),
+    item: makeNodeComponent("item"),
+    item2: makeNodeComponent("item2"),
+    item3: makeNodeComponent("item3"),
+    item4: makeNodeComponent("item4"),
+    feature: makeNodeComponent("feature"),
+    row2: makeNodeComponent("row2"),
+    title: makeNodeComponent("title"),
+    price: makeNodeComponent("price"),
+    row3: makeNodeComponent("row3"),
+    title2: makeNodeComponent("title2"),
+    items: makeNodeComponent("items"),
+    items2: makeNodeComponent("items2"),
+    items3: makeNodeComponent("items3"),
+    items4: makeNodeComponent("items4"),
+    items5: makeNodeComponent("items5"),
+    items6: makeNodeComponent("items6"),
+    items7: makeNodeComponent("items7"),
+    items8: makeNodeComponent("items8"),
+    items13: makeNodeComponent("items13"),
+    items14: makeNodeComponent("items14"),
+    items15: makeNodeComponent("items15"),
+    items16: makeNodeComponent("items16"),
+    items9: makeNodeComponent("items9"),
+    items10: makeNodeComponent("items10"),
+    items11: makeNodeComponent("items11"),
+    items12: makeNodeComponent("items12"),
+    contact: makeNodeComponent("contact"),
+    row4: makeNodeComponent("row4"),
+    title3: makeNodeComponent("title3"),
+    portfolio: makeNodeComponent("portfolio"),
     graphCmsFetcher: makeNodeComponent("graphCmsFetcher"),
     graphCmsField: makeNodeComponent("graphCmsField"),
+    partner: makeNodeComponent("partner"),
+    footer: makeNodeComponent("footer"),
+    logo2: makeNodeComponent("logo2"),
+    ul: makeNodeComponent("ul"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
