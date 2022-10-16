@@ -34,6 +34,8 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import NavBar from "../../NavBar"; // plasmic-import: Bsrcg3o0x1/component
+import TombolCinta from "../../TombolCinta"; // plasmic-import: KWGUqEZOm9/component
 import FiturCard from "../../FiturCard"; // plasmic-import: bQ8noILEe4/component
 import PriceCard from "../../PriceCard"; // plasmic-import: q8Lmfm3hoF/component
 import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
@@ -68,14 +70,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  navBar?: p.Flex<"div">;
-  alingLeft?: p.Flex<"div">;
-  logo?: p.Flex<"div">;
-  navMenu?: p.Flex<"div">;
-  tentangKami?: p.Flex<"a"> & Partial<LinkProps>;
-  harga?: p.Flex<"a"> & Partial<LinkProps>;
-  faq?: p.Flex<"a"> & Partial<LinkProps>;
-  alingRigth?: p.Flex<"div">;
+  navBar?: p.Flex<typeof NavBar>;
   header?: p.Flex<"header">;
   udangan?: p.Flex<"div">;
   udangan2?: p.Flex<"div">;
@@ -116,6 +111,7 @@ export type PlasmicHomepage__OverridesType = {
   partner?: p.Flex<"section">;
   footer?: p.Flex<"footer">;
   logo2?: p.Flex<"div">;
+  h5?: p.Flex<"h5">;
   ul?: p.Flex<"ul">;
 };
 
@@ -188,133 +184,11 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <div
+          <NavBar
             data-plasmic-name={"navBar"}
             data-plasmic-override={overrides.navBar}
-            className={classNames(projectcss.all, sty.navBar)}
-          >
-            <div
-              data-plasmic-name={"alingLeft"}
-              data-plasmic-override={overrides.alingLeft}
-              className={classNames(projectcss.all, sty.alingLeft)}
-            >
-              {true ? (
-                <div
-                  data-plasmic-name={"logo"}
-                  data-plasmic-override={overrides.logo}
-                  className={classNames(projectcss.all, sty.logo)}
-                >
-                  <h5
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h5,
-                      projectcss.__wab_text,
-                      sty.h5__eMv3U
-                    )}
-                  >
-                    {"Bentuk Cinta"}
-                  </h5>
-                </div>
-              ) : null}
-
-              <p.Stack
-                as={"div"}
-                data-plasmic-name={"navMenu"}
-                data-plasmic-override={overrides.navMenu}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.navMenu)}
-              >
-                <p.PlasmicLink
-                  data-plasmic-name={"tentangKami"}
-                  data-plasmic-override={overrides.tentangKami}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    sty.tentangKami
-                  )}
-                  component={Link}
-                  platform={"nextjs"}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hoijD
-                    )}
-                  >
-                    {"Tentang Kami"}
-                  </div>
-                </p.PlasmicLink>
-
-                <p.PlasmicLink
-                  data-plasmic-name={"harga"}
-                  data-plasmic-override={overrides.harga}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    sty.harga
-                  )}
-                  component={Link}
-                  platform={"nextjs"}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__kv1Cv
-                    )}
-                  >
-                    {"Harga"}
-                  </div>
-                </p.PlasmicLink>
-
-                <p.PlasmicLink
-                  data-plasmic-name={"faq"}
-                  data-plasmic-override={overrides.faq}
-                  className={classNames(projectcss.all, projectcss.a, sty.faq)}
-                  component={Link}
-                  platform={"nextjs"}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___6Fi9
-                    )}
-                  >
-                    {"FAQ"}
-                  </div>
-                </p.PlasmicLink>
-              </p.Stack>
-            </div>
-
-            <div
-              data-plasmic-name={"alingRigth"}
-              data-plasmic-override={overrides.alingRigth}
-              className={classNames(projectcss.all, sty.alingRigth)}
-            >
-              <p.PlasmicLink
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  sty.link__e8TRn
-                )}
-                component={Link}
-                platform={"nextjs"}
-              >
-                <h6
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h6,
-                    projectcss.__wab_text,
-                    sty.h6___6A10Q
-                  )}
-                >
-                  {"Hubungi Kami"}
-                </h6>
-              </p.PlasmicLink>
-            </div>
-          </div>
+            className={classNames("__wab_instance", sty.navBar)}
+          />
 
           <p.Stack
             as={"header"}
@@ -366,47 +240,26 @@ function PlasmicHomepage__RenderFunc(props: {
                     hasGap={true}
                     className={classNames(projectcss.all, sty.freeBox__xj8Yc)}
                   >
-                    <p.PlasmicLink
+                    <TombolCinta
                       className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        sty.link__k3BmE
+                        "__wab_instance",
+                        sty.tombolCinta__cmga5
                       )}
-                      component={Link}
-                      platform={"nextjs"}
+                      size={"large" as const}
                     >
-                      <h6
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h6,
-                          projectcss.__wab_text,
-                          sty.h6___6Ip8M
-                        )}
-                      >
-                        {"Pelajari Selengkapnya"}
-                      </h6>
-                    </p.PlasmicLink>
+                      {"Pelajari Selengkapnya"}
+                    </TombolCinta>
 
-                    <p.PlasmicLink
+                    <TombolCinta
                       className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        sty.link__uW3Ui
+                        "__wab_instance",
+                        sty.tombolCinta__uGjeo
                       )}
-                      component={Link}
-                      platform={"nextjs"}
+                      size={"large" as const}
+                      type={"secondary" as const}
                     >
-                      <h6
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h6,
-                          projectcss.__wab_text,
-                          sty.h6__lKJ
-                        )}
-                      >
-                        {"Pelajari Selengkapnya"}
-                      </h6>
-                    </p.PlasmicLink>
+                      {"Buat Undangan"}
+                    </TombolCinta>
                   </p.Stack>
                 ) : null}
 
@@ -535,25 +388,31 @@ function PlasmicHomepage__RenderFunc(props: {
                 hasGap={true}
                 className={classNames(projectcss.all, sty.columns__cyDe6)}
               >
-                <div className={classNames(projectcss.all, sty.column__qaVd)}>
-                  <p.PlasmicImg
-                    alt={""}
-                    className={classNames(sty.img___7OA6)}
-                    displayHeight={"auto" as const}
-                    displayMaxHeight={"none" as const}
-                    displayMaxWidth={"100%" as const}
-                    displayMinHeight={"0" as const}
-                    displayMinWidth={"0" as const}
-                    displayWidth={"60%" as const}
-                    loading={"lazy" as const}
-                    src={{
-                      src: "/plasmic/bentukcinta/images/phoneImageMinpng.png",
-                      fullWidth: 600,
-                      fullHeight: 710,
-                      aspectRatio: undefined
-                    }}
-                  />
-                </div>
+                {(
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : true
+                ) ? (
+                  <div className={classNames(projectcss.all, sty.column__qaVd)}>
+                    <p.PlasmicImg
+                      alt={""}
+                      className={classNames(sty.img___7OA6)}
+                      displayHeight={"auto" as const}
+                      displayMaxHeight={"none" as const}
+                      displayMaxWidth={"100%" as const}
+                      displayMinHeight={"0" as const}
+                      displayMinWidth={"0" as const}
+                      displayWidth={"60%" as const}
+                      loading={"lazy" as const}
+                      src={{
+                        src: "/plasmic/bentukcinta/images/phoneImageMinpng.png",
+                        fullWidth: 600,
+                        fullHeight: 710,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </div>
+                ) : null}
 
                 <p.Stack
                   as={"div"}
@@ -713,26 +572,15 @@ function PlasmicHomepage__RenderFunc(props: {
                       hasGap={true}
                       className={classNames(projectcss.all, sty.freeBox__ouGnw)}
                     >
-                      <p.PlasmicLink
+                      <TombolCinta
                         className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          sty.link__tnF1
+                          "__wab_instance",
+                          sty.tombolCinta__hm9PO
                         )}
-                        component={Link}
-                        platform={"nextjs"}
+                        size={"large" as const}
                       >
-                        <h6
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.h6,
-                            projectcss.__wab_text,
-                            sty.h6___1Nc6K
-                          )}
-                        >
-                          {"Buat Undangan Sekarang"}
-                        </h6>
-                      </p.PlasmicLink>
+                        {"Buat Undangan"}
+                      </TombolCinta>
                     </p.Stack>
                   ) : null}
                 </p.Stack>
@@ -783,133 +631,145 @@ function PlasmicHomepage__RenderFunc(props: {
                       "Bentukcinta.com menawarkan berbagai fitur untuk undangan online mu agar undangan onlinemu menjadi lebih berguna dan elegan"
                     }
                   </dd>
+                </div>
+              ) : null}
 
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__q1L7Y)}
+              <div className={classNames(projectcss.all, sty.freeBox__q1L7Y)}>
+                <div className={classNames(projectcss.all, sty.freeBox__wzRp4)}>
+                  <FiturCard
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fiturCard__cYwMw
+                    )}
+                    slot={"Informasi Undangan"}
+                    slot2={
+                      "Memberikan informasi detail pasangan dan lokasi waktu upacara."
+                    }
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__wzRp4)}
-                    >
-                      <FiturCard
-                        className={classNames(
-                          "__wab_instance",
-                          sty.fiturCard__cYwMw
-                        )}
-                        slot={"Informasi Undangan"}
-                        slot2={
-                          "Memberikan informasi detail pasangan dan lokasi waktu upacara."
-                        }
-                      >
-                        <InfoSvgrepoComsvgIcon
-                          className={classNames(projectcss.all, sty.svg__hdr3A)}
-                          role={"img"}
-                        />
-                      </FiturCard>
-                    </div>
+                    <InfoSvgrepoComsvgIcon
+                      className={classNames(projectcss.all, sty.svg__hdr3A)}
+                      role={"img"}
+                    />
+                  </FiturCard>
+                </div>
 
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__bg4H6)}
-                    >
-                      <FiturCard
-                        className={classNames(
-                          "__wab_instance",
-                          sty.fiturCard___85HQg
-                        )}
-                        slot={"Gallery Photo dan Video"}
-                        slot2={
-                          "Berbagi moment indah terbaik kalian dengan foto dan video yang berkualitas."
-                        }
-                      >
-                        <CameraSvgrepoCom1SvgIcon
-                          className={classNames(projectcss.all, sty.svg__hqga8)}
-                          role={"img"}
-                        />
-                      </FiturCard>
-                    </div>
+                <div className={classNames(projectcss.all, sty.freeBox__bg4H6)}>
+                  <FiturCard
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fiturCard___85HQg
+                    )}
+                    slot={"Gallery Photo dan Video"}
+                    slot2={
+                      "Berbagi moment indah terbaik kalian dengan foto dan video yang berkualitas."
+                    }
+                  >
+                    <CameraSvgrepoCom1SvgIcon
+                      className={classNames(projectcss.all, sty.svg__hqga8)}
+                      role={"img"}
+                    />
+                  </FiturCard>
+                </div>
 
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__dBsfI)}
-                    >
-                      <FiturCard
-                        className={classNames(
-                          "__wab_instance",
-                          sty.fiturCard__uIdYf
-                        )}
-                        slot={"Peta Lokasi Upacara"}
-                        slot2={
-                          "Terhubung dengan google map, untuk mempermudah mencari lokasi."
-                        }
-                      >
-                        <GpsLocationLocatorSvgrepoComsvgIcon
-                          className={classNames(projectcss.all, sty.svg__iYf8)}
-                          role={"img"}
-                        />
-                      </FiturCard>
-                    </div>
+                <div className={classNames(projectcss.all, sty.freeBox__dBsfI)}>
+                  <FiturCard
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fiturCard__uIdYf
+                    )}
+                    slot={"Peta Lokasi Upacara"}
+                    slot2={
+                      "Terhubung dengan google map, untuk mempermudah mencari lokasi."
+                    }
+                  >
+                    <GpsLocationLocatorSvgrepoComsvgIcon
+                      className={classNames(projectcss.all, sty.svg__iYf8)}
+                      role={"img"}
+                    />
+                  </FiturCard>
+                </div>
 
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__rqiu)}
-                    >
-                      <FiturCard
-                        className={classNames(
-                          "__wab_instance",
-                          sty.fiturCard__jo0XM
-                        )}
-                        slot={"Kolom Komentar"}
-                        slot2={
-                          "Tamu dapat memberi ucapan selamat, doa restu untuk kalian yang berbahagia."
-                        }
-                      >
-                        <CommentDotsSvgrepoComsvgIcon
-                          className={classNames(projectcss.all, sty.svg__uGb3J)}
-                          role={"img"}
-                        />
-                      </FiturCard>
-                    </div>
+                <div className={classNames(projectcss.all, sty.freeBox__rqiu)}>
+                  <FiturCard
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fiturCard__jo0XM
+                    )}
+                    slot={"Kolom Komentar"}
+                    slot2={
+                      "Tamu dapat memberi ucapan selamat, doa restu untuk kalian yang berbahagia."
+                    }
+                  >
+                    <CommentDotsSvgrepoComsvgIcon
+                      className={classNames(projectcss.all, sty.svg__uGb3J)}
+                      role={"img"}
+                    />
+                  </FiturCard>
+                </div>
 
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___2Cdml
-                      )}
-                    >
-                      <FiturCard
-                        className={classNames(
-                          "__wab_instance",
-                          sty.fiturCard__bCdyc
-                        )}
-                        slot={"Background Lagu"}
-                        slot2={
-                          "Ceriakan undangan pernikahan dengan berlatar music favorit kalian."
-                        }
-                      >
-                        <SoundSvgrepoComsvgIcon
-                          className={classNames(projectcss.all, sty.svg__eKrmg)}
-                          role={"img"}
-                        />
-                      </FiturCard>
-                    </div>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___2Cdml)}
+                >
+                  <FiturCard
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fiturCard__bCdyc
+                    )}
+                    slot={"Background Lagu"}
+                    slot2={
+                      "Ceriakan undangan pernikahan dengan berlatar music favorit kalian."
+                    }
+                  >
+                    <SoundSvgrepoComsvgIcon
+                      className={classNames(projectcss.all, sty.svg__eKrmg)}
+                      role={"img"}
+                    />
+                  </FiturCard>
+                </div>
 
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__opkZa)}
-                    >
-                      <FiturCard
+                <div className={classNames(projectcss.all, sty.freeBox__opkZa)}>
+                  <FiturCard
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fiturCard__rgvl7
+                    )}
+                    slot={"Layanan WhatsApp"}
+                    slot2={
+                      "Sewaktu-waktu tamu ingin info lebih lanjut bisa chat via button WhatsApp."
+                    }
+                  >
+                    <WhatsappSvgrepoCom1SvgIcon
+                      className={classNames(projectcss.all, sty.svg__jvBuS)}
+                      role={"img"}
+                    />
+                  </FiturCard>
+                </div>
+              </div>
+
+              {true ? (
+                <div className={classNames(projectcss.all, sty.freeBox__ou9V8)}>
+                  <p.PlasmicLink
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      sty.link___69CYx
+                    )}
+                    component={Link}
+                    platform={"nextjs"}
+                  >
+                    {true ? (
+                      <TombolCinta
                         className={classNames(
                           "__wab_instance",
-                          sty.fiturCard__rgvl7
+                          sty.tombolCinta__kytll
                         )}
-                        slot={"Layanan WhatsApp"}
-                        slot2={
-                          "Sewaktu-waktu tamu ingin info lebih lanjut bisa chat via button WhatsApp."
-                        }
+                        size={"large" as const}
+                        type={"primary" as const}
                       >
-                        <WhatsappSvgrepoCom1SvgIcon
-                          className={classNames(projectcss.all, sty.svg__jvBuS)}
-                          role={"img"}
-                        />
-                      </FiturCard>
-                    </div>
-                  </div>
+                        {"Buat Undangan"}
+                      </TombolCinta>
+                    ) : null}
+                  </p.PlasmicLink>
                 </div>
               ) : null}
             </p.Stack>
@@ -944,7 +804,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.h1__fjCBp
                     )}
                   >
-                    {"Premium"}
+                    {"Harga"}
                   </h1>
 
                   <dd
@@ -1558,55 +1418,88 @@ function PlasmicHomepage__RenderFunc(props: {
                   hasGap={true}
                   className={classNames(projectcss.all, sty.title3)}
                 >
-                  {true ? (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__ukHu3)}
+                  <div
+                    className={classNames(projectcss.all, sty.columns__k5ZX)}
+                  >
+                    <p.Stack
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.column__cjvgq)}
                     >
-                      <h4
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h4,
-                          projectcss.__wab_text,
-                          sty.h4__u0L9T
-                        )}
-                      >
-                        {"Yuk bisa yuk, kita onlinekan"}
-                      </h4>
+                      {true ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__f19S0
+                          )}
+                        >
+                          <h4
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.h4,
+                              projectcss.__wab_text,
+                              sty.h4__fkKFy
+                            )}
+                          >
+                            {"Yuk bisa yuk, kita onlinekan"}
+                          </h4>
 
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__sJmYv
+                            )}
+                          >
+                            {
+                              "Jadikan Bentukcinta bagian dari sejarah perjalan cintamu sekarang juga"
+                            }
+                          </div>
+                        </div>
+                      ) : null}
+
+                      <TombolCinta
+                        className={classNames(
+                          "__wab_instance",
+                          sty.tombolCinta__hMlpa
+                        )}
+                        size={"large" as const}
+                      >
+                        {"Buat Undangan Sekarang"}
+                      </TombolCinta>
+                    </p.Stack>
+
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__yzogd
+                          sty.column__b6GKr
                         )}
                       >
-                        {
-                          "Jadikan Bentukcinta bagian dari sejarah perjalan cinta anda sekarang juga"
-                        }
+                        <p.PlasmicImg
+                          alt={""}
+                          className={classNames(sty.img__yyrwe)}
+                          displayHeight={"auto" as const}
+                          displayMaxHeight={"none" as const}
+                          displayMaxWidth={"100%" as const}
+                          displayMinHeight={"0" as const}
+                          displayMinWidth={"0" as const}
+                          displayWidth={"300px" as const}
+                          loading={"lazy" as const}
+                          src={{
+                            src: "/plasmic/bentukcinta/images/iPhoneXBannerMinpng.png",
+                            fullWidth: 628,
+                            fullHeight: 696,
+                            aspectRatio: undefined
+                          }}
+                        />
                       </div>
-                    </div>
-                  ) : null}
-
-                  <p.PlasmicLink
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      sty.link__pSiEc
-                    )}
-                    component={Link}
-                    platform={"nextjs"}
-                  >
-                    <h6
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h6,
-                        projectcss.__wab_text,
-                        sty.h6___3Vswd
-                      )}
-                    >
-                      {"Buat Undangan Sekarang"}
-                    </h6>
-                  </p.PlasmicLink>
+                    ) : null}
+                  </div>
                 </p.Stack>
               ) : null}
             </p.Stack>
@@ -1693,7 +1586,11 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames(projectcss.all, sty.partner)}
             id={"partner" as const}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__q2Q69)}>
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__q2Q69)}
+            >
               <PlasmicLogosvgIcon
                 className={classNames(projectcss.all, sty.svg___5Cvnz)}
                 role={"img"}
@@ -1708,7 +1605,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.svg__lH6Nj)}
                 role={"img"}
               />
-            </div>
+            </p.Stack>
           </p.Stack>
 
           <p.Stack
@@ -1731,11 +1628,13 @@ function PlasmicHomepage__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.logo2)}
                   >
                     <h5
+                      data-plasmic-name={"h5"}
+                      data-plasmic-override={overrides.h5}
                       className={classNames(
                         projectcss.all,
                         projectcss.h5,
                         projectcss.__wab_text,
-                        sty.h5__di4S1
+                        sty.h5
                       )}
                     >
                       {"Bentuk Cinta"}
@@ -1886,13 +1785,6 @@ const PlasmicDescendants = {
   root: [
     "root",
     "navBar",
-    "alingLeft",
-    "logo",
-    "navMenu",
-    "tentangKami",
-    "harga",
-    "faq",
-    "alingRigth",
     "header",
     "udangan",
     "udangan2",
@@ -1933,25 +1825,10 @@ const PlasmicDescendants = {
     "partner",
     "footer",
     "logo2",
+    "h5",
     "ul"
   ],
-  navBar: [
-    "navBar",
-    "alingLeft",
-    "logo",
-    "navMenu",
-    "tentangKami",
-    "harga",
-    "faq",
-    "alingRigth"
-  ],
-  alingLeft: ["alingLeft", "logo", "navMenu", "tentangKami", "harga", "faq"],
-  logo: ["logo"],
-  navMenu: ["navMenu", "tentangKami", "harga", "faq"],
-  tentangKami: ["tentangKami"],
-  harga: ["harga"],
-  faq: ["faq"],
-  alingRigth: ["alingRigth"],
+  navBar: ["navBar"],
   header: ["header", "udangan", "udangan2"],
   udangan: ["udangan"],
   udangan2: ["udangan2"],
@@ -2047,8 +1924,9 @@ const PlasmicDescendants = {
   graphCmsFetcher: ["graphCmsFetcher", "graphCmsField"],
   graphCmsField: ["graphCmsField"],
   partner: ["partner"],
-  footer: ["footer", "logo2", "ul"],
-  logo2: ["logo2"],
+  footer: ["footer", "logo2", "h5", "ul"],
+  logo2: ["logo2", "h5"],
+  h5: ["h5"],
   ul: ["ul"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -2056,14 +1934,7 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  navBar: "div";
-  alingLeft: "div";
-  logo: "div";
-  navMenu: "div";
-  tentangKami: "a";
-  harga: "a";
-  faq: "a";
-  alingRigth: "div";
+  navBar: typeof NavBar;
   header: "header";
   udangan: "div";
   udangan2: "div";
@@ -2104,6 +1975,7 @@ type NodeDefaultElementType = {
   partner: "section";
   footer: "footer";
   logo2: "div";
+  h5: "h5";
   ul: "ul";
 };
 
@@ -2169,13 +2041,6 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     navBar: makeNodeComponent("navBar"),
-    alingLeft: makeNodeComponent("alingLeft"),
-    logo: makeNodeComponent("logo"),
-    navMenu: makeNodeComponent("navMenu"),
-    tentangKami: makeNodeComponent("tentangKami"),
-    harga: makeNodeComponent("harga"),
-    faq: makeNodeComponent("faq"),
-    alingRigth: makeNodeComponent("alingRigth"),
     header: makeNodeComponent("header"),
     udangan: makeNodeComponent("udangan"),
     udangan2: makeNodeComponent("udangan2"),
@@ -2216,6 +2081,7 @@ export const PlasmicHomepage = Object.assign(
     partner: makeNodeComponent("partner"),
     footer: makeNodeComponent("footer"),
     logo2: makeNodeComponent("logo2"),
+    h5: makeNodeComponent("h5"),
     ul: makeNodeComponent("ul"),
 
     // Metadata about props expected for PlasmicHomepage

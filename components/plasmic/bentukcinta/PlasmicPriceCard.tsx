@@ -34,6 +34,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import TombolCinta from "../../TombolCinta"; // plasmic-import: KWGUqEZOm9/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -61,6 +62,7 @@ export type PlasmicPriceCard__ArgsType = {
   item?: React.ReactNode;
   children?: React.ReactNode;
   slot?: React.ReactNode;
+  linkProp?: string;
 };
 
 type ArgPropType = keyof PlasmicPriceCard__ArgsType;
@@ -68,7 +70,8 @@ export const PlasmicPriceCard__ArgProps = new Array<ArgPropType>(
   "harga",
   "item",
   "children",
-  "slot"
+  "slot",
+  "linkProp"
 );
 
 export type PlasmicPriceCard__OverridesType = {
@@ -78,7 +81,7 @@ export type PlasmicPriceCard__OverridesType = {
   item?: p.Flex<"div">;
   addedDescription?: p.Flex<"div">;
   link?: p.Flex<"a"> & Partial<LinkProps>;
-  h6?: p.Flex<"h6">;
+  tombolCinta?: p.Flex<typeof TombolCinta>;
 };
 
 export interface DefaultPriceCardProps {
@@ -86,6 +89,7 @@ export interface DefaultPriceCardProps {
   item?: React.ReactNode;
   children?: React.ReactNode;
   slot?: React.ReactNode;
+  linkProp?: string;
   isHighlight?: SingleBooleanChoiceArg<"isHighlight">;
   isAddDescription?: SingleBooleanChoiceArg<"isAddDescription">;
   className?: string;
@@ -104,8 +108,9 @@ function PlasmicPriceCard__RenderFunc(props: {
   const args = React.useMemo(
     () =>
       Object.assign(
-        {},
-
+        {
+          linkProp: "" as const
+        },
         props.args
       ),
     [props.args]
@@ -318,42 +323,63 @@ function PlasmicPriceCard__RenderFunc(props: {
           )
         })}
         component={Link}
+        href={(() => {
+          try {
+            return $props.linkProp;
+          } catch (e) {
+            if (e instanceof TypeError) {
+              return undefined;
+            }
+            throw e;
+          }
+        })()}
         platform={"nextjs"}
       >
-        <h6
-          data-plasmic-name={"h6"}
-          data-plasmic-override={overrides.h6}
-          className={classNames(
-            projectcss.all,
-            projectcss.h6,
-            projectcss.__wab_text,
-            sty.h6,
-            {
-              [sty.h6isHighlight]: hasVariant(
-                variants,
-                "isHighlight",
-                "isHighlight"
-              )
-            }
-          )}
+        <TombolCinta
+          data-plasmic-name={"tombolCinta"}
+          data-plasmic-override={overrides.tombolCinta}
+          className={classNames("__wab_instance", sty.tombolCinta, {
+            [sty.tombolCintaisAddDescription]: hasVariant(
+              variants,
+              "isAddDescription",
+              "isAddDescription"
+            ),
+            [sty.tombolCintaisHighlight]: hasVariant(
+              variants,
+              "isHighlight",
+              "isHighlight"
+            )
+          })}
+          size={"large" as const}
+          type={
+            hasVariant(variants, "isHighlight", "isHighlight")
+              ? ("secondary" as const)
+              : ("primary" as const)
+          }
         >
-          {hasVariant(variants, "isHighlight", "isHighlight")
-            ? "Buat Undangan Sekarang"
-            : "Buat Undangan Sekarang"}
-        </h6>
+          {"Tombol Cinta"}
+        </TombolCinta>
       </p.PlasmicLink>
     </p.Stack>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "title", "price", "item", "addedDescription", "link", "h6"],
+  root: [
+    "root",
+    "title",
+    "price",
+    "item",
+    "addedDescription",
+    "link",
+    "tombolCinta"
+  ],
   title: ["title", "price"],
   price: ["price"],
   item: ["item"],
   addedDescription: ["addedDescription"],
-  link: ["link", "h6"],
-  h6: ["h6"]
+  link: ["link", "tombolCinta"],
+  tombolCinta: ["tombolCinta"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -365,7 +391,7 @@ type NodeDefaultElementType = {
   item: "div";
   addedDescription: "div";
   link: "a";
-  h6: "h6";
+  tombolCinta: typeof TombolCinta;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -434,7 +460,7 @@ export const PlasmicPriceCard = Object.assign(
     item: makeNodeComponent("item"),
     addedDescription: makeNodeComponent("addedDescription"),
     link: makeNodeComponent("link"),
-    h6: makeNodeComponent("h6"),
+    tombolCinta: makeNodeComponent("tombolCinta"),
 
     // Metadata about props expected for PlasmicPriceCard
     internalVariantProps: PlasmicPriceCard__VariantProps,

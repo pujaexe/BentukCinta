@@ -178,25 +178,17 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  background: #725dff;
+  background: none;
   box-shadow: none;
   min-width: 0;
   border-radius: 12px;
-  padding: 12px 24px;
 }
 .linkisHighlight {
   background: #ffffff;
 }
-.h6 {
+.tombolCinta:global(.__wab_instance) {
+  max-width: 100%;
   position: relative;
   width: 100%;
-  height: auto;
-  max-width: 800px;
-  align-self: auto;
-  color: #ffffff;
-  padding-top: 0px;
   min-width: 0;
-}
-.h6isHighlight {
-  color: #725dff;
 }

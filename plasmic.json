@@ -200,6 +200,45 @@
           "cssFilePath": "plasmic/bentukcinta/PlasmicPriceCard.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "KWGUqEZOm9",
+          "name": "TombolCinta",
+          "type": "managed",
+          "projectId": "6366ps4JUXGcyRNfgAokBX",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicTombolCinta.tsx",
+          "importSpec": {
+            "modulePath": "TombolCinta.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicTombolCinta.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "Bsrcg3o0x1",
+          "name": "NavBar",
+          "type": "managed",
+          "projectId": "6366ps4JUXGcyRNfgAokBX",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicNavBar.tsx",
+          "importSpec": {
+            "modulePath": "NavBar.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicNavBar.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "SVNXSXhQAU",
+          "name": "MenubarCollapse",
+          "type": "managed",
+          "projectId": "6366ps4JUXGcyRNfgAokBX",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicMenubarCollapse.tsx",
+          "importSpec": {
+            "modulePath": "MenubarCollapse.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicMenubarCollapse.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -252,6 +291,11 @@
           "id": "KSPMBHFJ3A",
           "name": "SoundSvgrepoComsvgIcon",
           "moduleFilePath": "plasmic/bentukcinta/icons/PlasmicIcon__SoundSvgrepoComsvg.tsx"
+        },
+        {
+          "id": "JoX-gYL16O",
+          "name": "MenuSvgrepoCom3SvgIcon",
+          "moduleFilePath": "plasmic/bentukcinta/icons/PlasmicIcon__MenuSvgrepoCom3Svg.tsx"
         }
       ],
       "images": [
@@ -269,6 +313,11 @@
           "id": "j3TNo1u4T",
           "name": "elip-bg.png",
           "filePath": "../public/plasmic/bentukcinta/images/elipBgpng.png"
+        },
+        {
+          "id": "BHesYXTFp",
+          "name": "iPhoneX-banner-min.png",
+          "filePath": "../public/plasmic/bentukcinta/images/iPhoneXBannerMinpng.png"
         }
       ],
       "indirect": false,

@@ -1,0 +1,75 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  position: relative;
+  background: #725dff;
+  cursor: pointer;
+  box-shadow: 0px 4px 16px 0px #725dff66;
+  border-radius: 12px;
+  padding: 8px 12px;
+  border-width: 1px;
+  border-style: none;
+}
+.rootsize_small {
+  padding: 12px 16px;
+}
+.rootsize_large {
+  padding: 18px 24px;
+}
+.roottype_primary {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.roottype_secondary {
+  background: none;
+  box-shadow: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border: 1px solid #c4c2c1;
+}
+.rootsize_large_type_primary {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+.roottype_secondary_size_large {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+.root:hover {
+  box-shadow: 0px 4px 24px 0px #725dff66;
+}
+.roottype_secondary:hover {
+  box-shadow: none;
+}
+.root:active {
+  box-shadow: none;
+  background: #624df5;
+}
+.roottype_secondary:active {
+  background: #725dff40;
+  border-color: #c4c2c1;
+}
+.freeBox {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+.slotTargetChildren {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.slotTargetChildrentype_secondary {
+  color: #0a0c2d;
+}
