@@ -35,6 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import { PlasmicHead } from "@plasmicapp/react-web"; // plasmic-import: 5FU_u38KTG/codeComponent
+import Slider from "react-slick"; // plasmic-import: HOQUyOpClJ/codeComponent
 import BrideTitleHero from "../../BrideTitleHero"; // plasmic-import: w1AsPdUUjj/component
 import HeroDateTime from "../../HeroDateTime"; // plasmic-import: lGTX7nAbs-/component
 import BrideCard from "../../BrideCard"; // plasmic-import: D8Nie4k4_Z/component
@@ -88,6 +89,7 @@ export type PlasmicTemplate2__OverridesType = {
   head?: p.Flex<typeof PlasmicHead>;
   hero?: p.Flex<"header">;
   imageContainer?: p.Flex<"div">;
+  slider?: p.Flex<typeof Slider>;
   heroTitle?: p.Flex<"div">;
   col2?: p.Flex<"div">;
   brideTitleHero?: p.Flex<typeof BrideTitleHero>;
@@ -114,7 +116,6 @@ export type PlasmicTemplate2__OverridesType = {
   title2?: p.Flex<"div">;
   youtubeWrapper?: p.Flex<"div">;
   youTube?: p.Flex<typeof YouTube>;
-  img?: p.Flex<typeof p.PlasmicImg>;
   antdImage?: p.Flex<typeof AntdImage>;
   audioWidget?: p.Flex<"div">;
   audioPlayer?: p.Flex<typeof AudioPlayer>;
@@ -248,6 +249,78 @@ function PlasmicTemplate2__RenderFunc(props: {
 
               value: args.bgMasshead
             })}
+
+            <Slider
+              data-plasmic-name={"slider"}
+              data-plasmic-override={overrides.slider}
+              autoplay={true}
+              autoplaySpeed={2000 as const}
+              className={classNames("__wab_instance", sty.slider)}
+              dots={false}
+            >
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img__glzHc)}
+                displayHeight={"auto" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"auto" as const}
+                src={(() => {
+                  try {
+                    return $ctx.graphCmsItem.slideshows[0].slideImageUrl;
+                  } catch (e) {
+                    if (e instanceof TypeError) {
+                      return "https://via.placeholder.com/150x90/FF0000/FFFFFF/?text=Slide_1";
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img__uEx0)}
+                displayHeight={"auto" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"auto" as const}
+                src={(() => {
+                  try {
+                    return $ctx.graphCmsItem.slideshows[1].slideImageUrl;
+                  } catch (e) {
+                    if (e instanceof TypeError) {
+                      return "https://via.placeholder.com/150x90/00FF00/FFFFFF/?text=Slide_2";
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img__ruv7S)}
+                displayHeight={"auto" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"auto" as const}
+                src={(() => {
+                  try {
+                    return $ctx.graphCmsItem.slideshows[2].slideImageUrl;
+                  } catch (e) {
+                    if (e instanceof TypeError) {
+                      return "https://via.placeholder.com/150x90/0000FF/FFFFFF/?text=Slide_3";
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+            </Slider>
           </div>
 
           <p.Stack
@@ -1180,10 +1253,8 @@ function PlasmicTemplate2__RenderFunc(props: {
             >
               <div className={classNames(projectcss.all, sty.freeBox__iIpP8)}>
                 <p.PlasmicImg
-                  data-plasmic-name={"img"}
-                  data-plasmic-override={overrides.img}
                   alt={""}
-                  className={classNames(sty.img)}
+                  className={classNames(sty.img__qItLu)}
                   displayHeight={"250px" as const}
                   displayMaxHeight={"none" as const}
                   displayMaxWidth={"100%" as const}
@@ -1379,6 +1450,7 @@ const PlasmicDescendants = {
     "head",
     "hero",
     "imageContainer",
+    "slider",
     "heroTitle",
     "col2",
     "brideTitleHero",
@@ -1405,7 +1477,6 @@ const PlasmicDescendants = {
     "title2",
     "youtubeWrapper",
     "youTube",
-    "img",
     "antdImage",
     "audioWidget",
     "audioPlayer",
@@ -1419,6 +1490,7 @@ const PlasmicDescendants = {
   hero: [
     "hero",
     "imageContainer",
+    "slider",
     "heroTitle",
     "col2",
     "brideTitleHero",
@@ -1426,7 +1498,8 @@ const PlasmicDescendants = {
     "heroDateTime",
     "h4"
   ],
-  imageContainer: ["imageContainer"],
+  imageContainer: ["imageContainer", "slider"],
+  slider: ["slider"],
   heroTitle: [
     "heroTitle",
     "col2",
@@ -1502,7 +1575,6 @@ const PlasmicDescendants = {
     "title2",
     "youtubeWrapper",
     "youTube",
-    "img",
     "antdImage",
     "audioWidget",
     "audioPlayer"
@@ -1510,7 +1582,6 @@ const PlasmicDescendants = {
   title2: ["title2"],
   youtubeWrapper: ["youtubeWrapper", "youTube"],
   youTube: ["youTube"],
-  img: ["img"],
   antdImage: ["antdImage"],
   audioWidget: ["audioWidget", "audioPlayer"],
   audioPlayer: ["audioPlayer"],
@@ -1528,6 +1599,7 @@ type NodeDefaultElementType = {
   head: typeof PlasmicHead;
   hero: "header";
   imageContainer: "div";
+  slider: typeof Slider;
   heroTitle: "div";
   col2: "div";
   brideTitleHero: typeof BrideTitleHero;
@@ -1554,7 +1626,6 @@ type NodeDefaultElementType = {
   title2: "div";
   youtubeWrapper: "div";
   youTube: typeof YouTube;
-  img: typeof p.PlasmicImg;
   antdImage: typeof AntdImage;
   audioWidget: "div";
   audioPlayer: typeof AudioPlayer;
@@ -1629,6 +1700,7 @@ export const PlasmicTemplate2 = Object.assign(
     head: makeNodeComponent("head"),
     hero: makeNodeComponent("hero"),
     imageContainer: makeNodeComponent("imageContainer"),
+    slider: makeNodeComponent("slider"),
     heroTitle: makeNodeComponent("heroTitle"),
     col2: makeNodeComponent("col2"),
     brideTitleHero: makeNodeComponent("brideTitleHero"),
@@ -1655,7 +1727,6 @@ export const PlasmicTemplate2 = Object.assign(
     title2: makeNodeComponent("title2"),
     youtubeWrapper: makeNodeComponent("youtubeWrapper"),
     youTube: makeNodeComponent("youTube"),
-    img: makeNodeComponent("img"),
     antdImage: makeNodeComponent("antdImage"),
     audioWidget: makeNodeComponent("audioWidget"),
     audioPlayer: makeNodeComponent("audioPlayer"),

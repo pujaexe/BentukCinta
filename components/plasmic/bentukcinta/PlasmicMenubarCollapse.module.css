@@ -81,9 +81,12 @@
 .text___8Dj38 {
   position: relative;
 }
+.link {
+  position: relative;
+  display: flex;
+}
 .tombolCinta:global(.__wab_instance) {
   max-width: 100%;
-  position: relative;
   width: 100%;
   min-width: 0;
 }

@@ -22,7 +22,7 @@
 }
 
 .plasmic_default_styles {
-  --mixin-ySKdYQzhg2a_font-family: "Poppins";
+  --mixin-ySKdYQzhg2a_font-family: "Poppins", sans-serif;
   --mixin-ySKdYQzhg2a_font-size: 0.88rem;
   --mixin-ySKdYQzhg2a_font-weight: 400;
   --mixin-ySKdYQzhg2a_font-style: normal;

@@ -122,7 +122,7 @@ function PlasmicInvitation__RenderFunc(props: {
                   query:
                     'query MyQuery {\n pengantin(where: {slug: "' +
                     $ctx.params.slug +
-                    '"}) {\n slug\n title\n eventLocation\n gmapsEmbed\n evenDateTime\n eventMap {\n latitude\n longitude\n }\n phone1\n phone2\n pengantinPria\n pengantinWanita\n bapakPria\n bapakWanita\n ibuPria\n ibuWanita\n alamatPria\n alamatWanita\n coverPhoto\n photoPria\n photoWanita\n youtubeUrl\n templateUse\n audioUrl galleries {photoGallery} openGraphImage\n }\n}\n',
+                    '"}) {\n slug\n title\n eventLocation\n gmapsEmbed\n evenDateTime\n eventMap {\n latitude\n longitude\n }\n phone1\n phone2\n pengantinPria\n pengantinWanita\n bapakPria\n bapakWanita\n ibuPria\n ibuWanita\n alamatPria\n alamatWanita\n coverPhoto\n photoPria\n photoWanita\n youtubeUrl\n templateUse\n audioUrl galleries {photoGallery} slideshows {slideImageUrl} openGraphImage\n }\n}\n',
                   variables: {}
                 };
               } catch (e) {

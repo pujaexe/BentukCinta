@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  height: 720px;
+  height: 864px;
   max-width: 100%;
   min-width: 0;
   flex-shrink: 0;
@@ -35,14 +35,14 @@
 .imageContainer {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 864px;
   max-width: 100%;
   overflow: hidden;
   position: absolute;
   left: 0px;
   top: 0px;
   min-width: 0;
-  min-height: 0;
+  flex-shrink: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .imageContainer {
@@ -68,6 +68,46 @@
   object-fit: cover;
 }
 .img___5JBmP > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.slider:global(.__wab_instance) {
+  width: 100%;
+  max-width: 100%;
+  flex-direction: column;
+  object-fit: cover;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  min-width: 0;
+}
+.img__glzHc {
+  object-fit: cover;
+  max-width: 100%;
+}
+.img__glzHc > picture > img {
+  object-fit: cover;
+}
+.img__glzHc > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.img__uEx0 {
+  object-fit: cover;
+  max-width: 100%;
+}
+.img__uEx0 > picture > img {
+  object-fit: cover;
+}
+.img__uEx0 > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.img__ruv7S {
+  object-fit: cover;
+  max-width: 100%;
+}
+.img__ruv7S > picture > img {
+  object-fit: cover;
+}
+.img__ruv7S > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .heroTitle {
@@ -775,7 +815,7 @@
     flex-shrink: 0;
   }
 }
-.img {
+.img__qItLu {
   position: absolute;
   object-fit: cover;
   max-width: 100%;
@@ -788,10 +828,10 @@
   filter: blur(5px);
   flex-shrink: 0;
 }
-.img > picture > img {
+.img__qItLu > picture > img {
   object-fit: cover;
 }
-.img > :global(.__wab_img-spacer) > img {
+.img__qItLu > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .antdImage:global(.__wab_instance) {

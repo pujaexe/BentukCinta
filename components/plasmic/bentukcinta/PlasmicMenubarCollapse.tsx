@@ -61,6 +61,7 @@ export type PlasmicMenubarCollapse__OverridesType = {
   root?: p.Flex<"div">;
   ul?: p.Flex<"ul">;
   li?: p.Flex<"li">;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
   tombolCinta?: p.Flex<typeof TombolCinta>;
 };
 
@@ -188,22 +189,34 @@ function PlasmicMenubarCollapse__RenderFunc(props: {
         </li>
       </ul>
 
-      <TombolCinta
-        data-plasmic-name={"tombolCinta"}
-        data-plasmic-override={overrides.tombolCinta}
-        className={classNames("__wab_instance", sty.tombolCinta)}
-        size={"small" as const}
+      <p.PlasmicLink
+        data-plasmic-name={"link"}
+        data-plasmic-override={overrides.link}
+        className={classNames(projectcss.all, projectcss.a, sty.link)}
+        component={Link}
+        href={
+          "https://api.whatsapp.com/send?phone=%2b6281916567373%20&text=Hi,%20saya%20mau%20pesan%20undangan%20online." as const
+        }
+        platform={"nextjs"}
       >
-        {"Contact Us"}
-      </TombolCinta>
+        <TombolCinta
+          data-plasmic-name={"tombolCinta"}
+          data-plasmic-override={overrides.tombolCinta}
+          className={classNames("__wab_instance", sty.tombolCinta)}
+          size={"small" as const}
+        >
+          {"Contact Us"}
+        </TombolCinta>
+      </p.PlasmicLink>
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "ul", "li", "tombolCinta"],
+  root: ["root", "ul", "li", "link", "tombolCinta"],
   ul: ["ul", "li"],
   li: ["li"],
+  link: ["link", "tombolCinta"],
   tombolCinta: ["tombolCinta"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -213,6 +226,7 @@ type NodeDefaultElementType = {
   root: "div";
   ul: "ul";
   li: "li";
+  link: "a";
   tombolCinta: typeof TombolCinta;
 };
 
@@ -279,6 +293,7 @@ export const PlasmicMenubarCollapse = Object.assign(
     // Helper components rendering sub-elements
     ul: makeNodeComponent("ul"),
     li: makeNodeComponent("li"),
+    link: makeNodeComponent("link"),
     tombolCinta: makeNodeComponent("tombolCinta"),
 
     // Metadata about props expected for PlasmicMenubarCollapse

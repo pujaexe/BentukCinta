@@ -65,8 +65,9 @@ export const PlasmicNavBar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNavBar__OverridesType = {
   root?: p.Flex<"div">;
+  freeBox?: p.Flex<"div">;
   alingLeft?: p.Flex<"div">;
-  logo?: p.Flex<"div">;
+  logo?: p.Flex<"a"> & Partial<LinkProps>;
   h5?: p.Flex<"h5">;
   navMenu?: p.Flex<"div">;
   tentangKami?: p.Flex<"a"> & Partial<LinkProps>;
@@ -143,132 +144,201 @@ function PlasmicNavBar__RenderFunc(props: {
       ]}
     >
       <div
-        data-plasmic-name={"alingLeft"}
-        data-plasmic-override={overrides.alingLeft}
-        className={classNames(projectcss.all, sty.alingLeft)}
+        data-plasmic-name={"freeBox"}
+        data-plasmic-override={overrides.freeBox}
+        className={classNames(projectcss.all, sty.freeBox)}
       >
-        {true ? (
-          <div
-            data-plasmic-name={"logo"}
-            data-plasmic-override={overrides.logo}
-            className={classNames(projectcss.all, sty.logo)}
-          >
-            <h5
-              data-plasmic-name={"h5"}
-              data-plasmic-override={overrides.h5}
-              className={classNames(
-                projectcss.all,
-                projectcss.h5,
-                projectcss.__wab_text,
-                sty.h5
-              )}
-            >
-              {"Bentuk Cinta"}
-            </h5>
-          </div>
-        ) : null}
-        {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
-          <p.Stack
-            as={"div"}
-            data-plasmic-name={"navMenu"}
-            data-plasmic-override={overrides.navMenu}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.navMenu)}
-          >
+        <div
+          data-plasmic-name={"alingLeft"}
+          data-plasmic-override={overrides.alingLeft}
+          className={classNames(projectcss.all, sty.alingLeft)}
+        >
+          {true ? (
             <p.PlasmicLink
-              data-plasmic-name={"tentangKami"}
-              data-plasmic-override={overrides.tentangKami}
-              className={classNames(
-                projectcss.all,
-                projectcss.a,
-                sty.tentangKami
-              )}
+              data-plasmic-name={"logo"}
+              data-plasmic-override={overrides.logo}
+              className={classNames(projectcss.all, projectcss.a, sty.logo, {
+                [sty.logoisCollapse]: hasVariant(
+                  variants,
+                  "isCollapse",
+                  "isCollapse"
+                )
+              })}
               component={Link}
+              href={
+                hasVariant(variants, "isCollapse", "isCollapse") ? `/` : `/`
+              }
               platform={"nextjs"}
             >
-              <div
+              <h5
+                data-plasmic-name={"h5"}
+                data-plasmic-override={overrides.h5}
                 className={classNames(
                   projectcss.all,
+                  projectcss.h5,
                   projectcss.__wab_text,
-                  sty.text__if0Pi
+                  sty.h5,
+                  {
+                    [sty.h5isCollapse]: hasVariant(
+                      variants,
+                      "isCollapse",
+                      "isCollapse"
+                    )
+                  }
                 )}
               >
-                {"Tentang Kami"}
-              </div>
+                {"Bentuk Cinta"}
+              </h5>
             </p.PlasmicLink>
-
-            <p.PlasmicLink
-              data-plasmic-name={"faq"}
-              data-plasmic-override={overrides.faq}
-              className={classNames(projectcss.all, projectcss.a, sty.faq)}
-              component={Link}
-              platform={"nextjs"}
+          ) : null}
+          {(
+            hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
+          ) ? (
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"navMenu"}
+              data-plasmic-override={overrides.navMenu}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.navMenu)}
             >
-              <div
+              <p.PlasmicLink
+                data-plasmic-name={"tentangKami"}
+                data-plasmic-override={overrides.tentangKami}
                 className={classNames(
                   projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___12OzW
+                  projectcss.a,
+                  sty.tentangKami
                 )}
+                component={Link}
+                href={"#about" as const}
+                platform={"nextjs"}
               >
-                {"Fitur"}
-              </div>
-            </p.PlasmicLink>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__if0Pi,
+                    {
+                      [sty.textisCollapse__if0Pi24Wj]: hasVariant(
+                        variants,
+                        "isCollapse",
+                        "isCollapse"
+                      )
+                    }
+                  )}
+                >
+                  {"Tentang Kami"}
+                </div>
+              </p.PlasmicLink>
 
-            <p.PlasmicLink
-              data-plasmic-name={"harga"}
-              data-plasmic-override={overrides.harga}
-              className={classNames(projectcss.all, projectcss.a, sty.harga)}
-              component={Link}
-              platform={"nextjs"}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__i7ZxI
-                )}
+              <p.PlasmicLink
+                data-plasmic-name={"faq"}
+                data-plasmic-override={overrides.faq}
+                className={classNames(projectcss.all, projectcss.a, sty.faq)}
+                component={Link}
+                href={"#feature" as const}
+                platform={"nextjs"}
               >
-                {"Harga"}
-              </div>
-            </p.PlasmicLink>
-          </p.Stack>
-        ) : null}
-      </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___12OzW
+                  )}
+                >
+                  {"Fitur"}
+                </div>
+              </p.PlasmicLink>
 
-      <div
-        data-plasmic-name={"alingRigth"}
-        data-plasmic-override={overrides.alingRigth}
-        className={classNames(projectcss.all, sty.alingRigth)}
-      >
-        {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
-          <TombolCinta
-            data-plasmic-name={"tombolCinta"}
-            data-plasmic-override={overrides.tombolCinta}
-            className={classNames("__wab_instance", sty.tombolCinta)}
-            size={"small" as const}
-          >
-            {"Contact Us"}
-          </TombolCinta>
-        ) : null}
-        {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
-          <button
-            data-plasmic-name={"button"}
-            data-plasmic-override={overrides.button}
+              <p.PlasmicLink
+                data-plasmic-name={"harga"}
+                data-plasmic-override={overrides.harga}
+                className={classNames(projectcss.all, projectcss.a, sty.harga)}
+                component={Link}
+                href={"#price" as const}
+                platform={"nextjs"}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__i7ZxI
+                  )}
+                >
+                  {"Harga"}
+                </div>
+              </p.PlasmicLink>
+            </p.Stack>
+          ) : null}
+        </div>
+
+        <div
+          data-plasmic-name={"alingRigth"}
+          data-plasmic-override={overrides.alingRigth}
+          className={classNames(projectcss.all, sty.alingRigth)}
+        >
+          <p.PlasmicLink
             className={classNames(
               projectcss.all,
-              projectcss.button,
-              sty.button
+              projectcss.a,
+              sty.link__s7S3T,
+              {
+                [sty.linkisCollapse__s7S3T24Wj]: hasVariant(
+                  variants,
+                  "isCollapse",
+                  "isCollapse"
+                )
+              }
             )}
+            component={Link}
+            href={
+              hasVariant(variants, "isCollapse", "isCollapse")
+                ? ("https://api.whatsapp.com/send?phone=%2b6281916567373%20&text=Hi,%20saya%20mau%20pesan%20undangan%20online." as const)
+                : ("https://api.whatsapp.com/send?phone=%2b6281916567373%20&text=Hi,%20saya%20mau%20pesan%20undangan%20online." as const)
+            }
+            platform={"nextjs"}
           >
-            <MenuSvgrepoCom3SvgIcon
-              data-plasmic-name={"svg"}
-              data-plasmic-override={overrides.svg}
-              className={classNames(projectcss.all, sty.svg)}
-              role={"img"}
-            />
-          </button>
-        ) : null}
+            {(
+              hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
+            ) ? (
+              <TombolCinta
+                data-plasmic-name={"tombolCinta"}
+                data-plasmic-override={overrides.tombolCinta}
+                className={classNames("__wab_instance", sty.tombolCinta, {
+                  [sty.tombolCintaisCollapse]: hasVariant(
+                    variants,
+                    "isCollapse",
+                    "isCollapse"
+                  )
+                })}
+                size={"small" as const}
+              >
+                {"Contact Us"}
+              </TombolCinta>
+            ) : null}
+          </p.PlasmicLink>
+
+          {(
+            hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
+          ) ? (
+            <button
+              data-plasmic-name={"button"}
+              data-plasmic-override={overrides.button}
+              className={classNames(
+                projectcss.all,
+                projectcss.button,
+                sty.button
+              )}
+            >
+              <MenuSvgrepoCom3SvgIcon
+                data-plasmic-name={"svg"}
+                data-plasmic-override={overrides.svg}
+                className={classNames(projectcss.all, sty.svg)}
+                role={"img"}
+              />
+            </button>
+          ) : null}
+        </div>
       </div>
 
       {(
@@ -292,7 +362,85 @@ function PlasmicNavBar__RenderFunc(props: {
               "isCollapse"
             )
           })}
-        />
+        >
+          <p.PlasmicLink
+            className={classNames(
+              projectcss.all,
+              projectcss.a,
+              sty.link___3Pcx8
+            )}
+            component={Link}
+            href={
+              triggers.active_root &&
+              hasVariant(globalVariants, "screen", "mobileOnly")
+                ? ("#about" as const)
+                : ("#about" as const)
+            }
+            platform={"nextjs"}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__ginIy
+              )}
+            >
+              {"Tentang Kami"}
+            </div>
+          </p.PlasmicLink>
+
+          <p.PlasmicLink
+            className={classNames(
+              projectcss.all,
+              projectcss.a,
+              sty.link__uQkXw
+            )}
+            component={Link}
+            href={
+              triggers.active_root &&
+              hasVariant(globalVariants, "screen", "mobileOnly")
+                ? ("#feature" as const)
+                : ("#feature" as const)
+            }
+            platform={"nextjs"}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__uf4Vv
+              )}
+            >
+              {"Fitur"}
+            </div>
+          </p.PlasmicLink>
+
+          <p.PlasmicLink
+            className={classNames(
+              projectcss.all,
+              projectcss.a,
+              sty.link___1ViJ
+            )}
+            component={Link}
+            href={
+              triggers.active_root &&
+              hasVariant(globalVariants, "screen", "mobileOnly")
+                ? ("#price" as const)
+                : ("#price" as const)
+            }
+            platform={"nextjs"}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___0Y31Z
+              )}
+            >
+              {"Harga"}
+            </div>
+          </p.PlasmicLink>
+        </MenubarCollapse>
       ) : null}
     </div>
   ) as React.ReactElement | null;
@@ -301,6 +449,7 @@ function PlasmicNavBar__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "freeBox",
     "alingLeft",
     "logo",
     "h5",
@@ -313,6 +462,20 @@ const PlasmicDescendants = {
     "button",
     "svg",
     "menubarCollapse"
+  ],
+  freeBox: [
+    "freeBox",
+    "alingLeft",
+    "logo",
+    "h5",
+    "navMenu",
+    "tentangKami",
+    "faq",
+    "harga",
+    "alingRigth",
+    "tombolCinta",
+    "button",
+    "svg"
   ],
   alingLeft: [
     "alingLeft",
@@ -340,8 +503,9 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  freeBox: "div";
   alingLeft: "div";
-  logo: "div";
+  logo: "a";
   h5: "h5";
   navMenu: "div";
   tentangKami: "a";
@@ -415,6 +579,7 @@ export const PlasmicNavBar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    freeBox: makeNodeComponent("freeBox"),
     alingLeft: makeNodeComponent("alingLeft"),
     logo: makeNodeComponent("logo"),
     h5: makeNodeComponent("h5"),

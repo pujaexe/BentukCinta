@@ -357,7 +357,7 @@ function PlasmicPriceCard__RenderFunc(props: {
               : ("primary" as const)
           }
         >
-          {"Tombol Cinta"}
+          {"Pesan Sekarang"}
         </TombolCinta>
       </p.PlasmicLink>
     </p.Stack>
