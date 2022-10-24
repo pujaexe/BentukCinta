@@ -213,32 +213,6 @@
           "cssFilePath": "plasmic/bentukcinta/PlasmicTombolCinta.module.css",
           "scheme": "blackbox",
           "componentType": "component"
-        },
-        {
-          "id": "Bsrcg3o0x1",
-          "name": "NavBar",
-          "type": "managed",
-          "projectId": "6366ps4JUXGcyRNfgAokBX",
-          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicNavBar.tsx",
-          "importSpec": {
-            "modulePath": "NavBar.tsx"
-          },
-          "cssFilePath": "plasmic/bentukcinta/PlasmicNavBar.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "SVNXSXhQAU",
-          "name": "MenubarCollapse",
-          "type": "managed",
-          "projectId": "6366ps4JUXGcyRNfgAokBX",
-          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicMenubarCollapse.tsx",
-          "importSpec": {
-            "modulePath": "MenubarCollapse.tsx"
-          },
-          "cssFilePath": "plasmic/bentukcinta/PlasmicMenubarCollapse.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
         }
       ],
       "icons": [
@@ -296,6 +270,11 @@
           "id": "JoX-gYL16O",
           "name": "MenuSvgrepoCom3SvgIcon",
           "moduleFilePath": "plasmic/bentukcinta/icons/PlasmicIcon__MenuSvgrepoCom3Svg.tsx"
+        },
+        {
+          "id": "gnyHE0HjTj",
+          "name": "BentukcintaLogosvgIcon",
+          "moduleFilePath": "plasmic/bentukcinta/icons/PlasmicIcon__BentukcintaLogosvg.tsx"
         }
       ],
       "images": [
@@ -318,6 +297,11 @@
           "id": "BHesYXTFp",
           "name": "iPhoneX-banner-min.png",
           "filePath": "../public/plasmic/bentukcinta/images/iPhoneXBannerMinpng.png"
+        },
+        {
+          "id": "CYVXqnjR8",
+          "name": "Asset 1.svg",
+          "filePath": "../public/plasmic/bentukcinta/images/asset1Svg.svg"
         }
       ],
       "indirect": false,
@@ -382,8 +366,7 @@
           "name": "DataProvider",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "enk3K4vZ6pmH6kVCoZJXGn",
@@ -402,8 +385,7 @@
           "name": "YouTube",
           "componentImportPath": "@plasmicpkgs/react-youtube"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "r3ASNrnyvLLLAtDvzUioQ",
@@ -422,8 +404,7 @@
           "name": "Slider",
           "componentImportPath": "react-slick"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
@@ -442,8 +423,26 @@
           "name": "Reveal",
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
-      ],
-      "jsBundleThemes": []
+      ]
+    },
+    {
+      "projectId": "7nJ7UcFmq9UzB6eXfC5z4a",
+      "projectApiToken": "uZp069FLSLNVA2dpWnqC3BUaj3flvtNBNXt6e1b67rm4Uh6lGHgYJ65FCBXlOFTB5KDW7RmmOxIAzgHYCg",
+      "projectName": "plasmic-nav",
+      "version": "0.6.0",
+      "cssFilePath": "plasmic/plasmic_nav/plasmic_plasmic_nav.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "jGx9tiKJoex",
+          "name": "NavigationBar",
+          "componentImportPath": "@plasmicpkgs/plasmic-nav"
+        }
+      ]
     }
   ],
   "globalVariants": {

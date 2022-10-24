@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700%3B0%2C900&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700%3B0%2C900&display=swap");
 
 .plasmic_default_styles {
-  --mixin-7rT4qx65AI_font-family: "Inter";
+  --mixin-7rT4qx65AI_font-family: "Inter", sans-serif;
   --mixin-7rT4qx65AI_font-size: 16px;
   --mixin-7rT4qx65AI_font-weight: 400;
   --mixin-7rT4qx65AI_font-style: normal;
@@ -14,14 +14,14 @@
   --mixin-7rT4qx65AI_user-select: text;
   --mixin-7rT4qx65AI_text-decoration-line: none;
   --mixin-7rT4qx65AI_text-overflow: clip;
-  --mixin-vLPgacqMBE_font-family: "Inter";
+  --mixin-vLPgacqMBE_font-family: "Inter", sans-serif;
   --mixin-vLPgacqMBE_color: #000000;
   --mixin-vLPgacqMBE_font-size: 72px;
   --mixin-vLPgacqMBE_font-weight: 900;
   --mixin-vLPgacqMBE_letter-spacing: -4px;
   --mixin-vLPgacqMBE_line-height: 1;
   --mixin-vLPgacqMBE_white-space: pre-wrap;
-  --mixin-ExHapZwdY-_font-family: "Inter";
+  --mixin-ExHapZwdY-_font-family: "Inter", sans-serif;
   --mixin-ExHapZwdY-_color: #000000;
   --mixin-ExHapZwdY-_font-size: 48px;
   --mixin-ExHapZwdY-_font-weight: 700;
@@ -30,14 +30,14 @@
   --mixin-ExHapZwdY-_white-space: pre-wrap;
   --mixin-34RnsJksyS1_color: #0070f3;
   --mixin-34RnsJksyS1_white-space: pre-wrap;
-  --mixin-BKgV9LNzB0_font-family: "Inter";
+  --mixin-BKgV9LNzB0_font-family: "Inter", sans-serif;
   --mixin-BKgV9LNzB0_color: #000000;
   --mixin-BKgV9LNzB0_font-size: 32px;
   --mixin-BKgV9LNzB0_font-weight: 600;
   --mixin-BKgV9LNzB0_letter-spacing: -0.8px;
   --mixin-BKgV9LNzB0_line-height: 1.2;
   --mixin-BKgV9LNzB0_white-space: pre-wrap;
-  --mixin-juL4Ib2l9z_font-family: "Inter";
+  --mixin-juL4Ib2l9z_font-family: "Inter", sans-serif;
   --mixin-juL4Ib2l9z_color: #000000;
   --mixin-juL4Ib2l9z_font-size: 24px;
   --mixin-juL4Ib2l9z_font-weight: 600;
@@ -67,14 +67,14 @@
   --mixin-c8UumBO5rQx_padding-right: 4px;
   --mixin-c8UumBO5rQx_padding-top: 1px;
   --mixin-c8UumBO5rQx_white-space: pre-wrap;
-  --mixin-e2urpWcRaU_font-family: "Inter";
+  --mixin-e2urpWcRaU_font-family: "Inter", sans-serif;
   --mixin-e2urpWcRaU_color: #000000;
   --mixin-e2urpWcRaU_font-size: 20px;
   --mixin-e2urpWcRaU_font-weight: 600;
   --mixin-e2urpWcRaU_letter-spacing: -0.3px;
   --mixin-e2urpWcRaU_line-height: 1.5;
   --mixin-e2urpWcRaU_white-space: pre-wrap;
-  --mixin-qyomXKxlnG_font-family: "Inter";
+  --mixin-qyomXKxlnG_font-family: "Inter", sans-serif;
   --mixin-qyomXKxlnG_color: #000000;
   --mixin-qyomXKxlnG_font-size: 16px;
   --mixin-qyomXKxlnG_font-weight: 600;
